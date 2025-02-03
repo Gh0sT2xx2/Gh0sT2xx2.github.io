@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-03T13:44:07+00:00</updated>
+  <updated>2025-02-03T14:07:30+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,28 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://localhost:4000/posts/hello-world/" rel="alternate" type="text/html" title="Hello World" />
+    <published>2025-02-03T13:46:00+00:00</published>
+  
+    <updated>2025-02-03T13:46:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/hello-world/</id>
+    <content type="text/html" src="http://localhost:4000/posts/hello-world/" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+  
+
+  <summary></summary>
+
+  </entry>
 
 </feed>
 
