@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-03T14:50:06+00:00</updated>
+  <updated>2025-02-03T14:57:58+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -21,22 +21,30 @@
   
   <entry>
     <title>Coming soon</title>
-    <link href="http://localhost:4000/posts/coming-soon/" rel="alternate" type="text/html" title="Coming soon" />
+    <link href="http://localhost:4000/coming-soon/" rel="alternate" type="text/html" title="Coming soon" />
     <published>2025-02-03T14:48:00+00:00</published>
   
     <updated>2025-02-03T14:48:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/coming-soon/</id>
-    <content type="text/html" src="http://localhost:4000/posts/coming-soon/" />
+    <id>http://localhost:4000/coming-soon/</id>
+    <content type="text/html" src="http://localhost:4000/coming-soon/" />
     <author>
       <name>Diogo Lages</name>
     </author>
 
   
     
+    <category term="Coming Soon" />
+    
   
 
-  <summary></summary>
+  <summary>Welcome to Hello World! In this exciting new section, I will be showcasing upcoming projects, hands-on labs, CTF walkthroughs (both blue and red team focused), and various Python-based projects. Stay tuned, more content will be added soon.
+
+What’s Coming:
+
+
+  Python Projects: An exciting collection of hands-on coding tutorials and fun Python challenges.
+  CTF Walkthroughs: A mix of beginner and...</summary>
 
   </entry>
 
