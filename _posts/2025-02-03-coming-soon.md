@@ -4,7 +4,7 @@ title: Coming soon
 date: 2025-02-03 14:48 +0000
 categories: [Coming Soon]
 tags: [Coming Soon]
-permalink: /coming-soon/
+permalink: /posts/coming-soon/
 image:  
   path: /assets/img/pfp.png
 ---
