@@ -11,6 +11,7 @@ order: 4
 
 Hi, I’m Diogo Lages, a **aspiring cybersecurity professional**. I believe cybersecurity is a field that’s always evolving, and I’m committed to keeping up with everything happening. I’m constantly learning, not just to improve my knowledge, but to stay ahead in the industry.
 
+<br>
 
 ```shell
 print("What I Do:")
