@@ -15,15 +15,15 @@ platforms:
 
   # Uncomment below if you need to.
   #
-  # - type: Tryhackme
+  #   - type: Tryhackme
   #   icon: "fas fa-user-secret"
   #   url: "https://tryhackme.com/p/DiogoLages"
   #
-  # - type: Osint Framework
+  #   - type: Osint Framework
   #   icon: "fas fa-fingerprint"
   #   url: "https://osintframework.com/"
   #
-  # - type: Terminal
+  #   - type: Terminal
   #   icon: "fas fa-terminal"
   #   url: "https://www.exploit-db.com/"
   #
