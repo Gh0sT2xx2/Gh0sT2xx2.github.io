@@ -13,6 +13,7 @@ Hi, I’m Diogo Lages, a **aspiring cybersecurity professional**. I believe cybe
 
 
 <br>
+<br>
 
 ```shell
 print("What I Do:")
@@ -26,6 +27,7 @@ print("- Cybersecurity News & Updates")
 print("- Share Guides, Books, Cheat Sheets, Forums, Tools for Cybersecurity")
 ```
 
+<br>
 <br>
 
 
