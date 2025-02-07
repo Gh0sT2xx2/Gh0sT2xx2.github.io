@@ -11,8 +11,6 @@ order: 4
 
 Hi, I’m Diogo Lages, a **aspiring cybersecurity professional**. I believe cybersecurity is a field that’s always evolving, and I’m committed to keeping up with everything happening. I’m constantly learning, not just to improve my knowledge, but to stay ahead in the industry.
 
-
-<br>
 <br>
 
 ```shell
@@ -28,9 +26,6 @@ print("- Share Guides, Books, Cheat Sheets, Forums, Tools for Cybersecurity")
 ```
 
 <br>
-<br>
-
-
 
 > Stay updated with my latest work: [GitHub Profile](https://github.com/Diogo-Lages)
 {: .prompt-tip }
