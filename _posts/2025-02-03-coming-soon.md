@@ -6,7 +6,7 @@ categories: [Exploits]
 tags: [Exploits, noVNC, 2FA Bypass]
 permalink: /posts/Exploiting-noVNC-for-2FA-Bypass/
 image:  
-  path: /assets/img/thumbnails/NoVNC.png
+  path: /assets/img/thumbnails/No-VNC.png
 ---
 
 
