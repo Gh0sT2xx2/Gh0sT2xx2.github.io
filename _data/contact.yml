@@ -15,11 +15,11 @@
   icon: "fas fa-fingerprint"
   url: "https://osintframework.com/"
 
-- type: link
-  icon: "fas fa-terminal"
-  url: "https://www.exploit-db.com/"
 
 # Uncomment and complete the url below to enable more contact options
+#- type: link
+#  icon: "fas fa-terminal"
+#  url: "https://www.exploit-db.com/"
 #- type: link
 #  icon: "fas fa-terminal"
 #  url: "https://www.exploit-db.com/"

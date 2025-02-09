@@ -1,0 +1,137 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Diogo Lages</title>
+  <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
+  <updated>2025-02-09T16:21:41+00:00</updated>
+  <author>
+    <name>Diogo Lages</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="en"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
+  <rights> © 2025 Diogo Lages </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>Evil Twin Attack</title>
+    <link href="http://localhost:4000/posts/Evil-Twin-Attack/" rel="alternate" type="text/html" title="Evil Twin Attack" />
+    <published>2025-02-09T13:40:00+00:00</published>
+  
+    <updated>2025-02-09T13:40:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/Evil-Twin-Attack/</id>
+    <content type="text/html" src="http://localhost:4000/posts/Evil-Twin-Attack/" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Exploits" />
+    
+    <category term="Evil Twin Attack" />
+    
+  
+
+  <summary>Evil Twin Attack: Exploiting Wi-Fi Clients Without Additional Hardware
+
+Introduction
+
+The Evil Twin Attack is a sophisticated method of exploiting Wi-Fi clients by creating a rogue access point (AP) that mimics a legitimate one. The goal is to force clients to disconnect from the legitimate network and reconnect to the malicious AP, which has the same SSID. Once connected, the attacker can inte...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>OPSEC</title>
+    <link href="http://localhost:4000/posts/opsec/" rel="alternate" type="text/html" title="OPSEC" />
+    <published>2025-02-09T11:53:00+00:00</published>
+  
+    <updated>2025-02-09T11:53:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/opsec/</id>
+    <content type="text/html" src="http://localhost:4000/posts/opsec/" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="OPSEC" />
+    
+    <category term="Anonymity" />
+    
+  
+
+  <summary>OPSEC: A Tactical Dive into Operations Security
+
+Finally taking the plunge to share thoughts that have been brewing in the recesses of my mind. So, what’s the scoop? It’s all about the intricate dance of OPSEC, or OPERATIONS SECURITY. For those who fancy a formal definition, OPSEC is the art of evaluating whether our moves are visible to potential threats, assessing the risk of compromising inf...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Exploiting noVNC for 2FA Bypass</title>
+    <link href="http://localhost:4000/posts/Exploiting-noVNC-for-2FA-Bypass/" rel="alternate" type="text/html" title="Exploiting noVNC for 2FA Bypass" />
+    <published>2025-02-07T00:00:00+00:00</published>
+  
+    <updated>2025-02-07T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/Exploiting-noVNC-for-2FA-Bypass/</id>
+    <content type="text/html" src="http://localhost:4000/posts/Exploiting-noVNC-for-2FA-Bypass/" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Exploits" />
+    
+    <category term="noVNC" />
+    
+  
+
+  <summary>Using noVNC for Credential Acquisition and Bypassing 2FA
+
+noVNC is both a JavaScript library for VNC clients and an application built on top of this library. Compatible with any modern browser, including mobile versions for iOS and Android, noVNC allows the web browser to function as a VNC client, enabling remote access to a machine.
+
+So, how can we use noVNC to acquire credentials and bypass 2...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Master Google Dorking: Advanced Techniques for OSINT and Ethical Hacking</title>
+    <link href="http://localhost:4000/master-google-dorking-advanced-search-techniques" rel="alternate" type="text/html" title="Master Google Dorking: Advanced Techniques for OSINT and Ethical Hacking" />
+    <published>2025-01-21T00:00:00+00:00</published>
+  
+    <updated>2025-01-21T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/master-google-dorking-advanced-search-techniques</id>
+    <content type="text/html" src="http://localhost:4000/master-google-dorking-advanced-search-techniques" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="OSINT" />
+    
+    <category term="Google Dorking" />
+    
+  
+
+  <summary>Coming-Soon</summary>
+
+  </entry>
+
+</feed>
+
+
