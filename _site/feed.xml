@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-09T12:32:59+00:00</updated>
+  <updated>2025-02-09T15:31:17+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,34 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Evil Twin Attack</title>
+    <link href="http://localhost:4000/posts/Evil-Twin-Attack/" rel="alternate" type="text/html" title="Evil Twin Attack" />
+    <published>2025-02-09T13:40:00+00:00</published>
+  
+    <updated>2025-02-09T13:40:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/Evil-Twin-Attack/</id>
+    <content type="text/html" src="http://localhost:4000/posts/Evil-Twin-Attack/" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Exploits" />
+    
+  
+
+  <summary>Evil Twin Attack: Exploiting Wi-Fi Clients Without Additional Hardware
+
+Introduction
+
+The Evil Twin Attack is a sophisticated method of exploiting Wi-Fi clients by creating a rogue access point (AP) that mimics a legitimate one. The goal is to force clients to disconnect from the legitimate network and reconnect to the malicious AP, which has the same SSID. Once connected, the attacker can inte...</summary>
+
+  </entry>
 
   
   <entry>

