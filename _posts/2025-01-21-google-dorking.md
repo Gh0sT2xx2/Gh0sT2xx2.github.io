@@ -5,7 +5,7 @@ categories: [OSINT, Google Dorking]
 tags: [google-dorking, advanced-search, hidden-web-data]
 permalink: /master-google-dorking-advanced-search-techniques
 image:
-  path: /assets/img/pfp.png
+  path: /assets/img/thumbnails/GoogleDorking.png
 ---
 
 # Coming-Soon
