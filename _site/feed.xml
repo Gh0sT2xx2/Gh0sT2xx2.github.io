@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-09T16:21:41+00:00</updated>
+  <updated>2025-02-09T18:38:38+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/Evil-Twin-Attack/" rel="alternate" type="text/html" title="Evil Twin Attack" />
     <published>2025-02-09T13:40:00+00:00</published>
   
-    <updated>2025-02-09T13:40:00+00:00</updated>
+    <updated>2025-02-09T16:22:02+00:00</updated>
   
     <id>http://localhost:4000/posts/Evil-Twin-Attack/</id>
     <content type="text/html" src="http://localhost:4000/posts/Evil-Twin-Attack/" />
@@ -54,7 +54,7 @@ The Evil Twin Attack is a sophisticated method of exploiting Wi-Fi clients by cr
     <link href="http://localhost:4000/posts/opsec/" rel="alternate" type="text/html" title="OPSEC" />
     <published>2025-02-09T11:53:00+00:00</published>
   
-    <updated>2025-02-09T11:53:00+00:00</updated>
+    <updated>2025-02-09T16:22:02+00:00</updated>
   
     <id>http://localhost:4000/posts/opsec/</id>
     <content type="text/html" src="http://localhost:4000/posts/opsec/" />
@@ -108,11 +108,11 @@ So, how can we use noVNC to acquire credentials and bypass 2...</summary>
 
   
   <entry>
-    <title>Master Google Dorking: Advanced Techniques for OSINT and Ethical Hacking</title>
-    <link href="http://localhost:4000/master-google-dorking-advanced-search-techniques" rel="alternate" type="text/html" title="Master Google Dorking: Advanced Techniques for OSINT and Ethical Hacking" />
+    <title>Mastering Google Dorking: The Ultimate Guide</title>
+    <link href="http://localhost:4000/master-google-dorking-advanced-search-techniques" rel="alternate" type="text/html" title="Mastering Google Dorking: The Ultimate Guide" />
     <published>2025-01-21T00:00:00+00:00</published>
   
-    <updated>2025-01-21T00:00:00+00:00</updated>
+    <updated>2025-02-09T17:52:42+00:00</updated>
   
     <id>http://localhost:4000/master-google-dorking-advanced-search-techniques</id>
     <content type="text/html" src="http://localhost:4000/master-google-dorking-advanced-search-techniques" />
@@ -128,7 +128,9 @@ So, how can we use noVNC to acquire credentials and bypass 2...</summary>
     
   
 
-  <summary>Coming-Soon</summary>
+  <summary>Mastering Google Dorking: The Ultimate Guide
+
+Google Dorking, also known as Google Hacking, is a technique used to uncover sensitive information exposed on the internet. This guide covers everything from the basics to advanced techniques, including automation, OSINT gathering, vulnerability exploitation, and ethical considerations. Whether you’re a beginner or an experienced cybersecurity profe...</summary>
 
   </entry>
 
