@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-09T23:48:18+00:00</updated>
+  <updated>2025-02-10T01:55:03+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,32 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Github Scraper</title>
+    <link href="http://localhost:4000/posts/python-github-scraper" rel="alternate" type="text/html" title="Github Scraper" />
+    <published>2025-02-10T00:00:00+00:00</published>
+  
+    <updated>2025-02-10T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/python-github-scraper</id>
+    <content type="text/html" src="http://localhost:4000/posts/python-github-scraper" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Python" />
+    
+    <category term="Github Scraper" />
+    
+  
+
+  <summary>Coming-Soon</summary>
+
+  </entry>
 
   
   <entry>
@@ -112,7 +138,7 @@ So, how can we use noVNC to acquire credentials and bypass 2...</summary>
     <link href="http://localhost:4000/master-google-dorking-ultimate-guide" rel="alternate" type="text/html" title="Mastering Google Dorking: The Ultimate Guide" />
     <published>2025-01-21T00:00:00+00:00</published>
   
-    <updated>2025-02-09T18:39:24+00:00</updated>
+    <updated>2025-02-10T01:42:54+00:00</updated>
   
     <id>http://localhost:4000/master-google-dorking-ultimate-guide</id>
     <content type="text/html" src="http://localhost:4000/master-google-dorking-ultimate-guide" />
@@ -131,44 +157,6 @@ So, how can we use noVNC to acquire credentials and bypass 2...</summary>
   <summary>Mastering Google Dorking: The Ultimate Guide
 
 Google Dorking, also known as Google Hacking, is a technique used to uncover sensitive information exposed on the internet. This guide covers everything from the basics to advanced techniques, including automation, OSINT gathering, vulnerability exploitation, and ethical considerations. Whether you’re a beginner or an experienced cybersecurity profe...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>WAF Bypass: Techniques, Tools, and Tactics for Penetration Testers</title>
-    <link href="http://localhost:4000/posts/waf-bypass" rel="alternate" type="text/html" title="WAF Bypass: Techniques, Tools, and Tactics for Penetration Testers" />
-    <published>2025-01-17T00:00:00+00:00</published>
-  
-    <updated>2025-01-17T00:00:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/waf-bypass</id>
-    <content type="text/html" src="http://localhost:4000/posts/waf-bypass" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Exploits" />
-    
-    <category term="WAF Bypass" />
-    
-  
-
-  <summary>Bypassing Web Application Firewalls (WAFs): Techniques, Tools, and Tactics for Penetration Testers
-
-Table of Contents
-
-  What is a Web Application Firewall (WAF)?
-  Purpose of a WAF
-  How Does a WAF Work?
-  Famous WAF Services
-  The Importance of a WAF in Vulnerability Protection
-  Top 10 Ways to Bypass a WAF
-  Advanced WAF Bypass Techniques
-  Tools to Bypass WAFs
-  XSS Bypass Techniques and Pa...</summary>
 
   </entry>
 
