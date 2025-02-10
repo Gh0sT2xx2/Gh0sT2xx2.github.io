@@ -2,8 +2,8 @@
 title: "Mastering Google Dorking: The Ultimate Guide"
 date: 2025-01-21
 categories: [OSINT, Google Dorking]
-tags: [google-dorking, advanced-search, hidden-web-data]
-permalink: /master-google-dorking-advanced-search-techniques
+tags: [Google Dorking, Advanced Search]
+permalink: /master-google-dorking-ultimate-guide
 image:
   path: /assets/img/thumbnails/GoogleDorking.png
 ---
