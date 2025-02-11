@@ -1,0 +1,129 @@
+<h1 id="opsec-a-tactical-dive-into-operations-security">OPSEC: A Tactical Dive into Operations Security</h1>
+
+<p>Finally taking the plunge to share thoughts that have been brewing in the recesses of my mind. So, what’s the scoop? It’s all about the intricate dance of <strong>OPSEC</strong>, or <strong>OPERATIONS SECURITY</strong>. For those who fancy a formal definition, OPSEC is the art of evaluating whether our moves are visible to potential threats, assessing the risk of compromising information, and then taking calculated measures to thwart those who seek to exploit our critical data.</p>
+
+<h2 id="the-origins-of-opsec">The Origins of OPSEC</h2>
+
+<p>Diving into the tactical realm, OPSEC emerged officially in 1966 during the US’s <strong>Operation Purple Dragon</strong>, spurred by the need to investigate operational mishaps and devise a pre-operation process to dodge fatal compromises.</p>
+
+<hr />
+
+<h2 id="core-principles">Core Principles</h2>
+
+<p>In a nutshell, OPSEC boils down to one thing: <strong>control</strong>. Control over information and actions, to prevent any attempts at turning them against you. Whether you’re immersed in threat intelligence collection, a red team engagement, or just nosing around an investigation, OPSEC is the guardian angel watching over it all. While the textbooks swear by five sacred steps, we’re zooming in on a couple, starting with the core of <strong>Identifying and Analyzing Threats &amp; Vulnerabilities</strong>.</p>
+
+<p>Picture a process that unveils the adversary’s watchful gaze, details the information they crave, and pinpoints your Achilles’ heels. That’s just the kickoff. We then pivot to <strong>Assessing Risks</strong> and strategically applying <strong>Appropriate Countermeasures</strong>. Quick heads-up: I’m spinning this yarn with a big ol’ focus on <strong>Anonymity and Privacy</strong>.</p>
+
+<hr />
+
+<h2 id="safeguarding-critical-information">Safeguarding Critical Information</h2>
+
+<p>Now, whether you’re a soldier, a civilian, or somewhere in the murky in-between, safeguarding your critical information is non-negotiable. This isn’t just a 9-to-5 deal—it extends to your home. OPSEC isn’t just for the field; it’s your shield against personal info leaks and safeguarding sensitive details from turning into weapons against you. From <strong>PII</strong> and <strong>financial data</strong> to your daily grind, address, and personal records, OPSEC’s got your back.</p>
+
+<p>Stick around, and we’ll navigate the cyber, hopping between topics, unraveling my train of thought. By the time we wrap this up, it should all click into place.</p>
+
+<hr />
+
+<h2 id="identifying-and-analyzing-threats--vulnerabilities">Identifying and Analyzing Threats &amp; Vulnerabilities</h2>
+
+<p>Alright, let’s demystify the <strong>Identification of Critical Information</strong>. In plain speak, it’s about pinpointing what needs safeguarding to pull off the operation without a hitch. Be it your source IP address, the tools of the trade, or the intricate web of your <strong>command and control (C&amp;C)</strong> infrastructure – make it crystal clear. Enter <strong>CALI</strong> (Capabilities, Activities, Limitations, and Intentions), a straightforward checklist outlining the operation’s must-haves. But before I dive into the deep end and potentially befuddle you, let’s ease into it with a high-level overview and a dash of shenanigans.</p>
+
+<h3 id="internet-privacy-ip-address">Internet Privacy: IP Address</h3>
+
+<p>Let’s get down to the internet. <strong>IP</strong> – the gateway to the online realm. Your connection to the internet is marked by an IP provided by your trusty <strong>ISP</strong> (Internet Service Provider), a key linked to an entry in their database. Most countries, ever-vigilant, have data retention regulations, forcing ISPs to log who’s using what IP when, for years on end. If that origin IP leaks, it’s a breadcrumb trail straight to you.</p>
+
+<hr />
+
+<h3 id="dns-domain-name-system">DNS (Domain Name System)</h3>
+
+<p>Now, DNS. Standing for “Domain Name System,” it’s the wizard behind the curtain, helping your browser find the IP address of a service. Think of it as a colossal contact list – ask for a name, and it hands you the number. When your browser wants to visit, say, <strong>github</strong> via <strong>github.com</strong>, it ping-pongs with a DNS service to unveil the IP addresses of github’s servers.</p>
+
+<p>Typically, your ISP dishes out the DNS service, automatically set up by the network you’re on. So, you type <strong>github.com</strong> into your browser, and the request embarks on an internet journey, hopping from DNS resolver to root nameserver to TLD server, and finally, to the domain’s nameserver. All this dance reveals the IP address of <strong>github.com</strong>, which then travels back to your browser, completing the ritual.</p>
+
+<p>For a deeper dive, check out: <a href="https://www.cloudflare.com/learning/dns/what-is-dns/">What is DNS?</a></p>
+
+<p>But here’s the kicker – most of these DNS requests cruise unencrypted. Even if you’re surfing in incognito mode or HTTPS, your browser might be casually throwing unencrypted DNS requests out there, saying, “Hey, what’s the IP address of www.cloudflare.com”. Not exactly covert, right?</p>
+
+<hr />
+
+<h3 id="fortifying-your-privacy-with-encrypted-dns">Fortifying Your Privacy with Encrypted DNS</h3>
+
+<p>Now that we’ve paved the way and you’ve got the basics down, let’s talk about fortifying your privacy. Enter <strong>encrypted DNS</strong> (DNS over HTTPS or DNS over TLS). You can set up your private DNS server, self-hosted with something like <strong>pi-hole</strong> or remotely hosted with services like <strong>nextdns</strong> or <strong>1.1.1.1</strong> within the <strong>Tor network</strong>. Sounds like airtight privacy, right? Well, not entirely.</p>
+
+<p>You can’t don the cloak of Tor all the time – it’s like shouting, “Hey, look at me!” and that’s not our game plan. To dodge unnecessary attention, we introduce <strong>VPNs</strong> and <strong>Tor</strong>, tag-teaming to keep your ISP and any nosy third party from eavesdropping or blocking your DNS requests. We’ll unpack this intricate dance in more detail down the road.</p>
+
+<hr />
+
+<h2 id="mac-address-randomization--tracking">MAC Address Randomization &amp; Tracking</h2>
+
+<p>We’ve got a glaring gap to address here – <strong>MAC addresses</strong>, a pivotal piece of the puzzle. Your MAC address, acting as a unique ID for your network interface, can become a tracking beacon if left unrandomized. Big players like <strong>Microsoft</strong> and <strong>Apple</strong>, along with device manufacturers, maintain logs with MAC addresses, creating a traceable trail linking devices to specific accounts.</p>
+
+<p>Even if you think you’ve slipped under the radar by buying your gadget “anonymously,” surveillance tactics, from CCTV footage to mobile provider antenna logs, might expose your identity. So, <strong>randomizing your MAC</strong> becomes a non-negotiable move. Concealing both your MAC and <strong>Bluetooth</strong> addresses is paramount.</p>
+
+<hr />
+
+<h2 id="threat-analysis-understanding-your-adversary">Threat Analysis: Understanding Your Adversary</h2>
+
+<p>Now, let’s unpack <strong>Threat Analysis</strong> in layman’s terms. It’s all about getting to know your adversaries inside out and identifying what’s on the line. Picture this: the threat of your <strong>source IP</strong>, network, or fingerprint being exposed. This becomes especially critical when dealing with <strong>malware samples</strong> – slip up, and your investigation might be blown.</p>
+
+<p>For those donning the hat of <strong>adversary hunters</strong>, safeguarding your identity as a researcher is paramount. Some adversaries aren’t above trying to infect or exploit researchers with malware. Let’s break it down step by step:</p>
+
+<ol>
+  <li><strong>Main OS</strong>: Used for normal work, research, browsing, and keeping things clean.</li>
+  <li><strong>Private VM</strong>: For malware analysis, encrypted traffic routing.</li>
+  <li><strong>Hidden OS</strong>: A VM within a VM, routed through <strong>Tor</strong> for complete anonymity.</li>
+</ol>
+
+<p>This multi-layered approach significantly slashes the odds of your adversaries easily de-anonymizing you.</p>
+
+<hr />
+
+<h2 id="whonix-a-linchpin-for-anonymization">Whonix: A Linchpin for Anonymization</h2>
+
+<p>Enter <strong>Whonix</strong>, a linchpin in the anonymization process. Whonix, a Linux distribution, rolls out two Virtual Machines:</p>
+
+<ul>
+  <li><strong>Whonix Workstation</strong>: Your go-to for anonymous activities.</li>
+  <li><strong>Whonix Gateway</strong>: Establishing a connection to the Tor network and routing all network traffic from the Workstation through the Tor network.</li>
+</ul>
+
+<p>You’ve got two routes here:</p>
+<ul>
+  <li><strong>Whonix-only</strong> route, where all traffic journeys through the Tor Network.</li>
+  <li><strong>Whonix hybrid</strong> route, where everything goes through a cash-paid VPN over the Tor Network.</li>
+</ul>
+
+<p>Choose your adventure wisely.</p>
+
+<hr />
+
+<h2 id="vulnerability-analysis--risk-assessment">Vulnerability Analysis &amp; Risk Assessment</h2>
+
+<p>Now, let’s delve into identifying <strong>vulnerabilities</strong> – the weak spots adversaries are itching to exploit. The <strong>Tor Project</strong>, while a formidable force, isn’t an impervious fortress against global adversaries. Successful attacks have left their mark, and advanced techniques boasting a remarkable 96% success rate in fingerprinting encrypted traffic have emerged over the years, exposing the websites you’ve visited.</p>
+
+<p>Consider major platforms like <strong>Twitter</strong> and <strong>Facebook</strong>. The anonymity offered by <strong>Tor</strong> starts losing its mojo when users toss in their real names, pictures, and link their accounts to personal info like emails and phone numbers. Platforms can employ algorithms to scrutinize browsing patterns, potentially connecting you to other profiles.</p>
+
+<hr />
+
+<h2 id="securing-devices">Securing Devices</h2>
+
+<p>Don’t forget to <strong>disable Bluetooth</strong>, <strong>biometrics</strong>, <strong>webcam</strong>, and <strong>microphone</strong>. Enable <strong>BIOS/UEFI password</strong>, and disable <strong>USB/HDMI</strong>. These measures help keep things in check and fend off certain attacks. And whatever you do, don’t leave your laptop unattended in your hotel room or elsewhere. Make it as challenging as possible for anyone to tamper with it without raising alarms.</p>
+
+<hr />
+
+<h2 id="conclusion-opsec-as-a-strategy">Conclusion: OPSEC as a Strategy</h2>
+
+<p>I won’t sugarcoat it – achieving perfect OPSEC is an illusion. Compromises are inevitable. The key is in your dedication and the measures you’re willing to take. The more time invested and the more cautious you are, the better.</p>
+
+<p>Remember the basics: avoid attracting attention, stay vigilant, be patient, steer clear of laziness and ignorance, blend in, do what makes sense, and, most importantly, <strong>Sh*t up</strong>.</p>
+
+<hr />
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>I’ve touched on the shenanigans in play. While not an exhaustive dive into every facet of attacks or vulnerabilities, consider this a <strong>101</strong> to kickstart your research. It’s designed to stake a claim in the recesses of your mind, offering a glimpse into how an OPSEC strategy should take shape.</p>
+
+<p>And no matter what research you conduct or guide/tips you come across might not cut it; they could be downright irrelevant to your unique operations.</p>
+
+<p>So, how do you make this realistically work? Simple. <strong>Build your own OPSEC</strong> and execute drills that fit your OP. It shouldn’t consume more than a few hours in most cases. <strong>Stay sharp, stay secure.</strong></p>
+

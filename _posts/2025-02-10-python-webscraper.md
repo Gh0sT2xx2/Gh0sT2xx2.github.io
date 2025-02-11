@@ -61,7 +61,7 @@ threading.Thread(target=crawl_thread, daemon=True).start()
 
 ---
 
-## Code
+## Full Code
 
 Github Repository:  [Web Scraper Tool](https://github.com/Diogo-Lages/WebScraper.py)
 
@@ -500,6 +500,12 @@ graph TD
     J -->|Yes| E
     J -->|No| K[Finish]
 ```
+
+---
+
+## Output
+
+![Network Monitor Output](/assets/img/Web-Scraper-Output.png)
 
 ---
 

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-10T18:42:50+00:00</updated>
+  <updated>2025-02-11T14:57:42+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/python-web-scraper" rel="alternate" type="text/html" title="Web Scraper and Crawling Tool" />
     <published>2025-02-10T00:00:00+00:00</published>
   
-    <updated>2025-02-10T00:00:00+00:00</updated>
+    <updated>2025-02-10T18:43:11+00:00</updated>
   
     <id>http://localhost:4000/posts/python-web-scraper</id>
     <content type="text/html" src="http://localhost:4000/posts/python-web-scraper" />
@@ -50,6 +50,34 @@ Features
 
 
   Intuitive GUI: Bui...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Network Monitor Tool</title>
+    <link href="http://localhost:4000/posts/python-network-monitor-tool" rel="alternate" type="text/html" title="Network Monitor Tool" />
+    <published>2025-02-10T00:00:00+00:00</published>
+  
+    <updated>2025-02-10T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/python-network-monitor-tool</id>
+    <content type="text/html" src="http://localhost:4000/posts/python-network-monitor-tool" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Python" />
+    
+    <category term="Network Monitor" />
+    
+  
+
+  <summary>Network Monitor Tool
+
+The Network Monitor is a tool designed to capture, analyze, and display real-time network traffic. It provides insights into network packets, including source and destination IP addresses, protocols, ports, process names, packet sizes, and geographical locations of remote IPs. Additionally, it includes a real-time bandwidth usage graph to visualize inbound and outbound tra...</summary>
 
   </entry>
 
@@ -138,34 +166,6 @@ Finally taking the plunge to share thoughts that have been brewing in the recess
 noVNC is both a JavaScript library for VNC clients and an application built on top of this library. Compatible with any modern browser, including mobile versions for iOS and Android, noVNC allows the web browser to function as a VNC client, enabling remote access to a machine.
 
 So, how can we use noVNC to acquire credentials and bypass 2...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Mastering Google Dorking: The Ultimate Guide</title>
-    <link href="http://localhost:4000/master-google-dorking-ultimate-guide" rel="alternate" type="text/html" title="Mastering Google Dorking: The Ultimate Guide" />
-    <published>2025-01-21T00:00:00+00:00</published>
-  
-    <updated>2025-02-10T01:42:54+00:00</updated>
-  
-    <id>http://localhost:4000/master-google-dorking-ultimate-guide</id>
-    <content type="text/html" src="http://localhost:4000/master-google-dorking-ultimate-guide" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="OSINT" />
-    
-    <category term="Google Dorking" />
-    
-  
-
-  <summary>Mastering Google Dorking: The Ultimate Guide
-
-Google Dorking, also known as Google Hacking, is a technique used to uncover sensitive information exposed on the internet. This guide covers everything from the basics to advanced techniques, including automation, OSINT gathering, vulnerability exploitation, and ethical considerations. Whether you’re a beginner or an experienced cybersecurity profe...</summary>
 
   </entry>
 

@@ -1,0 +1,330 @@
+<h1 id="mastering-google-dorking-the-ultimate-guide">Mastering Google Dorking: The Ultimate Guide</h1>
+
+<p>Google Dorking, also known as <strong>Google Hacking</strong>, is a technique used to uncover sensitive information exposed on the internet. This guide covers everything from the <strong>basics</strong> to <strong>advanced techniques</strong>, including <strong>automation</strong>, <strong>OSINT gathering</strong>, <strong>vulnerability exploitation</strong>, and <strong>ethical considerations</strong>. Whether you’re a beginner or an experienced cybersecurity professional, this guide will help you master Google Dorking.</p>
+
+<hr />
+
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+  <li><a href="#introduction-to-google-dorking">Introduction to Google Dorking</a></li>
+  <li><a href="#fundamentals-of-google-dorking">Fundamentals of Google Dorking</a></li>
+  <li><a href="#understanding-google-dork-operators">Understanding Google Dork Operators</a></li>
+  <li><a href="#common-google-dork-queries">Common Google Dork Queries</a></li>
+  <li><a href="#advanced-techniques">Advanced Techniques</a>
+    <ul>
+      <li><a href="#advanced-query-crafting">Advanced Query Crafting</a></li>
+      <li><a href="#exploiting-specific-vulnerabilities">Exploiting Specific Vulnerabilities</a></li>
+      <li><a href="#using-google-dorking-for-osint">Using Google Dorking for OSINT</a></li>
+      <li><a href="#automation-and-scripting">Automation and Scripting</a></li>
+    </ul>
+  </li>
+  <li><a href="#case-studies">Case Studies</a></li>
+  <li><a href="#preventing-google-dorking">Preventing Google Dorking</a></li>
+  <li><a href="#google-dorking-tools-and-resources">Google Dorking Tools and Resources</a></li>
+  <li><a href="#legal-considerations">Legal Considerations</a></li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ol>
+
+<hr />
+
+<h2 id="introduction-to-google-dorking">Introduction to Google Dorking</h2>
+
+<p>Google Dorking is a technique used to find sensitive information accidentally exposed on the internet. This can include:</p>
+<ul>
+  <li>Log files with usernames and passwords</li>
+  <li>Exposed cameras and IoT devices</li>
+  <li>Sensitive documents (e.g., financial records, confidential files)</li>
+  <li>Website vulnerabilities (e.g., SQL injection points)</li>
+</ul>
+
+<p>While Google Dorking is a powerful tool for <strong>information gathering</strong>, it is often misused for malicious purposes such as cyberattacks, identity theft, and digital espionage. This guide emphasizes <strong>ethical use</strong> and encourages readers to use these techniques for <strong>security testing</strong> and <strong>vulnerability assessment</strong>.</p>
+
+<hr />
+
+<h2 id="fundamentals-of-google-dorking">Fundamentals of Google Dorking</h2>
+
+<p>Google Dorking relies on <strong>advanced search operators</strong> to refine search results. These operators allow you to target specific types of information. Below are the seven fundamental types of queries used in Google Dorking:</p>
+
+<ol>
+  <li><strong>intitle</strong>: Searches for pages with specific text in their HTML title.
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">intitle:"login page"</code></li>
+    </ul>
+  </li>
+  <li><strong>allintitle</strong>: Similar to <code class="language-plaintext highlighter-rouge">intitle</code>, but requires all keywords to be in the title.
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">allintitle:"login page admin"</code></li>
+    </ul>
+  </li>
+  <li><strong>inurl</strong>: Searches for pages based on text in the URL.
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">inurl:login.php</code></li>
+    </ul>
+  </li>
+  <li><strong>allinurl</strong>: Similar to <code class="language-plaintext highlighter-rouge">inurl</code>, but requires all keywords to be in the URL.
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">allinurl:admin login</code></li>
+    </ul>
+  </li>
+  <li><strong>filetype</strong>: Filters results by specific file types.
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">filetype:pdf</code></li>
+    </ul>
+  </li>
+  <li><strong>ext</strong>: Filters results by file extensions.
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">ext:log</code></li>
+    </ul>
+  </li>
+  <li><strong>site</strong>: Limits search results to a specific website.
+    <ul>
+      <li>Example: <code class="language-plaintext highlighter-rouge">site:example.com</code></li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="understanding-google-dork-operators">Understanding Google Dork Operators</h2>
+
+<p>Google Dork operators are the building blocks of effective queries. Here’s a breakdown of the most commonly used operators:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Operator</strong></th>
+      <th><strong>Description</strong></th>
+      <th><strong>Example</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">intitle</code></td>
+      <td>Searches for pages with specific text in the title.</td>
+      <td><code class="language-plaintext highlighter-rouge">intitle:"login page"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">allintitle</code></td>
+      <td>Searches for pages with all specified keywords in the title.</td>
+      <td><code class="language-plaintext highlighter-rouge">allintitle:"admin login"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">inurl</code></td>
+      <td>Searches for pages with specific text in the URL.</td>
+      <td><code class="language-plaintext highlighter-rouge">inurl:admin</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">allinurl</code></td>
+      <td>Searches for pages with all specified keywords in the URL.</td>
+      <td><code class="language-plaintext highlighter-rouge">allinurl:admin login</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">filetype</code></td>
+      <td>Filters results by specific file types.</td>
+      <td><code class="language-plaintext highlighter-rouge">filetype:pdf</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ext</code></td>
+      <td>Filters results by file extensions.</td>
+      <td><code class="language-plaintext highlighter-rouge">ext:log</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">intext</code></td>
+      <td>Searches for pages containing specific text in the body.</td>
+      <td><code class="language-plaintext highlighter-rouge">intext:"username"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">allintext</code></td>
+      <td>Searches for pages containing all specified keywords in the body.</td>
+      <td><code class="language-plaintext highlighter-rouge">allintext:"username password"</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">site</code></td>
+      <td>Limits search results to a specific domain.</td>
+      <td><code class="language-plaintext highlighter-rouge">site:example.com</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cache</code></td>
+      <td>Displays the cached version of a page.</td>
+      <td><code class="language-plaintext highlighter-rouge">cache:example.com</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="common-google-dork-queries">Common Google Dork Queries</h2>
+
+<p>Below are some commonly used Google Dork queries for various purposes:</p>
+
+<h3 id="general-dorks">General Dorks</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intitle:"Index of"
+intitle:"Index of" site:example.com
+filetype:log inurl:"access.log"
+intext:"Welcome to phpMyAdmin"
+intitle:"Login — WordPress"
+intext:"Powered by WordPress"
+</code></pre></div></div>
+
+<h3 id="database-related-dorks">Database-Related Dorks</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inurl:/phpmyadmin/index.php
+inurl:/db/websql/
+inurl:/phpPgAdmin/index.php
+intext:"phpPgAdmin — Login"
+</code></pre></div></div>
+
+<h3 id="search-for-vulnerabilities">Search for Vulnerabilities</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intext:"Error Message" intext:"MySQL server" intext:"on <span class="err">*</span> using password:"
+intext:"Warning: mysql_connect()" intext:"on line" filetype:php
+</code></pre></div></div>
+
+<h3 id="exposed-documents-and-files">Exposed Documents and Files</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>filetype:pdf intitle:"Confidential"
+filetype:doc intitle:"Confidential"
+filetype:xls intitle:"Confidential"
+filetype:ppt intitle:"Confidential"
+</code></pre></div></div>
+
+<h3 id="directory-listings">Directory Listings</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intitle:"Index of" inurl:/parent-directory
+intitle:"Index of" inurl:/admin<span class="err">*</span>
+intitle:"Index of" inurl:/backup
+intitle:"Index of" inurl:/config
+intitle:"Index of" inurl:/logs
+</code></pre></div></div>
+
+<h3 id="exposed-webcams-and-cameras">Exposed Webcams and Cameras</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inurl:"view/index.shtml"
+intitle:"Live View /-AXIS"
+intitle:"Network Camera NetworkCamera"
+</code></pre></div></div>
+
+<h3 id="authentication-related-dorks">Authentication-Related Dorks</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intitle:"Login" inurl:/admin
+intitle:"Login" inurl:/login
+inurl:"/admin/login.php"
+</code></pre></div></div>
+
+<h3 id="exposed-control-panels">Exposed Control Panels</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intitle:"Control Panel" inurl:/admin
+intitle:"Control Panel" inurl:/cpanel
+</code></pre></div></div>
+
+<h3 id="exposed-iot-devices">Exposed IoT Devices</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intitle:"Smart TV" inurl:/cgi-bin/login
+intitle:"Router Login" inurl:/login
+</code></pre></div></div>
+
+<h3 id="finding-php-info-pages">Finding PHP Info Pages</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intitle:"PHP Version" intext:"PHP Version"
+</code></pre></div></div>
+
+<h3 id="exposing-sensitive-files-on-government-sites">Exposing Sensitive Files on Government Sites</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>site:gov (inurl:doc | inurl:pdf | inurl:xls | inurl:ppt | inurl:rtf | inurl:ps)
+</code></pre></div></div>
+
+<h3 id="exposed-network-devices">Exposed Network Devices</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intitle:"Brother" intext:"View Configuration"
+intitle:"Network Print Server" filetype:html
+intitle:"HP LaserJet" inurl:SSI/index.htm
+</code></pre></div></div>
+
+<h3 id="file-upload-vulnerabilities">File Upload Vulnerabilities</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inurl:/uploadfile/ filetype:php
+intext:"File Upload" inurl:/php/
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+
+<h3 id="advanced-query-crafting">Advanced Query Crafting</h3>
+<p>Combine multiple operators for precise searches. Use parentheses <code class="language-plaintext highlighter-rouge">()</code> to group conditions and logical operators (<code class="language-plaintext highlighter-rouge">OR</code>, <code class="language-plaintext highlighter-rouge">AND</code>, <code class="language-plaintext highlighter-rouge">-</code>) to refine results.</p>
+
+<h4 id="example">Example:</h4>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>site:example.com (intitle:"login" OR inurl:"admin") filetype:php
+</code></pre></div></div>
+
+<h3 id="exploiting-specific-vulnerabilities">Exploiting Specific Vulnerabilities</h3>
+<ul>
+  <li><strong>SQL Injection</strong>: <code class="language-plaintext highlighter-rouge">inurl:index.php?id=</code></li>
+  <li><strong>XSS Vulnerabilities</strong>: <code class="language-plaintext highlighter-rouge">inurl:search.php?q=</code></li>
+  <li><strong>File Inclusion Vulnerabilities</strong>: <code class="language-plaintext highlighter-rouge">inurl:index.php?page=</code></li>
+</ul>
+
+<h3 id="using-google-dorking-for-osint">Using Google Dorking for OSINT</h3>
+<ul>
+  <li><strong>Gathering Information</strong>: <code class="language-plaintext highlighter-rouge">site:linkedin.com intitle:"John Doe"</code></li>
+  <li><strong>Finding Leaked Credentials</strong>: <code class="language-plaintext highlighter-rouge">filetype:txt "username" "password"</code></li>
+</ul>
+
+<h3 id="automation-and-scripting">Automation and Scripting</h3>
+<p>Automate Google Dorking using Python and the <code class="language-plaintext highlighter-rouge">requests</code> library.</p>
+
+<h4 id="example-script">Example Script:</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">requests</span>
+
+<span class="k">def</span> <span class="nf">google_dork</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="s">https://www.google.com/search?q=</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="sh">"</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">User-Agent</span><span class="sh">"</span><span class="p">:</span> <span class="sh">"</span><span class="s">Mozilla/5.0</span><span class="sh">"</span><span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="n">text</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="sh">'</span><span class="s">inurl:index.php?id=</span><span class="sh">'</span>
+<span class="n">results</span> <span class="o">=</span> <span class="nf">google_dork</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="case-studies">Case Studies</h2>
+
+<h3 id="real-world-example-1-finding-exposed-admin-panels">Real-World Example 1: Finding Exposed Admin Panels</h3>
+<p>A penetration tester used the following query to find exposed admin panels:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>intitle:"Admin Login" inurl:/admin
+</code></pre></div></div>
+
+<h3 id="real-world-example-2-exploiting-sql-injection">Real-World Example 2: Exploiting SQL Injection</h3>
+<p>A bug bounty hunter used the following query to find SQL injection vulnerabilities:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inurl:index.php?id=
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="preventing-google-dorking">Preventing Google Dorking</h2>
+
+<p>To protect your website from Google Dorking:</p>
+<ol>
+  <li><strong>IP-based Restrictions</strong>: Limit access to sensitive areas.</li>
+  <li><strong>Vulnerability Scans</strong>: Regularly scan for vulnerabilities.</li>
+  <li><strong>Google Search Console</strong>: Remove sensitive content from search results.</li>
+  <li><strong>robots.txt</strong>: Use this file to block search engines from indexing sensitive directories.</li>
+  <li><strong>Secure Passwords</strong>: Change default passwords on devices and systems.</li>
+  <li><strong>Disable Remote Logins</strong>: Prevent unauthorized access to network devices.</li>
+</ol>
+
+<hr />
+
+<h2 id="google-dorking-tools-and-resources">Google Dorking Tools and Resources</h2>
+
+<p>Here are some tools and resources to help you get started:</p>
+<ul>
+  <li><strong>DorkSearch</strong>: <a href="https://dorksearch.com">https://dorksearch.com</a></li>
+  <li><strong>Dorks Builder</strong>: <a href="https://dorks.faisalahmed.me">https://dorks.faisalahmed.me</a></li>
+  <li><strong>Google Hacking Database (GHDB)</strong>: <a href="https://www.exploit-db.com/google-hacking-database">https://www.exploit-db.com/google-hacking-database</a></li>
+  <li><strong>Google Operators Guide</strong>: <a href="https://support.google.com/vault/answer/2474474">https://support.google.com/vault/answer/2474474</a></li>
+</ul>
+
+<hr />
+
+<h2 id="legal-considerations">Legal Considerations</h2>
+
+<h3 id="understanding-legal-boundaries">Understanding Legal Boundaries</h3>
+<p>Google Dorking can be a legal gray area. Ensure you have <strong>explicit permission</strong> before testing any website. Unauthorized access to systems is illegal and punishable by law.</p>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Google Dorking is an <strong>invaluable skill</strong> for cybersecurity professionals, but it must be used responsibly. By mastering advanced techniques, automating queries, and understanding legal boundaries, you can leverage Google Dorking to enhance security and uncover vulnerabilities. Always prioritize <strong>ethical use</strong> and obtain proper authorization before performing any tests.</p>
+
