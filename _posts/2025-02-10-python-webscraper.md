@@ -10,7 +10,6 @@ image:
 
 
 
-# Web Scraping and Crawling Tool
 
 A **Python-based web scraping and crawling tool** with a **graphical user interface (GUI)** built using `tkinter`. This tool allows users to crawl websites, download pages, and save them locally while maintaining the directory structure. It’s designed for ease of use, with features like depth control, rate limiting, and real-time logging.
 

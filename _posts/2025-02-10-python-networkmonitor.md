@@ -9,7 +9,6 @@ image:
 ---
 
 
-# Network Monitor Tool
 
 The **Network Monitor** is a tool designed to capture, analyze, and display real-time network traffic. It provides insights into network packets, including source and destination IP addresses, protocols, ports, process names, packet sizes, and geographical locations of remote IPs. Additionally, it includes a real-time bandwidth usage graph to visualize inbound and outbound traffic.
 

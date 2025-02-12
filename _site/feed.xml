@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-11T14:57:42+00:00</updated>
+  <updated>2025-02-12T01:08:38+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,46 @@
 
   
   <entry>
+    <title>Honeypot Suite</title>
+    <link href="http://localhost:4000/posts/python-honeypot-suite" rel="alternate" type="text/html" title="Honeypot Suite" />
+    <published>2025-02-11T00:00:00+00:00</published>
+  
+    <updated>2025-02-11T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/python-honeypot-suite</id>
+    <content type="text/html" src="http://localhost:4000/posts/python-honeypot-suite" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Python" />
+    
+    <category term="Honeypot Suite" />
+    
+  
+
+  <summary>The entire honeypot suite, including all protocol-specific implementations and the centralized management script (menu.py), is hosted in a single repository. This unified approach simplifies setup, maintenance, and contribution.
+
+Honeypot Suite Repository
+
+  Link: Honeypot-Suite Repository
+
+
+Directory Structure
+The repository follows a modular structure for clarity and extensibility:
+honeypot-s...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>Web Scraper and Crawling Tool</title>
     <link href="http://localhost:4000/posts/python-web-scraper" rel="alternate" type="text/html" title="Web Scraper and Crawling Tool" />
     <published>2025-02-10T00:00:00+00:00</published>
   
-    <updated>2025-02-10T18:43:11+00:00</updated>
+    <updated>2025-02-11T14:57:47+00:00</updated>
   
     <id>http://localhost:4000/posts/python-web-scraper</id>
     <content type="text/html" src="http://localhost:4000/posts/python-web-scraper" />
@@ -40,16 +75,14 @@
     
   
 
-  <summary>Web Scraping and Crawling Tool
-
-A Python-based web scraping and crawling tool with a graphical user interface (GUI) built using tkinter. This tool allows users to crawl websites, download pages, and save them locally while maintaining the directory structure. It’s designed for ease of use, with features like depth control, rate limiting, and real-time logging.
+  <summary>A Python-based web scraping and crawling tool with a graphical user interface (GUI) built using tkinter. This tool allows users to crawl websites, download pages, and save them locally while maintaining the directory structure. It’s designed for ease of use, with features like depth control, rate limiting, and real-time logging.
 
 
 
 Features
 
 
-  Intuitive GUI: Bui...</summary>
+  Intuitive GUI: Built with tkinter for a user-frien...</summary>
 
   </entry>
 
@@ -75,9 +108,12 @@ Features
     
   
 
-  <summary>Network Monitor Tool
+  <summary>The Network Monitor is a tool designed to capture, analyze, and display real-time network traffic. It provides insights into network packets, including source and destination IP addresses, protocols, ports, process names, packet sizes, and geographical locations of remote IPs. Additionally, it includes a real-time bandwidth usage graph to visualize inbound and outbound traffic.
 
-The Network Monitor is a tool designed to capture, analyze, and display real-time network traffic. It provides insights into network packets, including source and destination IP addresses, protocols, ports, process names, packet sizes, and geographical locations of remote IPs. Additionally, it includes a real-time bandwidth usage graph to visualize inbound and outbound tra...</summary>
+Key Features
+
+
+...</summary>
 
   </entry>
 
@@ -136,36 +172,6 @@ The Evil Twin Attack is a sophisticated method of exploiting Wi-Fi clients by cr
   <summary>OPSEC: A Tactical Dive into Operations Security
 
 Finally taking the plunge to share thoughts that have been brewing in the recesses of my mind. So, what’s the scoop? It’s all about the intricate dance of OPSEC, or OPERATIONS SECURITY. For those who fancy a formal definition, OPSEC is the art of evaluating whether our moves are visible to potential threats, assessing the risk of compromising inf...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Exploiting noVNC for 2FA Bypass</title>
-    <link href="http://localhost:4000/posts/Exploiting-noVNC-for-2FA-Bypass/" rel="alternate" type="text/html" title="Exploiting noVNC for 2FA Bypass" />
-    <published>2025-02-07T00:00:00+00:00</published>
-  
-    <updated>2025-02-07T00:00:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/Exploiting-noVNC-for-2FA-Bypass/</id>
-    <content type="text/html" src="http://localhost:4000/posts/Exploiting-noVNC-for-2FA-Bypass/" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Exploits" />
-    
-    <category term="noVNC" />
-    
-  
-
-  <summary>Using noVNC for Credential Acquisition and Bypassing 2FA
-
-noVNC is both a JavaScript library for VNC clients and an application built on top of this library. Compatible with any modern browser, including mobile versions for iOS and Android, noVNC allows the web browser to function as a VNC client, enabling remote access to a machine.
-
-So, how can we use noVNC to acquire credentials and bypass 2...</summary>
 
   </entry>
 
