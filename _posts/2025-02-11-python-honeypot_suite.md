@@ -13,7 +13,7 @@ image:
 The entire honeypot suite, including all protocol-specific implementations and the centralized management script (`menu.py`), is hosted in a single repository. This unified approach simplifies setup, maintenance, and contribution.
 
 ### **Honeypot Suite Repository**
-- **Link**: [Honeypot-Suite Repository](https://github.com/Diogo-Lages/Honeypot-Suite.py)
+- **Link**: [Honeypot Suite Repository](https://github.com/Diogo-Lages/Honeypot_Suite.py)
 
 
 ### **Directory Structure**

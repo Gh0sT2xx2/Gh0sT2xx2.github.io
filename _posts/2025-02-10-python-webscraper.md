@@ -62,7 +62,7 @@ threading.Thread(target=crawl_thread, daemon=True).start()
 
 ## Full Code
 
-Github Repository:  [Web Scraper Tool](https://github.com/Diogo-Lages/WebScraper.py)
+Github Repository:  [Web Scraper Tool](https://github.com/Diogo-Lages/Web_Scraper.py)
 
 
 ```python

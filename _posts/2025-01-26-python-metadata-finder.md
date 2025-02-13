@@ -35,7 +35,7 @@ A comprehensive tool for finding, managing, and removing metadata from images.
 
 ## Full Code
 
-Github Repository:  [Metadata Finder](https://github.com/Diogo-Lages/Metadata-Finder.py)
+Github Repository:  [Metadata Finder](https://github.com/Diogo-Lages/Metadata_Finder.py)
 
 ```python
 import os

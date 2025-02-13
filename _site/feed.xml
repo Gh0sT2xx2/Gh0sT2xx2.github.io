@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-12T01:08:38+00:00</updated>
+  <updated>2025-02-13T17:23:58+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,44 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Network Scanner</title>
+    <link href="http://localhost:4000/posts/python-network-scanner" rel="alternate" type="text/html" title="Network Scanner" />
+    <published>2025-02-13T00:00:00+00:00</published>
+  
+    <updated>2025-02-13T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/python-network-scanner</id>
+    <content type="text/html" src="http://localhost:4000/posts/python-network-scanner" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Python" />
+    
+    <category term="Network Scanner" />
+    
+  
+
+  <summary>Network Scanner Repository
+
+
+  Link: Network Scanner Repository
+
+
+Features
+
+
+  Port Scanning: Scan both TCP and UDP ports to identify open, closed, or filtered ports.
+  Service Detection: Detect service versions running on open ports.
+  OS Fingerprinting: Perform advanced OS fingerprinting to guess the operating system of the target.
+  Vulnerability Scanning: Query external databases (Shodan, N...</summary>
+
+  </entry>
 
   
   <entry>
@@ -44,7 +82,7 @@
 
 Honeypot Suite Repository
 
-  Link: Honeypot-Suite Repository
+  Link: Honeypot Suite Repository
 
 
 Directory Structure
@@ -59,7 +97,7 @@ honeypot-s...</summary>
     <link href="http://localhost:4000/posts/python-web-scraper" rel="alternate" type="text/html" title="Web Scraper and Crawling Tool" />
     <published>2025-02-10T00:00:00+00:00</published>
   
-    <updated>2025-02-11T14:57:47+00:00</updated>
+    <updated>2025-02-12T01:09:28+00:00</updated>
   
     <id>http://localhost:4000/posts/python-web-scraper</id>
     <content type="text/html" src="http://localhost:4000/posts/python-web-scraper" />
@@ -92,7 +130,7 @@ Features
     <link href="http://localhost:4000/posts/python-network-monitor-tool" rel="alternate" type="text/html" title="Network Monitor Tool" />
     <published>2025-02-10T00:00:00+00:00</published>
   
-    <updated>2025-02-10T00:00:00+00:00</updated>
+    <updated>2025-02-12T01:09:28+00:00</updated>
   
     <id>http://localhost:4000/posts/python-network-monitor-tool</id>
     <content type="text/html" src="http://localhost:4000/posts/python-network-monitor-tool" />
@@ -144,34 +182,6 @@ Key Features
 Introduction
 
 The Evil Twin Attack is a sophisticated method of exploiting Wi-Fi clients by creating a rogue access point (AP) that mimics a legitimate one. The goal is to force clients to disconnect from the legitimate network and reconnect to the malicious AP, which has the same SSID. Once connected, the attacker can inte...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>OPSEC</title>
-    <link href="http://localhost:4000/posts/opsec/" rel="alternate" type="text/html" title="OPSEC" />
-    <published>2025-02-09T11:53:00+00:00</published>
-  
-    <updated>2025-02-09T16:22:02+00:00</updated>
-  
-    <id>http://localhost:4000/posts/opsec/</id>
-    <content type="text/html" src="http://localhost:4000/posts/opsec/" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="OPSEC" />
-    
-    <category term="Anonymity" />
-    
-  
-
-  <summary>OPSEC: A Tactical Dive into Operations Security
-
-Finally taking the plunge to share thoughts that have been brewing in the recesses of my mind. So, what’s the scoop? It’s all about the intricate dance of OPSEC, or OPERATIONS SECURITY. For those who fancy a formal definition, OPSEC is the art of evaluating whether our moves are visible to potential threats, assessing the risk of compromising inf...</summary>
 
   </entry>
 
