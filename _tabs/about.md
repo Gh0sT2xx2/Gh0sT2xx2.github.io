@@ -5,7 +5,9 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-![About Image](assets/img/pfp.png)
+![About Image (Light)](assets/img/thumbnails/thumbnailwhoami.png){: .light}
+![About Image (Dark)](assets/img/thumbnails/thumbnailwhoami2.png){: .dark}
+
 
 ## **$whoami**
 
