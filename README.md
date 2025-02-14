@@ -1,1 +1,1 @@
-![Who Am I Thumbnail](/assets/img/thumbnails/whoamithumbnail2.png)
+![Who Am I Thumbnail](assets/img/thumbnails/thumbnailwhoami2.png)
