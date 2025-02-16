@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-14T14:26:05+00:00</updated>
+  <updated>2025-02-16T23:01:14+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,95 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Discover the Origin IP Address of a Website and Identify WAF Protection</title>
+    <link href="http://localhost:4000/posts/find-origin-ip-website" rel="alternate" type="text/html" title="Discover the Origin IP Address of a Website and Identify WAF Protection" />
+    <published>2025-02-16T00:00:00+00:00</published>
+  
+    <updated>2025-02-16T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/find-origin-ip-website</id>
+    <content type="text/html" src="http://localhost:4000/posts/find-origin-ip-website" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Guides" />
+    
+    <category term="Discover Origin IP Address of a Website and Identify WAF" />
+    
+  
+
+  <summary>Web application firewalls (WAFs) and content delivery networks (CDNs) are commonly employed to enhance website security. These technologies often obscure the true IP address of a server, adding an additional layer of protection that can complicate security assessments and bug bounty testing. However, uncovering the source IP address allows you to bypass these layers and directly assess the serv...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>FFUF: Fuzzing Guide to Web Applications</title>
+    <link href="http://localhost:4000/posts/ffuf-Fuzzing-Guide" rel="alternate" type="text/html" title="FFUF: Fuzzing Guide to Web Applications" />
+    <published>2025-02-16T00:00:00+00:00</published>
+  
+    <updated>2025-02-16T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/ffuf-Fuzzing-Guide</id>
+    <content type="text/html" src="http://localhost:4000/posts/ffuf-Fuzzing-Guide" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Tools" />
+    
+    <category term="FFUF Fuzzing Guide" />
+    
+  
+
+  <summary>FFUF is a powerful, open-source fuzzing tool designed for web application security testing. It enables users to discover hidden files, directories, subdomains, and parameters through high-speed fuzzing. This guide will provide an in-depth explanation of FFUF commands, their use cases, and advanced techniques to help you leverage its full potential.
+
+
+
+Table of Contents
+
+  Installation
+  Basic C...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Browser Extensions for Cybersecurity</title>
+    <link href="http://localhost:4000/posts/browser-extensions-cybersecurity" rel="alternate" type="text/html" title="Browser Extensions for Cybersecurity" />
+    <published>2025-02-13T00:00:00+00:00</published>
+  
+    <updated>2025-02-13T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/browser-extensions-cybersecurity</id>
+    <content type="text/html" src="http://localhost:4000/posts/browser-extensions-cybersecurity" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Tools" />
+    
+    <category term="Browser Extensions" />
+    
+  
+
+  <summary>For cybersecurity, browser extensions are essential tools that automate tasks, uncover vulnerabilities, and enhance privacy. This list highlights must-have extensions for testing applications, gathering intelligence, and improving your workflow. From detecting exposed credentials to managing proxies and analyzing metadata.
+
+Reconnaissance &amp;amp;amp; Information Gathering
+
+1. Wappalyzer — Technology ...</summary>
+
+  </entry>
 
   
   <entry>
@@ -40,19 +129,9 @@
     
   
 
-  <summary>Network Scanner Repository
+  <summary>Network scanning tool designed for cybersecurity. It offers features such as port scanning, service detection, OS fingerprinting, vulnerability scanning, traceroute, geolocation, WHOIS lookup, and SSL/TLS checks. By querying external databases like Shodan, NVD, and CIRCL, the tool identifies potential vulnerabilities and generates detailed HTML reports summarizing scan results.
 
-
-  Link: Network Scanner Repository
-
-
-Features
-
-
-  Port Scanning: Scan both TCP and UDP ports to identify open, closed, or filtered ports.
-  Service Detection: Detect service versions running on open ports.
-  OS Fingerprinting: Perform advanced OS fingerprinting to guess the operating system of the target.
-  Vulnerability Scanning: Query external databases (Shodan, N...</summary>
+Network Scanner...</summary>
 
   </entry>
 
@@ -88,100 +167,6 @@ Honeypot Suite Repository
 Directory Structure
 The repository follows a modular structure for clarity and extensibility:
 honeypot-s...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Web Scraper and Crawling Tool</title>
-    <link href="http://localhost:4000/posts/python-web-scraper" rel="alternate" type="text/html" title="Web Scraper and Crawling Tool" />
-    <published>2025-02-10T00:00:00+00:00</published>
-  
-    <updated>2025-02-13T19:41:06+00:00</updated>
-  
-    <id>http://localhost:4000/posts/python-web-scraper</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-web-scraper" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Python" />
-    
-    <category term="Web Scraper" />
-    
-  
-
-  <summary>A Python-based web scraping and crawling tool with a graphical user interface (GUI) built using tkinter. This tool allows users to crawl websites, download pages, and save them locally while maintaining the directory structure. It’s designed for ease of use, with features like depth control, rate limiting, and real-time logging.
-
-
-
-Features
-
-
-  Intuitive GUI: Built with tkinter for a user-frien...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Network Monitor Tool</title>
-    <link href="http://localhost:4000/posts/python-network-monitor-tool" rel="alternate" type="text/html" title="Network Monitor Tool" />
-    <published>2025-02-10T00:00:00+00:00</published>
-  
-    <updated>2025-02-13T19:41:06+00:00</updated>
-  
-    <id>http://localhost:4000/posts/python-network-monitor-tool</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-network-monitor-tool" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Python" />
-    
-    <category term="Network Monitor" />
-    
-  
-
-  <summary>The Network Monitor is a tool designed to capture, analyze, and display real-time network traffic. It provides insights into network packets, including source and destination IP addresses, protocols, ports, process names, packet sizes, and geographical locations of remote IPs. Additionally, it includes a real-time bandwidth usage graph to visualize inbound and outbound traffic.
-
-Key Features
-
-
-...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Evil Twin Attack</title>
-    <link href="http://localhost:4000/posts/Evil-Twin-Attack/" rel="alternate" type="text/html" title="Evil Twin Attack" />
-    <published>2025-02-09T13:40:00+00:00</published>
-  
-    <updated>2025-02-09T16:22:02+00:00</updated>
-  
-    <id>http://localhost:4000/posts/Evil-Twin-Attack/</id>
-    <content type="text/html" src="http://localhost:4000/posts/Evil-Twin-Attack/" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Exploits" />
-    
-    <category term="Evil Twin Attack" />
-    
-  
-
-  <summary>Evil Twin Attack: Exploiting Wi-Fi Clients Without Additional Hardware
-
-Introduction
-
-The Evil Twin Attack is a sophisticated method of exploiting Wi-Fi clients by creating a rogue access point (AP) that mimics a legitimate one. The goal is to force clients to disconnect from the legitimate network and reconnect to the malicious AP, which has the same SSID. Once connected, the attacker can inte...</summary>
 
   </entry>
 

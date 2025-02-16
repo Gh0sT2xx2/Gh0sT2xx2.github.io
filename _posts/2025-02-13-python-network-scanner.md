@@ -8,6 +8,11 @@ image:
   path: /assets/img/thumbnails/Network-Scanner.png
 ---
 
+
+
+Network scanning tool designed for cybersecurity. It offers features such as port scanning, service detection, OS fingerprinting, vulnerability scanning, traceroute, geolocation, WHOIS lookup, and SSL/TLS checks. By querying external databases like Shodan, NVD, and CIRCL, the tool identifies potential vulnerabilities and generates detailed HTML reports summarizing scan results.
+
+
 ## Network Scanner Repository
 
 - **Link**: [Network Scanner Repository](https://github.com/Diogo-Lages/Network_Scanner.py)
