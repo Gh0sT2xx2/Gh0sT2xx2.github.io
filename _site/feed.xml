@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-16T23:01:14+00:00</updated>
+  <updated>2025-02-16T23:05:43+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -113,7 +113,7 @@ Reconnaissance &amp;amp;amp; Information Gathering
     <link href="http://localhost:4000/posts/python-network-scanner" rel="alternate" type="text/html" title="Network Scanner" />
     <published>2025-02-13T00:00:00+00:00</published>
   
-    <updated>2025-02-13T00:00:00+00:00</updated>
+    <updated>2025-02-16T23:02:30+00:00</updated>
   
     <id>http://localhost:4000/posts/python-network-scanner</id>
     <content type="text/html" src="http://localhost:4000/posts/python-network-scanner" />

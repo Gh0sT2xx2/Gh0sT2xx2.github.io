@@ -16,7 +16,7 @@ timezone: Europe/Lisbon
 
 title: Diogo Lages # the main title
 
-tagline: Why So Secure? Because Tomorrow Depends on It # it will display as the subtitle
+tagline: You can't keep it a secret, because you're a good man # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.
