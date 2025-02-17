@@ -1,6 +1,6 @@
 ---
 title: "Web Scraper and Crawling Tool"
-date: 2025-02-10
+date: 2025-01-12
 categories: [Python, Web Scraper]
 tags: [Python, Web Scraper]
 permalink: /posts/python-web-scraper

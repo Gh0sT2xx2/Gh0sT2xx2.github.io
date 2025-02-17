@@ -1,6 +1,6 @@
 ---
 title: "FFUF: Fuzzing Guide to Web Applications"
-date: 2025-02-16
+date: 2025-02-15
 categories: [Tools, FFUF Fuzzing Guide]
 tags: [Tools, FFUF]
 permalink: /posts/ffuf-Fuzzing-Guide

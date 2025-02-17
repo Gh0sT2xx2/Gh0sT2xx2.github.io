@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-16T23:05:43+00:00</updated>
+  <updated>2025-02-17T21:53:09+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>Discover the Origin IP Address of a Website and Identify WAF Protection</title>
     <link href="http://localhost:4000/posts/find-origin-ip-website" rel="alternate" type="text/html" title="Discover the Origin IP Address of a Website and Identify WAF Protection" />
-    <published>2025-02-16T00:00:00+00:00</published>
+    <published>2025-02-17T00:00:00+00:00</published>
   
-    <updated>2025-02-16T00:00:00+00:00</updated>
+    <updated>2025-02-17T00:00:00+00:00</updated>
   
     <id>http://localhost:4000/posts/find-origin-ip-website</id>
     <content type="text/html" src="http://localhost:4000/posts/find-origin-ip-website" />
@@ -48,9 +48,9 @@
   <entry>
     <title>FFUF: Fuzzing Guide to Web Applications</title>
     <link href="http://localhost:4000/posts/ffuf-Fuzzing-Guide" rel="alternate" type="text/html" title="FFUF: Fuzzing Guide to Web Applications" />
-    <published>2025-02-16T00:00:00+00:00</published>
+    <published>2025-02-15T00:00:00+00:00</published>
   
-    <updated>2025-02-16T00:00:00+00:00</updated>
+    <updated>2025-02-15T00:00:00+00:00</updated>
   
     <id>http://localhost:4000/posts/ffuf-Fuzzing-Guide</id>
     <content type="text/html" src="http://localhost:4000/posts/ffuf-Fuzzing-Guide" />
@@ -109,29 +109,39 @@ Reconnaissance &amp;amp;amp; Information Gathering
 
   
   <entry>
-    <title>Network Scanner</title>
-    <link href="http://localhost:4000/posts/python-network-scanner" rel="alternate" type="text/html" title="Network Scanner" />
-    <published>2025-02-13T00:00:00+00:00</published>
+    <title>THM: Lookup</title>
+    <link href="http://localhost:4000/posts/ctf-redteam-lookup" rel="alternate" type="text/html" title="THM: Lookup" />
+    <published>2025-02-12T00:00:00+00:00</published>
   
-    <updated>2025-02-16T23:02:30+00:00</updated>
+    <updated>2025-02-12T00:00:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/python-network-scanner</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-network-scanner" />
+    <id>http://localhost:4000/posts/ctf-redteam-lookup</id>
+    <content type="text/html" src="http://localhost:4000/posts/ctf-redteam-lookup" />
     <author>
       <name>Diogo Lages</name>
     </author>
 
   
     
-    <category term="Python" />
+    <category term="CTF" />
     
-    <category term="Network Scanner" />
+    <category term="Red Team" />
     
   
 
-  <summary>Network scanning tool designed for cybersecurity. It offers features such as port scanning, service detection, OS fingerprinting, vulnerability scanning, traceroute, geolocation, WHOIS lookup, and SSL/TLS checks. By querying external databases like Shodan, NVD, and CIRCL, the tool identifies potential vulnerabilities and generates detailed HTML reports summarizing scan results.
+  <summary>Walkthrough
 
-Network Scanner...</summary>
+CTF Platform: TryHackMe
+Level: Easy
+
+Tools Used:
+
+  Nmap: For scanning the target network to identify open ports and services.
+  Gobuster: For enumerating subdomains and directories to uncover hidden resources.
+  Hydra: For brute-forcing login credentials.
+  Metasploit: For exploiting the elFinder command injection vulnerability.
+  Python: For spawning an interactive shell.
+  Linpe...</summary>
 
   </entry>
 
@@ -139,9 +149,9 @@ Network Scanner...</summary>
   <entry>
     <title>Honeypot Suite</title>
     <link href="http://localhost:4000/posts/python-honeypot-suite" rel="alternate" type="text/html" title="Honeypot Suite" />
-    <published>2025-02-11T00:00:00+00:00</published>
+    <published>2025-02-09T00:00:00+00:00</published>
   
-    <updated>2025-02-13T19:41:06+00:00</updated>
+    <updated>2025-02-09T00:00:00+00:00</updated>
   
     <id>http://localhost:4000/posts/python-honeypot-suite</id>
     <content type="text/html" src="http://localhost:4000/posts/python-honeypot-suite" />

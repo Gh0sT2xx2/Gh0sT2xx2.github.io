@@ -1,6 +1,6 @@
 ---
 title: "Mastering Google Dorking: The Ultimate Guide"
-date: 2025-01-21
+date: 2025-01-28
 categories: [OSINT, Google Dorking]
 tags: [Google Dorking, Advanced Search]
 permalink: /master-google-dorking-ultimate-guide
