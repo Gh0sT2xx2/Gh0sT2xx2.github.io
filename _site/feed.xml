@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-17T21:53:09+00:00</updated>
+  <updated>2025-02-24T20:27:49+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,96 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Guide to Server-Side Request Forgery (SSRF)</title>
+    <link href="http://localhost:4000/posts/ssrf-guide" rel="alternate" type="text/html" title="Guide to Server-Side Request Forgery (SSRF)" />
+    <published>2025-02-23T00:00:00+00:00</published>
+  
+    <updated>2025-02-23T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/ssrf-guide</id>
+    <content type="text/html" src="http://localhost:4000/posts/ssrf-guide" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Guides" />
+    
+    <category term="Web Pentesting" />
+    
+  
+
+  <summary>Understanding Server-Side Request Forgery (SSRF)
+
+What is SSRF?
+
+Server-Side Request Forgery (SSRF) is a critical web security vulnerability that allows an attacker to induce a server-side application to make unintended HTTP requests to internal or external systems. This can lead to unauthorized access to sensitive data, internal services, or even remote code execution on the server.
+
+In a typi...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Guide to Cross-Site Request Forgery (CSRF)</title>
+    <link href="http://localhost:4000/posts/csrf-guide" rel="alternate" type="text/html" title="Guide to Cross-Site Request Forgery (CSRF)" />
+    <published>2025-02-23T00:00:00+00:00</published>
+  
+    <updated>2025-02-23T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/csrf-guide</id>
+    <content type="text/html" src="http://localhost:4000/posts/csrf-guide" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Guides" />
+    
+    <category term="Web Pentesting" />
+    
+  
+
+  <summary>Introduction to Cross-Site Request Forgery (CSRF)
+
+What is Cross-Site Request Forgery (CSRF)?
+
+Cross-Site Request Forgery (CSRF) is a web security vulnerability that tricks users into performing actions they didn’t intend to. It exploits the trust that a website has in a user’s browser, allowing an attacker to perform unauthorized actions on behalf of an authenticated user without their knowled...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Guide to Cross-Origin Resource Sharing (CORS)</title>
+    <link href="http://localhost:4000/posts/cors-guide" rel="alternate" type="text/html" title="Guide to Cross-Origin Resource Sharing (CORS)" />
+    <published>2025-02-23T00:00:00+00:00</published>
+  
+    <updated>2025-02-23T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/cors-guide</id>
+    <content type="text/html" src="http://localhost:4000/posts/cors-guide" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Guides" />
+    
+    <category term="Web Pentesting" />
+    
+  
+
+  <summary>Introduction to Cross-Origin Resource Sharing (CORS)
+
+Cross-origin resource sharing (CORS) is a browser mechanism that enables controlled access to resources located outside of a given domain. It extends and adds flexibility to the same-origin policy (SOP), which restricts how websites can interact with resources outside their source domain. While CORS provides greater flexibility for developer...</summary>
+
+  </entry>
 
   
   <entry>
@@ -74,109 +164,6 @@ Table of Contents
 
   Installation
   Basic C...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Browser Extensions for Cybersecurity</title>
-    <link href="http://localhost:4000/posts/browser-extensions-cybersecurity" rel="alternate" type="text/html" title="Browser Extensions for Cybersecurity" />
-    <published>2025-02-13T00:00:00+00:00</published>
-  
-    <updated>2025-02-13T00:00:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/browser-extensions-cybersecurity</id>
-    <content type="text/html" src="http://localhost:4000/posts/browser-extensions-cybersecurity" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Tools" />
-    
-    <category term="Browser Extensions" />
-    
-  
-
-  <summary>For cybersecurity, browser extensions are essential tools that automate tasks, uncover vulnerabilities, and enhance privacy. This list highlights must-have extensions for testing applications, gathering intelligence, and improving your workflow. From detecting exposed credentials to managing proxies and analyzing metadata.
-
-Reconnaissance &amp;amp;amp; Information Gathering
-
-1. Wappalyzer — Technology ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>THM: Lookup</title>
-    <link href="http://localhost:4000/posts/ctf-redteam-lookup" rel="alternate" type="text/html" title="THM: Lookup" />
-    <published>2025-02-12T00:00:00+00:00</published>
-  
-    <updated>2025-02-12T00:00:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/ctf-redteam-lookup</id>
-    <content type="text/html" src="http://localhost:4000/posts/ctf-redteam-lookup" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="CTF" />
-    
-    <category term="Red Team" />
-    
-  
-
-  <summary>Walkthrough
-
-CTF Platform: TryHackMe
-Level: Easy
-
-Tools Used:
-
-  Nmap: For scanning the target network to identify open ports and services.
-  Gobuster: For enumerating subdomains and directories to uncover hidden resources.
-  Hydra: For brute-forcing login credentials.
-  Metasploit: For exploiting the elFinder command injection vulnerability.
-  Python: For spawning an interactive shell.
-  Linpe...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Honeypot Suite</title>
-    <link href="http://localhost:4000/posts/python-honeypot-suite" rel="alternate" type="text/html" title="Honeypot Suite" />
-    <published>2025-02-09T00:00:00+00:00</published>
-  
-    <updated>2025-02-09T00:00:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/python-honeypot-suite</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-honeypot-suite" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Python" />
-    
-    <category term="Honeypot Suite" />
-    
-  
-
-  <summary>The entire honeypot suite, including all protocol-specific implementations and the centralized management script (menu.py), is hosted in a single repository. This unified approach simplifies setup, maintenance, and contribution.
-
-Honeypot Suite Repository
-
-  Link: Honeypot Suite Repository
-
-
-Directory Structure
-The repository follows a modular structure for clarity and extensibility:
-honeypot-s...</summary>
 
   </entry>
 
