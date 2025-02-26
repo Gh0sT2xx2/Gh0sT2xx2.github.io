@@ -9,7 +9,7 @@ image:
 ---
 
 
-A comprehensive tool for finding, managing, and removing metadata from images.
+A tool for finding, managing, and removing metadata from images.
 
 ---
 
@@ -41,41 +41,42 @@ Github Repository:  [Metadata Finder](https://github.com/Diogo-Lages/Metadata_Fi
 import os
 import json
 import exifread
-import hashlib  # For checksum calculation
+import hashlib
 import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext, ttk
 from PIL import Image, ImageTk
 
+
 class MetaDataFinderGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Metadata Finder - Professional Tool")
+        self.root.title("MetaDataFinder")
         self.root.geometry("1000x800")
         self.root.minsize(1000, 800)
-        # Initialize variables
+
         self.image_path = None
         self.metadata = {}
-        self.theme = "dark"  # Fixed to dark theme
-        # Set initial theme
+        self.theme = "light"
+
         self.set_theme()
-        # Create UI Elements
+
         self.create_ui()
 
     def set_theme(self):
-        if self.theme == "dark":
-            self.bg_color = "#333333"
-            self.fg_color = "#FFFFFF"
-            self.button_bg = "#555555"
-            self.button_fg = "#FFFFFF"
-            self.text_area_bg = "#444444"
-            self.text_area_fg = "#FFFFFF"
-            self.root.configure(bg=self.bg_color)
+        if self.theme == "light":
+            self.bg_color = "#FFFFFF"
+            self.fg_color = "#000000"
+            self.button_bg = "#F0F0F0"
+            self.button_fg = "#000000"
+            self.text_area_bg = "#FAFAFA"
+            self.text_area_fg = "#000000"
+        self.root.configure(bg=self.bg_color)
 
     def create_ui(self):
         # Title Label
         title_label = tk.Label(
             self.root,
-            text="Metadata Finder",
+            text="MetaDataFinder",
             font=("Arial", 24, "bold"),
             bg=self.bg_color,
             fg=self.fg_color,
@@ -84,15 +85,6 @@ class MetaDataFinderGUI:
         )
         title_label.pack(fill="x")
 
-        # Description Label
-        desc_label = tk.Label(
-            self.root,
-            text="A Comprehensive Image Metadata Finder & Manager Tool",
-            font=("Arial", 12),
-            bg=self.bg_color,
-            fg=self.fg_color
-        )
-        desc_label.pack(pady=10)
 
         # File Upload Button
         upload_button = tk.Button(
@@ -187,7 +179,7 @@ class MetaDataFinderGUI:
     def display_image(self):
         try:
             img = Image.open(self.image_path)
-            img = img.resize((300, 300), Image.Resampling.LANCZOS)
+            img = img.resize((300, 300), Image.Resampling.LANCZOS)  # Use Resampling.LANCZOS for resizing
             img_tk = ImageTk.PhotoImage(img)
             self.image_label.config(image=img_tk)
             self.image_label.image = img_tk
@@ -198,48 +190,51 @@ class MetaDataFinderGUI:
         if not self.image_path:
             messagebox.showwarning("Warning", "Please upload an image first.")
             return
+
         try:
             self.progress.start()
-            self.metadata = self.format_metadata(self.image_path)
+            self.metadata = self.extract_metadata()
             self.display_metadata()
             self.progress.stop()
         except Exception as e:
             messagebox.showerror("Error", f"Failed to read metadata: {str(e)}")
             self.progress.stop()
 
-    def format_metadata(self, image_path):
+    def extract_metadata(self):
         metadata = {}
+
         # EXIF Data
         try:
-            with open(image_path, 'rb') as image_file:
+            with open(self.image_path, 'rb') as image_file:
                 tags = exifread.process_file(image_file)
-                metadata['Date and Time'] = tags.get('EXIF DateTimeOriginal', 'Not Available')
-                metadata['Camera Model'] = tags.get('Image Model', 'Not Available')
-                metadata['Device Name'] = tags.get('Image Make', 'Not Available')
-                metadata['Software'] = tags.get('Image Software', 'Not Available')
+                metadata['Date and Time'] = str(tags.get('EXIF DateTimeOriginal', 'Not Available'))
+                metadata['Camera Model'] = str(tags.get('Image Model', 'Not Available'))
+                metadata['Device Name'] = str(tags.get('Image Make', 'Not Available'))
+                metadata['Software'] = str(tags.get('Image Software', 'Not Available'))
                 metadata['GPS Coordinates'] = self.get_gps_coordinates(tags)
         except Exception:
             metadata['EXIF Data'] = "No EXIF data found"
 
         # Additional Metadata Fields
-        metadata['Checksum'] = self.calculate_checksum(image_path)
-        metadata['File Name'] = os.path.basename(image_path)
-        metadata['File Size'] = os.path.getsize(image_path)
-        metadata['File Type'] = Image.open(image_path).format
-        metadata['File Type Extension'] = os.path.splitext(image_path)[1].lower()
-        metadata['MIME Type'] = Image.MIME[Image.open(image_path).format]
-        img = Image.open(image_path)
-        metadata['Image Width'] = img.width
-        metadata['Image Height'] = img.height
-        metadata['Bit Depth'] = getattr(img.info, 'bit', 'Not Available')
-        metadata['Color Type'] = img.mode
-        metadata['RGB'] = "Yes" if img.mode == "RGB" else "No"
-        metadata['Compression'] = img.info.get("compression", "Not Available")
-        metadata['Filter'] = img.info.get("filter", "Not Available")
-        metadata['Interlace'] = "Noninterlaced" if img.info.get("interlace") == 0 else "Interlaced"
-        metadata['Image Size'] = f"{img.width}x{img.height}"
-        metadata['Megapixels'] = round((img.width * img.height) / 1e6, 2)
-        metadata['Category'] = "Image"
+        metadata['Checksum'] = self.calculate_checksum(self.image_path)
+        metadata['File Name'] = os.path.basename(self.image_path)
+        metadata['File Size'] = os.path.getsize(self.image_path)
+        with Image.open(self.image_path) as img:
+            metadata['File Type'] = img.format
+            metadata['File Type Extension'] = os.path.splitext(self.image_path)[1].lower()
+            metadata['MIME Type'] = Image.MIME[img.format]
+            metadata['Image Width'] = img.width
+            metadata['Image Height'] = img.height
+            metadata['Bit Depth'] = getattr(img.info, 'bit', 'Not Available')
+            metadata['Color Type'] = img.mode
+            metadata['RGB'] = "Yes" if img.mode == "RGB" else "No"
+            metadata['Compression'] = img.info.get("compression", "Not Available")
+            metadata['Filter'] = img.info.get("filter", "Not Available")
+            metadata['Interlace'] = "Noninterlaced" if img.info.get("interlace") == 0 else "Interlaced"
+            metadata['Image Size'] = f"{img.width}x{img.height}"
+            metadata['Megapixels'] = round((img.width * img.height) / 1e6, 2)
+            metadata['Category'] = "Image"
+
         return metadata
 
     def calculate_checksum(self, file_path):
@@ -269,26 +264,29 @@ class MetaDataFinderGUI:
     def display_metadata(self):
         self.metadata_display.config(state="normal")
         self.metadata_display.delete(1.0, tk.END)
+
         for key, value in self.metadata.items():
             if key == 'GPS Coordinates' and value:
                 lat, lon = value
                 self.metadata_display.insert(tk.END, f"{key}: https://www.google.com/maps?q={lat},{lon}\n")
             else:
                 self.metadata_display.insert(tk.END, f"{key}: {value}\n")
+
         self.metadata_display.config(state="disabled")
 
     def remove_metadata(self):
         if not self.image_path:
             messagebox.showwarning("Warning", "Please upload an image first.")
             return
+
         try:
             self.progress.start()
-            image = Image.open(self.image_path)
-            data = list(image.getdata())
-            image_without_exif = Image.new(image.mode, image.size)
-            image_without_exif.putdata(data)
-            new_image_path = os.path.splitext(self.image_path)[0] + "_no_metadata" + os.path.splitext(self.image_path)[1]
-            image_without_exif.save(new_image_path)
+            with Image.open(self.image_path) as img:
+                data = list(img.getdata())
+                image_without_exif = Image.new(img.mode, img.size)
+                image_without_exif.putdata(data)
+                new_image_path = os.path.splitext(self.image_path)[0] + "_no_metadata" + os.path.splitext(self.image_path)[1]
+                image_without_exif.save(new_image_path)
             messagebox.showinfo("Success", f"Metadata removed successfully. New image saved as {new_image_path}")
             self.progress.stop()
         except Exception as e:
@@ -299,8 +297,10 @@ class MetaDataFinderGUI:
         if not self.metadata:
             messagebox.showwarning("Warning", "No metadata available to save.")
             return
+
         file_types = [("Text File", "*.txt"), ("JSON File", "*.json")]
         file_path = filedialog.asksaveasfilename(title="Save Metadata", filetypes=file_types, defaultextension=".txt")
+
         if file_path:
             try:
                 if file_path.endswith(".json"):

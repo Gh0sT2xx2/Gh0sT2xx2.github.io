@@ -1,5 +1,5 @@
 ---
-title: "Guide to Cross-Site Request Forgery (CSRF)"
+title: "Cross-Site Request Forgery (CSRF)"
 date: 2025-02-23
 categories: [Guides, Web Pentesting]
 tags: [Guides, CSRF, Web Pentesting]

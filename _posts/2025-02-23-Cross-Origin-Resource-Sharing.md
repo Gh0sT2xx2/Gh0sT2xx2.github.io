@@ -1,5 +1,5 @@
 ---
-title: "Guide to Cross-Origin Resource Sharing (CORS)"
+title: "Cross-Origin Resource Sharing (CORS)"
 date: 2025-02-23
 categories: [Guides, Web Pentesting]
 tags: [Guides, CSRF, Web Pentesting]
