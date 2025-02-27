@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-27T16:39:19+00:00</updated>
+  <updated>2025-02-27T17:00:54+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/python-deep-dork" rel="alternate" type="text/html" title="Deep Dork" />
     <published>2025-02-27T00:00:00+00:00</published>
   
-    <updated>2025-02-27T00:00:00+00:00</updated>
+    <updated>2025-02-27T16:59:05+00:00</updated>
   
     <id>http://localhost:4000/posts/python-deep-dork</id>
     <content type="text/html" src="http://localhost:4000/posts/python-deep-dork" />

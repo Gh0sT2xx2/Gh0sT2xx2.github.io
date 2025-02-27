@@ -69,9 +69,6 @@ The tool provides an intuitive CLI-based interface with the following options:
 7. **Solve CAPTCHA**: Use a third-party CAPTCHA-solving service to handle blocked requests.
 8. **Exit**: Save the search history and exit the program.
 
-![First Part Output](/assets/img/Output1-Deep-Dork.png)
-![Second Part Output](/assets/img/Output2-Deep-Dork.png)
-
 
 ---
 
