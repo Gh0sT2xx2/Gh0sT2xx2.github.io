@@ -1,17 +1,17 @@
 
 
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>http://localhost:4000/</id>
+  <id>https://diogo-lages.github.io/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-27T17:00:54+00:00</updated>
+  <updated>2025-02-27T17:06:42+00:00</updated>
   <author>
     <name>Diogo Lages</name>
-    <uri>http://localhost:4000/</uri>
+    <uri>https://diogo-lages.github.io/</uri>
   </author>
-  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="self" type="application/atom+xml" href="https://diogo-lages.github.io/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
-    href="http://localhost:4000/"/>
+    href="https://diogo-lages.github.io/"/>
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <rights> © 2025 Diogo Lages </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
@@ -21,13 +21,13 @@
   
   <entry>
     <title>Deep Dork</title>
-    <link href="http://localhost:4000/posts/python-deep-dork" rel="alternate" type="text/html" title="Deep Dork" />
+    <link href="https://diogo-lages.github.io/posts/python-deep-dork" rel="alternate" type="text/html" title="Deep Dork" />
     <published>2025-02-27T00:00:00+00:00</published>
   
-    <updated>2025-02-27T16:59:05+00:00</updated>
+    <updated>2025-02-27T17:00:58+00:00</updated>
   
-    <id>http://localhost:4000/posts/python-deep-dork</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-deep-dork" />
+    <id>https://diogo-lages.github.io/posts/python-deep-dork</id>
+    <content type="text/html" src="https://diogo-lages.github.io/posts/python-deep-dork" />
     <author>
       <name>Diogo Lages</name>
     </author>
@@ -59,13 +59,13 @@ Features
   
   <entry>
     <title>Github Scraper</title>
-    <link href="http://localhost:4000/posts/python-github-scraper" rel="alternate" type="text/html" title="Github Scraper" />
+    <link href="https://diogo-lages.github.io/posts/python-github-scraper" rel="alternate" type="text/html" title="Github Scraper" />
     <published>2025-02-25T00:00:00+00:00</published>
   
     <updated>2025-02-25T00:00:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/python-github-scraper</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-github-scraper" />
+    <id>https://diogo-lages.github.io/posts/python-github-scraper</id>
+    <content type="text/html" src="https://diogo-lages.github.io/posts/python-github-scraper" />
     <author>
       <name>Diogo Lages</name>
     </author>
@@ -98,13 +98,13 @@ Features
   
   <entry>
     <title>Cross-Site Request Forgery (CSRF)</title>
-    <link href="http://localhost:4000/posts/csrf-guide" rel="alternate" type="text/html" title="Cross-Site Request Forgery (CSRF)" />
+    <link href="https://diogo-lages.github.io/posts/csrf-guide" rel="alternate" type="text/html" title="Cross-Site Request Forgery (CSRF)" />
     <published>2025-02-23T00:00:00+00:00</published>
   
     <updated>2025-02-27T00:19:57+00:00</updated>
   
-    <id>http://localhost:4000/posts/csrf-guide</id>
-    <content type="text/html" src="http://localhost:4000/posts/csrf-guide" />
+    <id>https://diogo-lages.github.io/posts/csrf-guide</id>
+    <content type="text/html" src="https://diogo-lages.github.io/posts/csrf-guide" />
     <author>
       <name>Diogo Lages</name>
     </author>
@@ -128,13 +128,13 @@ Cross-Site Request Forgery (CSRF) is a web security vulnerability that tricks us
   
   <entry>
     <title>Cross-Origin Resource Sharing (CORS)</title>
-    <link href="http://localhost:4000/posts/cors-guide" rel="alternate" type="text/html" title="Cross-Origin Resource Sharing (CORS)" />
+    <link href="https://diogo-lages.github.io/posts/cors-guide" rel="alternate" type="text/html" title="Cross-Origin Resource Sharing (CORS)" />
     <published>2025-02-23T00:00:00+00:00</published>
   
     <updated>2025-02-26T20:27:14+00:00</updated>
   
-    <id>http://localhost:4000/posts/cors-guide</id>
-    <content type="text/html" src="http://localhost:4000/posts/cors-guide" />
+    <id>https://diogo-lages.github.io/posts/cors-guide</id>
+    <content type="text/html" src="https://diogo-lages.github.io/posts/cors-guide" />
     <author>
       <name>Diogo Lages</name>
     </author>
@@ -156,13 +156,13 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
   
   <entry>
     <title>FFUF: Fuzzing Guide to Web Applications</title>
-    <link href="http://localhost:4000/posts/ffuf-Fuzzing-Guide" rel="alternate" type="text/html" title="FFUF: Fuzzing Guide to Web Applications" />
+    <link href="https://diogo-lages.github.io/posts/ffuf-Fuzzing-Guide" rel="alternate" type="text/html" title="FFUF: Fuzzing Guide to Web Applications" />
     <published>2025-02-15T00:00:00+00:00</published>
   
     <updated>2025-02-15T00:00:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/ffuf-Fuzzing-Guide</id>
-    <content type="text/html" src="http://localhost:4000/posts/ffuf-Fuzzing-Guide" />
+    <id>https://diogo-lages.github.io/posts/ffuf-Fuzzing-Guide</id>
+    <content type="text/html" src="https://diogo-lages.github.io/posts/ffuf-Fuzzing-Guide" />
     <author>
       <name>Diogo Lages</name>
     </author>
