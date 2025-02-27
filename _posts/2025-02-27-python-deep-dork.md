@@ -8,17 +8,15 @@ image:
   path: /assets/img/thumbnails/deep-dork.png
 ---
 
-
-
-
 Deep Dork is an advanced Google Dorking tool designed to automate and streamline the process of discovering sensitive information exposed on the web. It leverages Google's search engine, proxies, CAPTCHA bypass mechanisms, and result parsing to provide a powerful utility for ethical security research and reconnaissance.
 
-### **Deep Dork Repository**
+In addition to the Python CLI version, **Deep Dork Web** is now available as a browser-based tool, offering an intuitive interface for performing advanced Google Dork searches without requiring local setup or dependencies. The web version supports real-time search filtering, dynamic query generation, and seamless integration with search engines like Google, making it accessible to users of all skill levels.
 
-- **Link**: [Deep Dork Repository](https://github.com/Diogo-Lages/Deep-Dork)
+### **Deep Dork Repository**
+- **CLI Version**: [Deep Dork Repository](https://github.com/Diogo-Lages/Deep-Dork)
+- **Web Version**: [Deep Dork Web](https://diogo-lages.github.io/Deep-Dork-Web/)
 
 ---
-
 ## Features
 - **Advanced Search with Google Dorks**: Use predefined or custom Google Dork queries to uncover specific types of data, such as exposed files, directories, or vulnerable endpoints.
 - **Proxy Support**: Configure and validate HTTP, SOCKS4, and SOCKS5 proxies to anonymize requests and avoid IP blocking.
@@ -26,20 +24,23 @@ Deep Dork is an advanced Google Dorking tool designed to automate and streamline
 - **Multi-threaded Proxy Validation**: Efficiently test and validate large proxy lists in parallel to ensure reliability.
 - **Search History & Export**: Maintain a history of searches and export results in JSON or CSV format for further analysis.
 - **Customizable Dork Templates**: Load predefined Dork templates from a JSON file or create your own for tailored searches.
-- **Interactive Menu System**: A user-friendly command-line interface (CLI) for seamless navigation and operation.
+- **Interactive Menu System (CLI)**: A user-friendly command-line interface for seamless navigation and operation.
+- **Real-Time Search Filtering (Web)**: Dynamically filter dorks based on search terms and categories in the browser-based version.
+- **Dynamic Query Generation (Web)**: Replace placeholders in dork queries with user-provided input for personalized searches.
+- **Search Engine Integration (Web)**: Generate direct links to Google search results for selected dorks.
 
 ---
-
 ## How It Works
 1. **Query Construction**: The tool allows users to input a domain, name, or other target-specific keywords. These are combined with predefined or custom Google Dork templates to form search queries.
 2. **Search Execution**: The tool sends requests to Google's search engine using randomized User-Agent headers and optional proxies to avoid detection and blocking.
 3. **Result Parsing**: The HTML response from Google is parsed using BeautifulSoup to extract relevant details like titles, URLs, and snippets.
 4. **CAPTCHA Bypass**: If a CAPTCHA is encountered, the tool can either use Selenium to simulate browser behavior or delegate solving to a third-party service like 2Captcha.
 5. **Proxy Management**: Proxies are tested for validity and performance before being used. The tool rotates through available proxies to distribute requests evenly.
-6. **Output & Export**: Results are displayed in the CLI and can be saved to a file in JSON or CSV format for offline analysis.
+6. **Output & Export**: Results are displayed in the CLI or web interface and can be saved to a file in JSON or CSV format for offline analysis.
+
+For the **web version**, users simply visit the hosted URL, enter their search terms, and click on generated links to view results directly in their browser.
 
 ---
-
 ## Code Structure
 The project is organized into two main classes:
 1. **`GoogleDorkSearch`**:
@@ -56,9 +57,14 @@ Key Modules:
 - **`threading`**: For concurrent proxy validation and testing.
 - **`json` and `csv`**: For saving and exporting search results and history.
 
----
+For the **web version**, the tool uses:
+- **HTML/CSS/JavaScript**: For the responsive and modern user interface.
+- **`fetch` API**: To load predefined dorks from a JSON file dynamically.
+- **Dynamic Link Generation**: To integrate seamlessly with search engines like Google.
 
+---
 ## Interface
+### CLI Version
 The tool provides an intuitive CLI-based interface with the following options:
 1. **Advanced Search**: Run custom or predefined Google Dork queries.
 2. **Run All Dorks Automatically**: Iterate through a list of predefined Dork templates and execute them sequentially.
@@ -69,11 +75,22 @@ The tool provides an intuitive CLI-based interface with the following options:
 7. **Solve CAPTCHA**: Use a third-party CAPTCHA-solving service to handle blocked requests.
 8. **Exit**: Save the search history and exit the program.
 
-![Output 1](/assets/img/Output1-Deep-Dork.png)
-![Output 2](/assets/img/Output2-Deep-Dork.png)
+![Output CLI 1](/assets/img/Output1-Deep-Dork.png)
+![Output CLI 2](/assets/img/Output2-Deep-Dork.png)
+
+
+### Web Version
+The web interface includes:
+1. **Search Bar**: Enter keywords or phrases to filter dorks dynamically.
+2. **Category Filter**: Narrow down results by selecting specific categories.
+3. **Real-Time Results**: View matching dorks with their queries, categories, and descriptions.
+4. **Direct Links**: Click on generated links to open search results in Google or other supported search engines.
+5. **Responsive Design**: Accessible and functional on both desktop and mobile devices.
+
+
+![Output Web](/assets/img/Output-Deep-Dork-Web.png)
 
 ---
-
 ## Limitations
 - **Rate Limiting**: Google may impose rate limits or block IPs despite using proxies, requiring careful configuration.
 - **CAPTCHA Dependency**: CAPTCHA bypass mechanisms may fail if Google implements stricter anti-bot measures.
@@ -81,7 +98,6 @@ The tool provides an intuitive CLI-based interface with the following options:
 - **Proxy Reliability**: The effectiveness of the tool depends on the quality and availability of proxies.
 
 ---
-
 ## Future Enhancements
 - **Enhanced CAPTCHA Handling**: Integrate additional CAPTCHA-solving services or machine learning models for improved accuracy.
 - **GUI Implementation**: Develop a graphical user interface (GUI) for broader accessibility.
@@ -90,14 +106,7 @@ The tool provides an intuitive CLI-based interface with the following options:
 - **Automated Report Generation**: Generate detailed reports with insights and recommendations based on search results.
 
 ---
-
 ## Ethical Considerations
 This tool is intended for **ethical use only**, such as penetration testing, vulnerability assessments, and security research. Unauthorized use of this tool to access or exploit sensitive information is strictly prohibited and may violate laws and regulations. Always ensure you have explicit permission before conducting any reconnaissance or scanning activities.
 
 By using this tool, you agree to abide by all applicable laws and ethical guidelines. The developers and contributors of this project are not responsible for any misuse or illegal activities carried out with this software.
-
-
-
-
-
-
