@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-27T00:03:53+00:00</updated>
+  <updated>2025-02-27T16:39:19+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,44 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Deep Dork</title>
+    <link href="http://localhost:4000/posts/python-deep-dork" rel="alternate" type="text/html" title="Deep Dork" />
+    <published>2025-02-27T00:00:00+00:00</published>
+  
+    <updated>2025-02-27T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/python-deep-dork</id>
+    <content type="text/html" src="http://localhost:4000/posts/python-deep-dork" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Python" />
+    
+    <category term="Deep Dork" />
+    
+  
+
+  <summary>Deep Dork is an advanced Google Dorking tool designed to automate and streamline the process of discovering sensitive information exposed on the web. It leverages Google’s search engine, proxies, CAPTCHA bypass mechanisms, and result parsing to provide a powerful utility for ethical security research and reconnaissance.
+
+Deep Dork Repository
+
+
+  Link: Deep Dork Repository
+
+
+
+
+Features
+
+  Advanc...</summary>
+
+  </entry>
 
   
   <entry>
@@ -59,43 +97,11 @@ Features
 
   
   <entry>
-    <title>Server-Side Request Forgery (SSRF)</title>
-    <link href="http://localhost:4000/posts/ssrf-guide" rel="alternate" type="text/html" title="Server-Side Request Forgery (SSRF)" />
-    <published>2025-02-23T00:00:00+00:00</published>
-  
-    <updated>2025-02-26T20:27:14+00:00</updated>
-  
-    <id>http://localhost:4000/posts/ssrf-guide</id>
-    <content type="text/html" src="http://localhost:4000/posts/ssrf-guide" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Guides" />
-    
-    <category term="Web Pentesting" />
-    
-  
-
-  <summary>Understanding Server-Side Request Forgery (SSRF)
-
-What is SSRF?
-
-Server-Side Request Forgery (SSRF) is a critical web security vulnerability that allows an attacker to induce a server-side application to make unintended HTTP requests to internal or external systems. This can lead to unauthorized access to sensitive data, internal services, or even remote code execution on the server.
-
-In a typi...</summary>
-
-  </entry>
-
-  
-  <entry>
     <title>Cross-Site Request Forgery (CSRF)</title>
     <link href="http://localhost:4000/posts/csrf-guide" rel="alternate" type="text/html" title="Cross-Site Request Forgery (CSRF)" />
     <published>2025-02-23T00:00:00+00:00</published>
   
-    <updated>2025-02-26T20:27:14+00:00</updated>
+    <updated>2025-02-27T00:19:57+00:00</updated>
   
     <id>http://localhost:4000/posts/csrf-guide</id>
     <content type="text/html" src="http://localhost:4000/posts/csrf-guide" />

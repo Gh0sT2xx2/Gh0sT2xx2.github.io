@@ -45,7 +45,7 @@
 <meta property="twitter:title" content="Cross-Site Request Forgery (CSRF)" />
 <meta name="twitter:site" content="@Diogo-Lages" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-26T20:27:14+00:00","datePublished":"2025-02-23T00:00:00+00:00","description":"Introduction to Cross-Site Request Forgery (CSRF)","headline":"Cross-Site Request Forgery (CSRF)","image":"http://localhost:4000/assets/img/thumbnails/csrf-guide.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/csrf-guide"},"url":"http://localhost:4000/posts/csrf-guide"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-27T00:19:57+00:00","datePublished":"2025-02-23T00:00:00+00:00","description":"Introduction to Cross-Site Request Forgery (CSRF)","headline":"Cross-Site Request Forgery (CSRF)","image":"http://localhost:4000/assets/img/thumbnails/csrf-guide.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/csrf-guide"},"url":"http://localhost:4000/posts/csrf-guide"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1407,13 +1407,13 @@
 
 <time
   
-  data-ts="1740601634"
+  data-ts="1740615597"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 26, 2025
+  Feb 27, 2025
 </time>
 
         </span>
@@ -2694,7 +2694,14 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cors-guide">Cross-Origin Resource Sharing (CORS)</a>
+          <a href="/posts/python-network-scanner">Network Scanner</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/python-honeypot-suite">Honeypot Suite</a>
         </li>
       
         
@@ -2716,13 +2723,6 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
         
         <li class="text-truncate lh-lg">
           <a href="/posts/python-network-monitor-tool">Network Monitor Tool</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/python-metadata-finder">Metadata Finder</a>
         </li>
       
     </ul>
@@ -2851,65 +2851,6 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2919,122 +2860,6 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3129,6 +2954,172 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3159,6 +3150,40 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -3454,19 +3479,19 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -3524,11 +3549,11 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
 
 <time
   
-  data-ts="1740268800"
+  data-ts="1738195200"
   data-df="ll"
   
 >
-  Feb 23, 2025
+  Jan 30, 2025
 </time>
 
               <h4 class="pt-0 my-2">Server-Side Request Forgery (SSRF)</h4>
@@ -3596,11 +3621,11 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
 
   
     <a
-      href="/posts/ssrf-guide"
+      href="/posts/python-github-scraper"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Server-Side Request Forgery (SSRF)</p>
+      <p>Github Scraper</p>
     </a>
   
 </nav>
@@ -3772,65 +3797,6 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3840,122 +3806,6 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4050,6 +3900,172 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4080,6 +4096,40 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     

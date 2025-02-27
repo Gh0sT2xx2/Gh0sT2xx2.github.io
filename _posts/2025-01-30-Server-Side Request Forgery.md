@@ -1,6 +1,6 @@
 ---
 title: "Server-Side Request Forgery (SSRF)"
-date: 2025-02-23
+date: 2025-01-30
 categories: [Guides, Web Pentesting]
 tags: [Guides, SSRF, Web Pentesting]
 permalink: /posts/ssrf-guide
