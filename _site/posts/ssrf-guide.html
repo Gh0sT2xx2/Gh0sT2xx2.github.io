@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Guide to Server-Side Request Forgery (SSRF)" />
+<meta property="og:title" content="Server-Side Request Forgery (SSRF)" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Understanding Server-Side Request Forgery (SSRF)" />
 <meta property="og:description" content="Understanding Server-Side Request Forgery (SSRF)" />
@@ -42,14 +42,14 @@
 <meta property="article:published_time" content="2025-02-23T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="http://localhost:4000/assets/img/thumbnails/ssrf-guide.png" />
-<meta property="twitter:title" content="Guide to Server-Side Request Forgery (SSRF)" />
+<meta property="twitter:title" content="Server-Side Request Forgery (SSRF)" />
 <meta name="twitter:site" content="@Diogo-Lages" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-23T00:00:00+00:00","datePublished":"2025-02-23T00:00:00+00:00","description":"Understanding Server-Side Request Forgery (SSRF)","headline":"Guide to Server-Side Request Forgery (SSRF)","image":"http://localhost:4000/assets/img/thumbnails/ssrf-guide.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ssrf-guide"},"url":"http://localhost:4000/posts/ssrf-guide"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-26T20:27:14+00:00","datePublished":"2025-02-23T00:00:00+00:00","description":"Understanding Server-Side Request Forgery (SSRF)","headline":"Server-Side Request Forgery (SSRF)","image":"http://localhost:4000/assets/img/thumbnails/ssrf-guide.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ssrf-guide"},"url":"http://localhost:4000/posts/ssrf-guide"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Guide to Server-Side Request Forgery (SSRF) | Diogo Lages
+  <title>Server-Side Request Forgery (SSRF) | Diogo Lages
   </title>
 
   <!--
@@ -452,7 +452,7 @@
         
           
             
-              <span>Guide to Server-Side Request Forgery (SSRF)</span>
+              <span>Server-Side Request Forgery (SSRF)</span>
             
 
           
@@ -760,17 +760,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -786,39 +775,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1244,7 +1200,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>Guide to Server-Side Request Forgery (SSRF)</h1>
+    <h1 data-toc-skip>Server-Side Request Forgery (SSRF)</h1>
     
 
     <div class="post-meta text-muted">
@@ -1273,6 +1229,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740601634"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 26, 2025
+</time>
+
+        </span>
       
 
       
@@ -1325,9 +1304,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4513 words"
+  title="4198 words"
 >
-  <em>25 min</em> read</span>
+  <em>23 min</em> read</span>
 
         </div>
       </div>
@@ -1336,7 +1315,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">Guide to Server-Side Request Forgery (SSRF)</span>
+      <span class="label text-truncate">Server-Side Request Forgery (SSRF)</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1349,7 +1328,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">Guide to Server-Side Request Forgery (SSRF)</div>
+        <div class="label text-truncate py-2 ms-4">Server-Side Request Forgery (SSRF)</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1611,12 +1590,6 @@ stockApi=http://192.168.0.68/admin
     </ul>
   </li>
 </ol>
-
-<hr />
-
-<h3 id="conclusion"><span class="me-2"><strong>Conclusion</strong></span><a href="#conclusion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>Blacklist-based input filters are a common defense mechanism against SSRF vulnerabilities, but they are often ineffective due to the wide range of bypass techniques available. Attackers can exploit alternative IP representations, custom domains, URL encoding, and redirection strategies to circumvent these filters. To effectively mitigate SSRF risks, it is crucial to implement more robust defenses, such as <strong>whitelisting allowed domains</strong>, enforcing strict input validation, and monitoring outbound requests.</p>
 
 <hr />
 
@@ -2102,31 +2075,6 @@ Host: vulnerable-app.com
 
 <hr />
 
-<h3 id="conclusion-hidden-attack-surfaces-for-ssrf"><span class="me-2"><strong>Conclusion: Hidden Attack Surfaces for SSRF</strong></span><a href="#conclusion-hidden-attack-surfaces-for-ssrf" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<p>By exploring these hidden attack surfaces and understanding real-world examples, you can uncover SSRF vulnerabilities that might otherwise go unnoticed. Here are the key takeaways:</p>
-
-<ol>
-  <li><strong>Data Formats</strong>:
-    <ul>
-      <li><strong>Example</strong>: SSRF via XML (<code class="language-plaintext highlighter-rouge">XXE Injection</code>) or JSON with URL fields.</li>
-      <li>Always validate and sanitize user-supplied data, especially when parsing formats like XML or JSON that may include URLs.</li>
-    </ul>
-  </li>
-  <li><strong>Referer Header</strong>:
-    <ul>
-      <li><strong>Example</strong>: SSRF via malicious <code class="language-plaintext highlighter-rouge">Referer</code> headers or redirected URLs.</li>
-      <li>Avoid blindly following or logging URLs in the <code class="language-plaintext highlighter-rouge">Referer</code> header, and implement strict filtering for internal or sensitive domains.</li>
-    </ul>
-  </li>
-  <li><strong>Partial URLs</strong>:
-    <ul>
-      <li><strong>Example</strong>: SSRF via hostname or path parameters in requests.</li>
-      <li>Validate and restrict user-supplied input to prevent attackers from controlling critical parts of the constructed URL.</li>
-    </ul>
-  </li>
-</ol>
-
 <h1 id="understanding-server-side-request-forgery-ssrf-3"><strong>Understanding Server-Side Request Forgery (SSRF)</strong></h1>
 
 <h2 id="summary-of-key-points"><span class="me-2"><strong>Summary of Key Points</strong></span><a href="#summary-of-key-points" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -2282,28 +2230,6 @@ Host: vulnerable-app.com
   </li>
 </ol>
 
-<hr />
-
-<h2 id="conclusion-1"><span class="me-2"><strong>Conclusion</strong></span><a href="#conclusion-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>SSRF is a powerful and often underestimated vulnerability that can lead to severe consequences if left unmitigated. By understanding the various attack vectors and implementing robust defenses, you can significantly reduce the risk of SSRF in your applications.</p>
-
-<h3 id="key-takeaways"><span class="me-2"><strong>Key Takeaways:</strong></span><a href="#key-takeaways" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ol>
-  <li>
-    <p><strong>Understand the Attack Surface:</strong> Be aware of both obvious and hidden attack surfaces, such as URLs in data formats, the <code class="language-plaintext highlighter-rouge">Referer</code> header, and partial URLs in requests.</p>
-  </li>
-  <li>
-    <p><strong>Implement Robust Defenses:</strong> Use a combination of input validation, whitelisting, network restrictions, and monitoring to protect against SSRF.</p>
-  </li>
-  <li>
-    <p><strong>Stay Vigilant:</strong> Regularly test your applications for SSRF vulnerabilities and stay informed about new attack techniques and mitigation strategies.</p>
-  </li>
-</ol>
-
-<p>By following these guidelines, you can build more secure applications and protect your organization from the potentially devastating effects of SSRF attacks.</p>
-
 
   </div>
 
@@ -2434,35 +2360,35 @@ Host: vulnerable-app.com
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cors-guide">Guide to Cross-Origin Resource Sharing (CORS)</a>
+          <a href="/posts/cors-guide">Cross-Origin Resource Sharing (CORS)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/csrf-guide">Guide to Cross-Site Request Forgery (CSRF)</a>
+          <a href="/posts/csrf-guide">Cross-Site Request Forgery (CSRF)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ssrf-guide">Guide to Server-Side Request Forgery (SSRF)</a>
+          <a href="/posts/python-web-scraper">Web Scraper and Crawling Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/find-origin-ip-website">Discover the Origin IP Address of a Website and Identify WAF Protection</a>
+          <a href="/posts/python-network-monitor-tool">Network Monitor Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ffuf-Fuzzing-Guide">FFUF: Fuzzing Guide to Web Applications</a>
+          <a href="/posts/python-metadata-finder">Metadata Finder</a>
         </li>
       
     </ul>
@@ -2586,60 +2512,6 @@ Host: vulnerable-app.com
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2649,122 +2521,6 @@ Host: vulnerable-app.com
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2854,6 +2610,162 @@ Host: vulnerable-app.com
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2884,6 +2796,40 @@ Host: vulnerable-app.com
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -3221,7 +3167,7 @@ Host: vulnerable-app.com
   Feb 23, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Guide to Cross-Site Request Forgery (CSRF)</h4>
+              <h4 class="pt-0 my-2">Cross-Site Request Forgery (CSRF)</h4>
               <div class="text-muted">
                 <p>Introduction to Cross-Site Request Forgery (CSRF)
 
@@ -3253,7 +3199,7 @@ Cross-Site Request Forgery (CSRF) is a web security vulnerability that tricks us
   Feb 23, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Guide to Cross-Origin Resource Sharing (CORS)</h4>
+              <h4 class="pt-0 my-2">Cross-Origin Resource Sharing (CORS)</h4>
               <div class="text-muted">
                 <p>Introduction to Cross-Origin Resource Sharing (CORS)
 
@@ -3276,11 +3222,11 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
 
 <time
   
-  data-ts="1739750400"
+  data-ts="1736899200"
   data-df="ll"
   
 >
-  Feb 17, 2025
+  Jan 15, 2025
 </time>
 
               <h4 class="pt-0 my-2">Discover the Origin IP Address of a Website and Identify WAF Protection</h4>
@@ -3310,14 +3256,18 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Guide to Cross-Site Request Forgery (CSRF)</p>
+      <p>Cross-Site Request Forgery (CSRF)</p>
     </a>
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/python-github-scraper"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Github Scraper</p>
+    </a>
   
 </nav>
 
@@ -3483,60 +3433,6 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3546,122 +3442,6 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3751,6 +3531,162 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3781,6 +3717,40 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     

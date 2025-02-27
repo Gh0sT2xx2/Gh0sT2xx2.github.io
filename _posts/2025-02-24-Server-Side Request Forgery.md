@@ -200,11 +200,6 @@ Some applications attempt to block input containing sensitive hostnames like `12
 
 ---
 
-### **Conclusion**
-
-Blacklist-based input filters are a common defense mechanism against SSRF vulnerabilities, but they are often ineffective due to the wide range of bypass techniques available. Attackers can exploit alternative IP representations, custom domains, URL encoding, and redirection strategies to circumvent these filters. To effectively mitigate SSRF risks, it is crucial to implement more robust defenses, such as **whitelisting allowed domains**, enforcing strict input validation, and monitoring outbound requests.
-
----
 
 ### **SSRF with Whitelist-Based Input Filters**
 
@@ -556,25 +551,6 @@ In some cases, an application only places a **hostname** or part of a **URL path
 - Be cautious when allowing users to specify **hostnames** or **file paths**, as these can be manipulated to access internal resources or sensitive files.
 
 ---
-
-### **Conclusion: Hidden Attack Surfaces for SSRF**
-
-By exploring these hidden attack surfaces and understanding real-world examples, you can uncover SSRF vulnerabilities that might otherwise go unnoticed. Here are the key takeaways:
-
-1. **Data Formats**:
-   - **Example**: SSRF via XML (`XXE Injection`) or JSON with URL fields.
-   - Always validate and sanitize user-supplied data, especially when parsing formats like XML or JSON that may include URLs.
-
-2. **Referer Header**:
-   - **Example**: SSRF via malicious `Referer` headers or redirected URLs.
-   - Avoid blindly following or logging URLs in the `Referer` header, and implement strict filtering for internal or sensitive domains.
-
-3. **Partial URLs**:
-   - **Example**: SSRF via hostname or path parameters in requests.
-   - Validate and restrict user-supplied input to prevent attackers from controlling critical parts of the constructed URL.
-
-
-
   
 
 # **Understanding Server-Side Request Forgery (SSRF)**
@@ -678,19 +654,4 @@ Here are some additional best practices to follow when securing your application
 
 5. **Regularly Update Dependencies:** Keep all third-party libraries and frameworks up to date to patch known vulnerabilities that could be exploited via SSRF.
 
----
-
-## **Conclusion**
-
-SSRF is a powerful and often underestimated vulnerability that can lead to severe consequences if left unmitigated. By understanding the various attack vectors and implementing robust defenses, you can significantly reduce the risk of SSRF in your applications.
-
-### **Key Takeaways:**
-
-1. **Understand the Attack Surface:** Be aware of both obvious and hidden attack surfaces, such as URLs in data formats, the `Referer` header, and partial URLs in requests.
-   
-2. **Implement Robust Defenses:** Use a combination of input validation, whitelisting, network restrictions, and monitoring to protect against SSRF.
-
-3. **Stay Vigilant:** Regularly test your applications for SSRF vulnerabilities and stay informed about new attack techniques and mitigation strategies.
-
-By following these guidelines, you can build more secure applications and protect your organization from the potentially devastating effects of SSRF attacks.
 

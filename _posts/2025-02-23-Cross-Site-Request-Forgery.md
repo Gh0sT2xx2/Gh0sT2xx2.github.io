@@ -751,15 +751,3 @@ To protect your web application from CSRF attacks, follow these best practices:
 
    - **Automated Scanning**:  
      Use automated security scanners to detect potential CSRF vulnerabilities in your application. However, manual testing is often necessary to uncover more complex issues.
-
----
-
-## **Conclusion**
-
-CSRF attacks remain a significant threat to web applications, especially when proper defenses like CSRF tokens and SameSite cookies are not implemented correctly. Understanding how these attacks work and how to defend against them is crucial for securing modern web applications.
-
-### **Key Takeaways**:
-1. **CSRF tokens** are one of the most effective ways to prevent CSRF attacks. Ensure that tokens are tightly coupled with user sessions and validated on every sensitive request.
-2. **SameSite cookies** provide an additional layer of protection by controlling when cookies are sent with cross-site requests. Use `Strict` or `Lax` restrictions wherever possible.
-3. **Avoid using GET requests** for sensitive actions, and always validate the Referer header as an extra precaution.
-4. **Regularly test** your application for CSRF vulnerabilities and stay informed about new attack techniques and defenses.

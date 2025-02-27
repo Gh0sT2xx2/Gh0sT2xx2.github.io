@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-02-24T20:27:49+00:00</updated>
+  <updated>2025-02-27T00:03:53+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,50 @@
 
   
   <entry>
-    <title>Guide to Server-Side Request Forgery (SSRF)</title>
-    <link href="http://localhost:4000/posts/ssrf-guide" rel="alternate" type="text/html" title="Guide to Server-Side Request Forgery (SSRF)" />
+    <title>Github Scraper</title>
+    <link href="http://localhost:4000/posts/python-github-scraper" rel="alternate" type="text/html" title="Github Scraper" />
+    <published>2025-02-25T00:00:00+00:00</published>
+  
+    <updated>2025-02-25T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/python-github-scraper</id>
+    <content type="text/html" src="http://localhost:4000/posts/python-github-scraper" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Python" />
+    
+    <category term="Github Scraper" />
+    
+  
+
+  <summary>Tool designed to scrape and analyze repositories from GitHub based on customizable search criteria.
+
+Github Scraper Repository
+
+  Link: Github Scraper Repository
+
+
+
+
+Features
+
+
+  Customizable Search: Filter repositories by programming language, associated tools/technologies (e.g., Docker, React, TensorFlow), and star ratings.
+  Date Filtering: Retrieve repositories updated within a specific tim...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Server-Side Request Forgery (SSRF)</title>
+    <link href="http://localhost:4000/posts/ssrf-guide" rel="alternate" type="text/html" title="Server-Side Request Forgery (SSRF)" />
     <published>2025-02-23T00:00:00+00:00</published>
   
-    <updated>2025-02-23T00:00:00+00:00</updated>
+    <updated>2025-02-26T20:27:14+00:00</updated>
   
     <id>http://localhost:4000/posts/ssrf-guide</id>
     <content type="text/html" src="http://localhost:4000/posts/ssrf-guide" />
@@ -52,11 +91,11 @@ In a typi...</summary>
 
   
   <entry>
-    <title>Guide to Cross-Site Request Forgery (CSRF)</title>
-    <link href="http://localhost:4000/posts/csrf-guide" rel="alternate" type="text/html" title="Guide to Cross-Site Request Forgery (CSRF)" />
+    <title>Cross-Site Request Forgery (CSRF)</title>
+    <link href="http://localhost:4000/posts/csrf-guide" rel="alternate" type="text/html" title="Cross-Site Request Forgery (CSRF)" />
     <published>2025-02-23T00:00:00+00:00</published>
   
-    <updated>2025-02-23T00:00:00+00:00</updated>
+    <updated>2025-02-26T20:27:14+00:00</updated>
   
     <id>http://localhost:4000/posts/csrf-guide</id>
     <content type="text/html" src="http://localhost:4000/posts/csrf-guide" />
@@ -82,11 +121,11 @@ Cross-Site Request Forgery (CSRF) is a web security vulnerability that tricks us
 
   
   <entry>
-    <title>Guide to Cross-Origin Resource Sharing (CORS)</title>
-    <link href="http://localhost:4000/posts/cors-guide" rel="alternate" type="text/html" title="Guide to Cross-Origin Resource Sharing (CORS)" />
+    <title>Cross-Origin Resource Sharing (CORS)</title>
+    <link href="http://localhost:4000/posts/cors-guide" rel="alternate" type="text/html" title="Cross-Origin Resource Sharing (CORS)" />
     <published>2025-02-23T00:00:00+00:00</published>
   
-    <updated>2025-02-23T00:00:00+00:00</updated>
+    <updated>2025-02-26T20:27:14+00:00</updated>
   
     <id>http://localhost:4000/posts/cors-guide</id>
     <content type="text/html" src="http://localhost:4000/posts/cors-guide" />
@@ -105,32 +144,6 @@ Cross-Site Request Forgery (CSRF) is a web security vulnerability that tricks us
   <summary>Introduction to Cross-Origin Resource Sharing (CORS)
 
 Cross-origin resource sharing (CORS) is a browser mechanism that enables controlled access to resources located outside of a given domain. It extends and adds flexibility to the same-origin policy (SOP), which restricts how websites can interact with resources outside their source domain. While CORS provides greater flexibility for developer...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Discover the Origin IP Address of a Website and Identify WAF Protection</title>
-    <link href="http://localhost:4000/posts/find-origin-ip-website" rel="alternate" type="text/html" title="Discover the Origin IP Address of a Website and Identify WAF Protection" />
-    <published>2025-02-17T00:00:00+00:00</published>
-  
-    <updated>2025-02-17T00:00:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/find-origin-ip-website</id>
-    <content type="text/html" src="http://localhost:4000/posts/find-origin-ip-website" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Guides" />
-    
-    <category term="Discover Origin IP Address of a Website and Identify WAF" />
-    
-  
-
-  <summary>Web application firewalls (WAFs) and content delivery networks (CDNs) are commonly employed to enhance website security. These technologies often obscure the true IP address of a server, adding an additional layer of protection that can complicate security assessments and bug bounty testing. However, uncovering the source IP address allows you to bypass these layers and directly assess the serv...</summary>
 
   </entry>
 

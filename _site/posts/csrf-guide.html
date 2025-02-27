@@ -30,7 +30,7 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Guide to Cross-Site Request Forgery (CSRF)" />
+<meta property="og:title" content="Cross-Site Request Forgery (CSRF)" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Introduction to Cross-Site Request Forgery (CSRF)" />
 <meta property="og:description" content="Introduction to Cross-Site Request Forgery (CSRF)" />
@@ -42,14 +42,14 @@
 <meta property="article:published_time" content="2025-02-23T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="http://localhost:4000/assets/img/thumbnails/csrf-guide.png" />
-<meta property="twitter:title" content="Guide to Cross-Site Request Forgery (CSRF)" />
+<meta property="twitter:title" content="Cross-Site Request Forgery (CSRF)" />
 <meta name="twitter:site" content="@Diogo-Lages" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-23T00:00:00+00:00","datePublished":"2025-02-23T00:00:00+00:00","description":"Introduction to Cross-Site Request Forgery (CSRF)","headline":"Guide to Cross-Site Request Forgery (CSRF)","image":"http://localhost:4000/assets/img/thumbnails/csrf-guide.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/csrf-guide"},"url":"http://localhost:4000/posts/csrf-guide"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-26T20:27:14+00:00","datePublished":"2025-02-23T00:00:00+00:00","description":"Introduction to Cross-Site Request Forgery (CSRF)","headline":"Cross-Site Request Forgery (CSRF)","image":"http://localhost:4000/assets/img/thumbnails/csrf-guide.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/csrf-guide"},"url":"http://localhost:4000/posts/csrf-guide"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Guide to Cross-Site Request Forgery (CSRF) | Diogo Lages
+  <title>Cross-Site Request Forgery (CSRF) | Diogo Lages
   </title>
 
   <!--
@@ -452,7 +452,7 @@
         
           
             
-              <span>Guide to Cross-Site Request Forgery (CSRF)</span>
+              <span>Cross-Site Request Forgery (CSRF)</span>
             
 
           
@@ -760,17 +760,6 @@
 
       
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
 
     
   
@@ -786,17 +775,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1387,7 +1365,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>Guide to Cross-Site Request Forgery (CSRF)</h1>
+    <h1 data-toc-skip>Cross-Site Request Forgery (CSRF)</h1>
     
 
     <div class="post-meta text-muted">
@@ -1416,6 +1394,29 @@
       </span>
 
       <!-- lastmod date -->
+      
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740601634"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 26, 2025
+</time>
+
+        </span>
       
 
       
@@ -1468,9 +1469,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="4777 words"
+  title="4648 words"
 >
-  <em>26 min</em> read</span>
+  <em>25 min</em> read</span>
 
         </div>
       </div>
@@ -1479,7 +1480,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">Guide to Cross-Site Request Forgery (CSRF)</span>
+      <span class="label text-truncate">Cross-Site Request Forgery (CSRF)</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1492,7 +1493,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">Guide to Cross-Site Request Forgery (CSRF)</div>
+        <div class="label text-truncate py-2 ms-4">Cross-Site Request Forgery (CSRF)</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -2564,20 +2565,6 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
   </li>
 </ul>
 
-<hr />
-
-<h2 id="conclusion-1"><span class="me-2"><strong>Conclusion</strong></span><a href="#conclusion-1" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<p>CSRF attacks remain a significant threat to web applications, especially when proper defenses like CSRF tokens and SameSite cookies are not implemented correctly. Understanding how these attacks work and how to defend against them is crucial for securing modern web applications.</p>
-
-<h3 id="key-takeaways"><span class="me-2"><strong>Key Takeaways</strong>:</span><a href="#key-takeaways" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<ol>
-  <li><strong>CSRF tokens</strong> are one of the most effective ways to prevent CSRF attacks. Ensure that tokens are tightly coupled with user sessions and validated on every sensitive request.</li>
-  <li><strong>SameSite cookies</strong> provide an additional layer of protection by controlling when cookies are sent with cross-site requests. Use <code class="language-plaintext highlighter-rouge">Strict</code> or <code class="language-plaintext highlighter-rouge">Lax</code> restrictions wherever possible.</li>
-  <li><strong>Avoid using GET requests</strong> for sensitive actions, and always validate the Referer header as an extra precaution.</li>
-  <li><strong>Regularly test</strong> your application for CSRF vulnerabilities and stay informed about new attack techniques and defenses.</li>
-</ol>
-
   </div>
 
   <div class="post-tail-wrapper text-muted">
@@ -2707,35 +2694,35 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cors-guide">Guide to Cross-Origin Resource Sharing (CORS)</a>
+          <a href="/posts/cors-guide">Cross-Origin Resource Sharing (CORS)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/csrf-guide">Guide to Cross-Site Request Forgery (CSRF)</a>
+          <a href="/posts/csrf-guide">Cross-Site Request Forgery (CSRF)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ssrf-guide">Guide to Server-Side Request Forgery (SSRF)</a>
+          <a href="/posts/python-web-scraper">Web Scraper and Crawling Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/find-origin-ip-website">Discover the Origin IP Address of a Website and Identify WAF Protection</a>
+          <a href="/posts/python-network-monitor-tool">Network Monitor Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ffuf-Fuzzing-Guide">FFUF: Fuzzing Guide to Web Applications</a>
+          <a href="/posts/python-metadata-finder">Metadata Finder</a>
         </li>
       
     </ul>
@@ -2859,60 +2846,6 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2922,122 +2855,6 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3127,6 +2944,162 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3157,6 +3130,40 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -3494,7 +3501,7 @@ Use automated security scanners to detect potential CSRF vulnerabilities in your
   Feb 23, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Guide to Cross-Origin Resource Sharing (CORS)</h4>
+              <h4 class="pt-0 my-2">Cross-Origin Resource Sharing (CORS)</h4>
               <div class="text-muted">
                 <p>Introduction to Cross-Origin Resource Sharing (CORS)
 
@@ -3524,7 +3531,7 @@ Cross-origin resource sharing (CORS) is a browser mechanism that enables control
   Feb 23, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Guide to Server-Side Request Forgery (SSRF)</h4>
+              <h4 class="pt-0 my-2">Server-Side Request Forgery (SSRF)</h4>
               <div class="text-muted">
                 <p>Understanding Server-Side Request Forgery (SSRF)
 
@@ -3549,11 +3556,11 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
 
 <time
   
-  data-ts="1739750400"
+  data-ts="1736899200"
   data-df="ll"
   
 >
-  Feb 17, 2025
+  Jan 15, 2025
 </time>
 
               <h4 class="pt-0 my-2">Discover the Origin IP Address of a Website and Identify WAF Protection</h4>
@@ -3583,7 +3590,7 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>Guide to Cross-Origin Resource Sharing (CORS)</p>
+      <p>Cross-Origin Resource Sharing (CORS)</p>
     </a>
   
 
@@ -3593,7 +3600,7 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>Guide to Server-Side Request Forgery (SSRF)</p>
+      <p>Server-Side Request Forgery (SSRF)</p>
     </a>
   
 </nav>
@@ -3760,60 +3767,6 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3823,122 +3776,6 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -4028,6 +3865,162 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -4058,6 +4051,40 @@ Server-Side Request Forgery (SSRF) is a critical web security vulnerability that
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     

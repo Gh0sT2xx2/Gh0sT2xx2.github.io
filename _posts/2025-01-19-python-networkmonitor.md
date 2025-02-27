@@ -45,7 +45,7 @@ The **Network Monitor** is a tool designed to capture, analyze, and display real
 
 ## Full Code 
 
-Github Repository:  [Network Monitor Tool](https://github.com/Diogo-Lages/Network_Monitor.py)
+Github Repository:  [Network Monitor Tool](https://github.com/Diogo-Lages/Network-Monitor)
 
 ```python
 import psutil

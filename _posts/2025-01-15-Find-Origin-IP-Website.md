@@ -1,6 +1,6 @@
 ---
 title: "Discover the Origin IP Address of a Website and Identify WAF Protection"
-date: 2025-02-17
+date: 2025-01-15
 categories: [Guides, Discover Origin IP Address of a Website and Identify WAF]
 tags: [Guides, Origin IP, Identify WAF]
 permalink: /posts/find-origin-ip-website

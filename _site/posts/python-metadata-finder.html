@@ -32,8 +32,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Metadata Finder" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A comprehensive tool for finding, managing, and removing metadata from images." />
-<meta property="og:description" content="A comprehensive tool for finding, managing, and removing metadata from images." />
+<meta name="description" content="A tool for finding, managing, and removing metadata from images." />
+<meta property="og:description" content="A tool for finding, managing, and removing metadata from images." />
 <link rel="canonical" href="http://localhost:4000/posts/python-metadata-finder" />
 <meta property="og:url" content="http://localhost:4000/posts/python-metadata-finder" />
 <meta property="og:site_name" content="Diogo Lages" />
@@ -45,7 +45,7 @@
 <meta property="twitter:title" content="Metadata Finder" />
 <meta name="twitter:site" content="@Diogo-Lages" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-13T19:41:06+00:00","datePublished":"2025-01-26T00:00:00+00:00","description":"A comprehensive tool for finding, managing, and removing metadata from images.","headline":"Metadata Finder","image":"http://localhost:4000/assets/img/thumbnails/Metadata-Finder.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-metadata-finder"},"url":"http://localhost:4000/posts/python-metadata-finder"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-26T20:27:14+00:00","datePublished":"2025-01-26T00:00:00+00:00","description":"A tool for finding, managing, and removing metadata from images.","headline":"Metadata Finder","image":"http://localhost:4000/assets/img/thumbnails/Metadata-Finder.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-metadata-finder"},"url":"http://localhost:4000/posts/python-metadata-finder"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -931,13 +931,13 @@
 
 <time
   
-  data-ts="1739475666"
+  data-ts="1740601634"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb 13, 2025
+  Feb 26, 2025
 </time>
 
         </span>
@@ -993,7 +993,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1598 words"
+  title="1557 words"
 >
   <em>8 min</em> read</span>
 
@@ -1027,7 +1027,7 @@
   
 
   <div class="content">
-    <p>A comprehensive tool for finding, managing, and removing metadata from images.</p>
+    <p>A tool for finding, managing, and removing metadata from images.</p>
 
 <hr />
 
@@ -1057,7 +1057,7 @@
 
 <h2 id="full-code"><span class="me-2">Full Code</span><a href="#full-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Github Repository:  <a href="https://github.com/Diogo-Lages/Metadata_Finder.py">Metadata Finder</a></p>
+<p>Github Repository:  <a href="https://github.com/Diogo-Lages/Metadata-Finder">Metadata Finder</a></p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1349,41 +1349,42 @@
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">os</span>
 <span class="kn">import</span> <span class="n">json</span>
 <span class="kn">import</span> <span class="n">exifread</span>
-<span class="kn">import</span> <span class="n">hashlib</span>  <span class="c1"># For checksum calculation
-</span><span class="kn">import</span> <span class="n">tkinter</span> <span class="k">as</span> <span class="n">tk</span>
+<span class="kn">import</span> <span class="n">hashlib</span>
+<span class="kn">import</span> <span class="n">tkinter</span> <span class="k">as</span> <span class="n">tk</span>
 <span class="kn">from</span> <span class="n">tkinter</span> <span class="kn">import</span> <span class="n">filedialog</span><span class="p">,</span> <span class="n">messagebox</span><span class="p">,</span> <span class="n">scrolledtext</span><span class="p">,</span> <span class="n">ttk</span>
 <span class="kn">from</span> <span class="n">PIL</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+
 
 <span class="k">class</span> <span class="nc">MetaDataFinderGUI</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Metadata Finder - Professional Tool</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">MetaDataFinder</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">geometry</span><span class="p">(</span><span class="sh">"</span><span class="s">1000x800</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">minsize</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">800</span><span class="p">)</span>
-        <span class="c1"># Initialize variables
-</span>        <span class="n">self</span><span class="p">.</span><span class="n">image_path</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="n">image_path</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="n">self</span><span class="p">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">theme</span> <span class="o">=</span> <span class="sh">"</span><span class="s">dark</span><span class="sh">"</span>  <span class="c1"># Fixed to dark theme
-</span>        <span class="c1"># Set initial theme
-</span>        <span class="n">self</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">()</span>
-        <span class="c1"># Create UI Elements
-</span>        <span class="n">self</span><span class="p">.</span><span class="nf">create_ui</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">theme</span> <span class="o">=</span> <span class="sh">"</span><span class="s">light</span><span class="sh">"</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="nf">set_theme</span><span class="p">()</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="nf">create_ui</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">set_theme</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">theme</span> <span class="o">==</span> <span class="sh">"</span><span class="s">dark</span><span class="sh">"</span><span class="p">:</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">bg_color</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#333333</span><span class="sh">"</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">fg_color</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#FFFFFF</span><span class="sh">"</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">button_bg</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#555555</span><span class="sh">"</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">button_fg</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#FFFFFF</span><span class="sh">"</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">text_area_bg</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#444444</span><span class="sh">"</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">text_area_fg</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#FFFFFF</span><span class="sh">"</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">bg_color</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">theme</span> <span class="o">==</span> <span class="sh">"</span><span class="s">light</span><span class="sh">"</span><span class="p">:</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">bg_color</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#FFFFFF</span><span class="sh">"</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">fg_color</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#000000</span><span class="sh">"</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">button_bg</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#F0F0F0</span><span class="sh">"</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">button_fg</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#000000</span><span class="sh">"</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">text_area_bg</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#FAFAFA</span><span class="sh">"</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">text_area_fg</span> <span class="o">=</span> <span class="sh">"</span><span class="s">#000000</span><span class="sh">"</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">bg_color</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">create_ui</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="c1"># Title Label
 </span>        <span class="n">title_label</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span>
             <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">,</span>
-            <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Metadata Finder</span><span class="sh">"</span><span class="p">,</span>
+            <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">MetaDataFinder</span><span class="sh">"</span><span class="p">,</span>
             <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="sh">"</span><span class="s">Arial</span><span class="sh">"</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="sh">"</span><span class="s">bold</span><span class="sh">"</span><span class="p">),</span>
             <span class="n">bg</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">bg_color</span><span class="p">,</span>
             <span class="n">fg</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">fg_color</span><span class="p">,</span>
@@ -1392,15 +1393,6 @@
         <span class="p">)</span>
         <span class="n">title_label</span><span class="p">.</span><span class="nf">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="sh">"</span><span class="s">x</span><span class="sh">"</span><span class="p">)</span>
 
-        <span class="c1"># Description Label
-</span>        <span class="n">desc_label</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">,</span>
-            <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">A Comprehensive Image Metadata Finder &amp; Manager Tool</span><span class="sh">"</span><span class="p">,</span>
-            <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="sh">"</span><span class="s">Arial</span><span class="sh">"</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
-            <span class="n">bg</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">bg_color</span><span class="p">,</span>
-            <span class="n">fg</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">fg_color</span>
-        <span class="p">)</span>
-        <span class="n">desc_label</span><span class="p">.</span><span class="nf">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
         <span class="c1"># File Upload Button
 </span>        <span class="n">upload_button</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="nc">Button</span><span class="p">(</span>
@@ -1495,8 +1487,8 @@
     <span class="k">def</span> <span class="nf">display_image</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)</span>
-            <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="nf">resize</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">Image</span><span class="p">.</span><span class="n">Resampling</span><span class="p">.</span><span class="n">LANCZOS</span><span class="p">)</span>
-            <span class="n">img_tk</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="p">.</span><span class="nc">PhotoImage</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="nf">resize</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">Image</span><span class="p">.</span><span class="n">Resampling</span><span class="p">.</span><span class="n">LANCZOS</span><span class="p">)</span>  <span class="c1"># Use Resampling.LANCZOS for resizing
+</span>            <span class="n">img_tk</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="p">.</span><span class="nc">PhotoImage</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
             <span class="n">self</span><span class="p">.</span><span class="n">image_label</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">img_tk</span><span class="p">)</span>
             <span class="n">self</span><span class="p">.</span><span class="n">image_label</span><span class="p">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">img_tk</span>
         <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1506,48 +1498,51 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">:</span>
             <span class="n">messagebox</span><span class="p">.</span><span class="nf">showwarning</span><span class="p">(</span><span class="sh">"</span><span class="s">Warning</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Please upload an image first.</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span>
+
         <span class="k">try</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="n">progress</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span>
-            <span class="n">self</span><span class="p">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">format_metadata</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">extract_metadata</span><span class="p">()</span>
             <span class="n">self</span><span class="p">.</span><span class="nf">display_metadata</span><span class="p">()</span>
             <span class="n">self</span><span class="p">.</span><span class="n">progress</span><span class="p">.</span><span class="nf">stop</span><span class="p">()</span>
         <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">messagebox</span><span class="p">.</span><span class="nf">showerror</span><span class="p">(</span><span class="sh">"</span><span class="s">Error</span><span class="sh">"</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Failed to read metadata: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
             <span class="n">self</span><span class="p">.</span><span class="n">progress</span><span class="p">.</span><span class="nf">stop</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">format_metadata</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">image_path</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">extract_metadata</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="n">metadata</span> <span class="o">=</span> <span class="p">{}</span>
+
         <span class="c1"># EXIF Data
 </span>        <span class="k">try</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="sh">'</span><span class="s">rb</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">,</span> <span class="sh">'</span><span class="s">rb</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
                 <span class="n">tags</span> <span class="o">=</span> <span class="n">exifread</span><span class="p">.</span><span class="nf">process_file</span><span class="p">(</span><span class="n">image_file</span><span class="p">)</span>
-                <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Date and Time</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">EXIF DateTimeOriginal</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">)</span>
-                <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Camera Model</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">Image Model</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">)</span>
-                <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Device Name</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">Image Make</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">)</span>
-                <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Software</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tags</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">Image Software</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">)</span>
+                <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Date and Time</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">tags</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">EXIF DateTimeOriginal</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">))</span>
+                <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Camera Model</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">tags</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">Image Model</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">))</span>
+                <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Device Name</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">tags</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">Image Make</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">))</span>
+                <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Software</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">str</span><span class="p">(</span><span class="n">tags</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">'</span><span class="s">Image Software</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">))</span>
                 <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">GPS Coordinates</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">get_gps_coordinates</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span>
         <span class="k">except</span> <span class="nb">Exception</span><span class="p">:</span>
             <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">EXIF Data</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">No EXIF data found</span><span class="sh">"</span>
 
         <span class="c1"># Additional Metadata Fields
-</span>        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Checksum</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">calculate_checksum</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">File Name</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">File Size</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">getsize</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">File Type</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">).</span><span class="nb">format</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">File Type Extension</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="n">image_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nf">lower</span><span class="p">()</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">MIME Type</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="n">MIME</span><span class="p">[</span><span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">).</span><span class="nb">format</span><span class="p">]</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Image Width</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">width</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Image Height</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">height</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Bit Depth</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">getattr</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">info</span><span class="p">,</span> <span class="sh">'</span><span class="s">bit</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">)</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Color Type</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">mode</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">RGB</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Yes</span><span class="sh">"</span> <span class="k">if</span> <span class="n">img</span><span class="p">.</span><span class="n">mode</span> <span class="o">==</span> <span class="sh">"</span><span class="s">RGB</span><span class="sh">"</span> <span class="k">else</span> <span class="sh">"</span><span class="s">No</span><span class="sh">"</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Compression</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">compression</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Not Available</span><span class="sh">"</span><span class="p">)</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Filter</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">filter</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Not Available</span><span class="sh">"</span><span class="p">)</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Interlace</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Noninterlaced</span><span class="sh">"</span> <span class="k">if</span> <span class="n">img</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">interlace</span><span class="sh">"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="sh">"</span><span class="s">Interlaced</span><span class="sh">"</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Image Size</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">img</span><span class="p">.</span><span class="n">width</span><span class="si">}</span><span class="s">x</span><span class="si">{</span><span class="n">img</span><span class="p">.</span><span class="n">height</span><span class="si">}</span><span class="sh">"</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Megapixels</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">round</span><span class="p">((</span><span class="n">img</span><span class="p">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">img</span><span class="p">.</span><span class="n">height</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Category</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Image</span><span class="sh">"</span>
+</span>        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Checksum</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">calculate_checksum</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">File Name</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)</span>
+        <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">File Size</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">getsize</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">img</span><span class="p">:</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">File Type</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="nb">format</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">File Type Extension</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">].</span><span class="nf">lower</span><span class="p">()</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">MIME Type</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="n">MIME</span><span class="p">[</span><span class="n">img</span><span class="p">.</span><span class="nb">format</span><span class="p">]</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Image Width</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">width</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Image Height</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">height</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Bit Depth</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">getattr</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">info</span><span class="p">,</span> <span class="sh">'</span><span class="s">bit</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">Not Available</span><span class="sh">'</span><span class="p">)</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Color Type</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">mode</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">RGB</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Yes</span><span class="sh">"</span> <span class="k">if</span> <span class="n">img</span><span class="p">.</span><span class="n">mode</span> <span class="o">==</span> <span class="sh">"</span><span class="s">RGB</span><span class="sh">"</span> <span class="k">else</span> <span class="sh">"</span><span class="s">No</span><span class="sh">"</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Compression</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">compression</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Not Available</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Filter</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">img</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">filter</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Not Available</span><span class="sh">"</span><span class="p">)</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Interlace</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Noninterlaced</span><span class="sh">"</span> <span class="k">if</span> <span class="n">img</span><span class="p">.</span><span class="n">info</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sh">"</span><span class="s">interlace</span><span class="sh">"</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="sh">"</span><span class="s">Interlaced</span><span class="sh">"</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Image Size</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">img</span><span class="p">.</span><span class="n">width</span><span class="si">}</span><span class="s">x</span><span class="si">{</span><span class="n">img</span><span class="p">.</span><span class="n">height</span><span class="si">}</span><span class="sh">"</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Megapixels</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">round</span><span class="p">((</span><span class="n">img</span><span class="p">.</span><span class="n">width</span> <span class="o">*</span> <span class="n">img</span><span class="p">.</span><span class="n">height</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">metadata</span><span class="p">[</span><span class="sh">'</span><span class="s">Category</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Image</span><span class="sh">"</span>
+
         <span class="k">return</span> <span class="n">metadata</span>
 
     <span class="k">def</span> <span class="nf">calculate_checksum</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
@@ -1577,26 +1572,29 @@
     <span class="k">def</span> <span class="nf">display_metadata</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">metadata_display</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="sh">"</span><span class="s">normal</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">metadata_display</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">)</span>
+
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">metadata</span><span class="p">.</span><span class="nf">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="sh">'</span><span class="s">GPS Coordinates</span><span class="sh">'</span> <span class="ow">and</span> <span class="n">value</span><span class="p">:</span>
                 <span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="o">=</span> <span class="n">value</span>
                 <span class="n">self</span><span class="p">.</span><span class="n">metadata_display</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s">: https://www.google.com/maps?q=</span><span class="si">{</span><span class="n">lat</span><span class="si">}</span><span class="s">,</span><span class="si">{</span><span class="n">lon</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">self</span><span class="p">.</span><span class="n">metadata_display</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="se">\n</span><span class="sh">"</span><span class="p">)</span>
+
         <span class="n">self</span><span class="p">.</span><span class="n">metadata_display</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="sh">"</span><span class="s">disabled</span><span class="sh">"</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">remove_metadata</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">:</span>
             <span class="n">messagebox</span><span class="p">.</span><span class="nf">showwarning</span><span class="p">(</span><span class="sh">"</span><span class="s">Warning</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Please upload an image first.</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span>
+
         <span class="k">try</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="n">progress</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span>
-            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="nf">getdata</span><span class="p">())</span>
-            <span class="n">image_without_exif</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">image</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
-            <span class="n">image_without_exif</span><span class="p">.</span><span class="nf">putdata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-            <span class="n">new_image_path</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">"</span><span class="s">_no_metadata</span><span class="sh">"</span> <span class="o">+</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-            <span class="n">image_without_exif</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">new_image_path</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">img</span><span class="p">:</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="nf">getdata</span><span class="p">())</span>
+                <span class="n">image_without_exif</span> <span class="o">=</span> <span class="n">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">img</span><span class="p">.</span><span class="n">size</span><span class="p">)</span>
+                <span class="n">image_without_exif</span><span class="p">.</span><span class="nf">putdata</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="n">new_image_path</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="sh">"</span><span class="s">_no_metadata</span><span class="sh">"</span> <span class="o">+</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">splitext</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">image_path</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">image_without_exif</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="n">new_image_path</span><span class="p">)</span>
             <span class="n">messagebox</span><span class="p">.</span><span class="nf">showinfo</span><span class="p">(</span><span class="sh">"</span><span class="s">Success</span><span class="sh">"</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="s">Metadata removed successfully. New image saved as </span><span class="si">{</span><span class="n">new_image_path</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
             <span class="n">self</span><span class="p">.</span><span class="n">progress</span><span class="p">.</span><span class="nf">stop</span><span class="p">()</span>
         <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
@@ -1607,8 +1605,10 @@
         <span class="k">if</span> <span class="ow">not</span> <span class="n">self</span><span class="p">.</span><span class="n">metadata</span><span class="p">:</span>
             <span class="n">messagebox</span><span class="p">.</span><span class="nf">showwarning</span><span class="p">(</span><span class="sh">"</span><span class="s">Warning</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">No metadata available to save.</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span>
+
         <span class="n">file_types</span> <span class="o">=</span> <span class="p">[(</span><span class="sh">"</span><span class="s">Text File</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">*.txt</span><span class="sh">"</span><span class="p">),</span> <span class="p">(</span><span class="sh">"</span><span class="s">JSON File</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">*.json</span><span class="sh">"</span><span class="p">)]</span>
         <span class="n">file_path</span> <span class="o">=</span> <span class="n">filedialog</span><span class="p">.</span><span class="nf">asksaveasfilename</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="sh">"</span><span class="s">Save Metadata</span><span class="sh">"</span><span class="p">,</span> <span class="n">filetypes</span><span class="o">=</span><span class="n">file_types</span><span class="p">,</span> <span class="n">defaultextension</span><span class="o">=</span><span class="sh">"</span><span class="s">.txt</span><span class="sh">"</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="n">file_path</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">file_path</span><span class="p">.</span><span class="nf">endswith</span><span class="p">(</span><span class="sh">"</span><span class="s">.json</span><span class="sh">"</span><span class="p">):</span>
@@ -1900,35 +1900,35 @@ File Type: JPEG
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cors-guide">Guide to Cross-Origin Resource Sharing (CORS)</a>
+          <a href="/posts/cors-guide">Cross-Origin Resource Sharing (CORS)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/csrf-guide">Guide to Cross-Site Request Forgery (CSRF)</a>
+          <a href="/posts/csrf-guide">Cross-Site Request Forgery (CSRF)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ssrf-guide">Guide to Server-Side Request Forgery (SSRF)</a>
+          <a href="/posts/python-web-scraper">Web Scraper and Crawling Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/find-origin-ip-website">Discover the Origin IP Address of a Website and Identify WAF Protection</a>
+          <a href="/posts/python-network-monitor-tool">Network Monitor Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ffuf-Fuzzing-Guide">FFUF: Fuzzing Guide to Web Applications</a>
+          <a href="/posts/python-metadata-finder">Metadata Finder</a>
         </li>
       
     </ul>
@@ -2052,60 +2052,6 @@ File Type: JPEG
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2115,122 +2061,6 @@ File Type: JPEG
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2320,6 +2150,162 @@ File Type: JPEG
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2350,6 +2336,40 @@ File Type: JPEG
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2665,6 +2685,18 @@ File Type: JPEG
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2678,6 +2710,46 @@ File Type: JPEG
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/python-github-scraper" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740441600"
+  data-df="ll"
+  
+>
+  Feb 25, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Github Scraper</h4>
+              <div class="text-muted">
+                <p>Tool designed to scrape and analyze repositories from GitHub based on customizable search criteria.
+
+Github Scraper Repository
+
+  Link: Github Scraper Repository
+
+
+
+
+Features
+
+
+  Customizable Searc...</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/posts/python-honeypot-suite" class="post-preview card h-100">
@@ -2730,34 +2802,6 @@ File Type: JPEG
               <h4 class="pt-0 my-2">Network Scanner</h4>
               <div class="text-muted">
                 <p>Network scanning tool designed for cybersecurity. It offers features such as port scanning, service detection, OS fingerprinting, vulnerability scanning, traceroute, geolocation, WHOIS lookup, and ...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/python-network-monitor-tool" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1737244800"
-  data-df="ll"
-  
->
-  Jan 19, 2025
-</time>
-
-              <h4 class="pt-0 my-2">Network Monitor Tool</h4>
-              <div class="text-muted">
-                <p>The Network Monitor is a tool designed to capture, analyze, and display real-time network traffic. It provides insights into network packets, including source and destination IP addresses, protocol...</p>
               </div>
             </div>
           </a>
@@ -2959,60 +3003,6 @@ File Type: JPEG
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3022,122 +3012,6 @@ File Type: JPEG
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3227,6 +3101,162 @@ File Type: JPEG
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3257,6 +3287,40 @@ File Type: JPEG
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     

@@ -45,7 +45,7 @@
 <meta property="twitter:title" content="Web Scraper and Crawling Tool" />
 <meta name="twitter:site" content="@Diogo-Lages" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-12T00:00:00+00:00","datePublished":"2025-01-12T00:00:00+00:00","description":"A Python-based web scraping and crawling tool with a graphical user interface (GUI) built using tkinter. This tool allows users to crawl websites, download pages, and save them locally while maintaining the directory structure. It’s designed for ease of use, with features like depth control, rate limiting, and real-time logging.","headline":"Web Scraper and Crawling Tool","image":"http://localhost:4000/assets/img/thumbnails/Web-Scraper.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-web-scraper"},"url":"http://localhost:4000/posts/python-web-scraper"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-26T20:27:14+00:00","datePublished":"2025-01-12T00:00:00+00:00","description":"A Python-based web scraping and crawling tool with a graphical user interface (GUI) built using tkinter. This tool allows users to crawl websites, download pages, and save them locally while maintaining the directory structure. It’s designed for ease of use, with features like depth control, rate limiting, and real-time logging.","headline":"Web Scraper and Crawling Tool","image":"http://localhost:4000/assets/img/thumbnails/Web-Scraper.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-web-scraper"},"url":"http://localhost:4000/posts/python-web-scraper"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -931,6 +931,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740601634"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 26, 2025
+</time>
+
+        </span>
+      
 
       
         
@@ -982,9 +1005,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2122 words"
+  title="1834 words"
 >
-  <em>11 min</em> read</span>
+  <em>10 min</em> read</span>
 
         </div>
       </div>
@@ -1082,7 +1105,7 @@
 
 <h2 id="full-code"><span class="me-2">Full Code</span><a href="#full-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Github Repository:  <a href="https://github.com/Diogo-Lages/Web_Scraper.py">Web Scraper Tool</a></p>
+<p>Github Repository:  <a href="https://github.com/Diogo-Lages/Web-Scraper">Web Scraper Tool</a></p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1426,73 +1449,6 @@
 338
 339
 340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370
-371
-372
-373
-374
-375
-376
-377
-378
-379
-380
-381
-382
-383
-384
-385
-386
-387
-388
-389
-390
-391
-392
-393
-394
-395
-396
-397
-398
-399
-400
-401
-402
-403
-404
-405
-406
-407
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">tkinter</span> <span class="k">as</span> <span class="n">tk</span>
 <span class="kn">from</span> <span class="n">tkinter</span> <span class="kn">import</span> <span class="n">ttk</span><span class="p">,</span> <span class="n">filedialog</span><span class="p">,</span> <span class="n">messagebox</span>
 <span class="kn">import</span> <span class="n">threading</span>
@@ -1503,175 +1459,106 @@
 <span class="kn">from</span> <span class="n">urllib.parse</span> <span class="kn">import</span> <span class="n">urljoin</span><span class="p">,</span> <span class="n">urlparse</span>
 <span class="kn">import</span> <span class="n">time</span>
 <span class="kn">import</span> <span class="n">re</span>
+<span class="kn">import</span> <span class="n">random</span>
 
 
 <span class="k">class</span> <span class="nc">WebsiteCrawler</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">base_url</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="sh">"</span><span class="s">downloaded_site</span><span class="sh">"</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">base_url</span><span class="p">,</span> <span class="n">output_dir</span><span class="o">=</span><span class="sh">"</span><span class="s">downloaded_site</span><span class="sh">"</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">rate_limit</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">base_url</span>
         <span class="n">self</span><span class="p">.</span><span class="n">domain</span> <span class="o">=</span> <span class="nf">urlparse</span><span class="p">(</span><span class="n">base_url</span><span class="p">).</span><span class="n">netloc</span>
         <span class="n">self</span><span class="p">.</span><span class="n">output_dir</span> <span class="o">=</span> <span class="n">output_dir</span>
         <span class="n">self</span><span class="p">.</span><span class="n">visited_urls</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">rate_limit</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Delay between requests in seconds
-</span>        <span class="n">self</span><span class="p">.</span><span class="n">max_depth</span> <span class="o">=</span> <span class="n">max_depth</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">stop_requested</span> <span class="o">=</span> <span class="bp">False</span>  <span class="c1"># Flag to control crawling
-</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">rate_limit</span> <span class="o">=</span> <span class="n">rate_limit</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">max_depth</span> <span class="o">=</span> <span class="n">max_depth</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">stop_requested</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">user_agents</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sh">"</span><span class="s">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15</span><span class="sh">"</span><span class="p">,</span>
+            <span class="sh">"</span><span class="s">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0</span><span class="sh">"</span><span class="p">,</span>
+        <span class="p">]</span>
+
         <span class="c1"># Create output directory if it doesn't exist
-</span>        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">exists</span><span class="p">(</span><span class="n">output_dir</span><span class="p">):</span>
-            <span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+</span>        <span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Request the crawler to stop after current page</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">stop_requested</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">Stop requested. Finishing current page...</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="se">\n</span><span class="s">[INFO] Stop requested. Finishing current page...</span><span class="sh">"</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">is_valid_url</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Check if URL belongs to the same domain and is a webpage.</span><span class="sh">"""</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">parsed</span> <span class="o">=</span> <span class="nf">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
-            <span class="c1"># Skip any image files
-</span>            <span class="n">image_extensions</span> <span class="o">=</span> <span class="p">(</span><span class="sh">'</span><span class="s">.jpg</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.jpeg</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.png</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.gif</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.svg</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.webp</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.bmp</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.ico</span><span class="sh">'</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">url</span><span class="p">.</span><span class="nf">lower</span><span class="p">().</span><span class="nf">endswith</span><span class="p">(</span><span class="n">image_extensions</span><span class="p">):</span>
-                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Skipping image file: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            <span class="c1"># Skip any image files or unsupported formats
+</span>            <span class="n">invalid_extensions</span> <span class="o">=</span> <span class="p">(</span><span class="sh">'</span><span class="s">.jpg</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.jpeg</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.png</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.gif</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.svg</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.webp</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.bmp</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.ico</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.pdf</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.zip</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.doc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.docx</span><span class="sh">'</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">url</span><span class="p">.</span><span class="nf">lower</span><span class="p">().</span><span class="nf">endswith</span><span class="p">(</span><span class="n">invalid_extensions</span><span class="p">):</span>
+                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[SKIP] Invalid file type: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
                 <span class="k">return</span> <span class="bp">False</span>
 
-            <span class="c1"># Skip Wikipedia special pages and non-article pages
+            <span class="c1"># Skip special pages (e.g., Wikipedia)
 </span>            <span class="n">skip_patterns</span> <span class="o">=</span> <span class="p">[</span>
-                <span class="sh">'</span><span class="s">/wiki/Wikipedia:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">/wiki/File:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">/wiki/Help:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">/wiki/Special:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">/wiki/Talk:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">/wiki/User:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">/wiki/Template:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">/wiki/Category:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">/wiki/Portal:</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">action=</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">oldid=</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">diff=</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">printable=</span><span class="sh">'</span><span class="p">,</span>
-                <span class="sh">'</span><span class="s">mobileaction=</span><span class="sh">'</span>
+                <span class="sh">'</span><span class="s">/wiki/Wikipedia:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">/wiki/File:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">/wiki/Help:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">/wiki/Special:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">/wiki/Talk:</span><span class="sh">'</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">/wiki/User:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">/wiki/Template:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">/wiki/Category:</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">/wiki/Portal:</span><span class="sh">'</span><span class="p">,</span>
+                <span class="sh">'</span><span class="s">action=</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">oldid=</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">diff=</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">printable=</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">mobileaction=</span><span class="sh">'</span>
             <span class="p">]</span>
+            <span class="k">if</span> <span class="nf">any</span><span class="p">(</span><span class="n">pattern</span> <span class="ow">in</span> <span class="n">url</span> <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">skip_patterns</span><span class="p">):</span>
+                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[SKIP] Special page: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">False</span>
 
-            <span class="c1"># Check if this is a Wikipedia URL and if so, apply special rules
-</span>            <span class="k">if</span> <span class="sh">'</span><span class="s">wikipedia.org</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">parsed</span><span class="p">.</span><span class="n">netloc</span><span class="p">:</span>
-                <span class="c1"># Skip special pages but allow all regular article pages
-</span>                <span class="k">if</span> <span class="nf">any</span><span class="p">(</span><span class="n">pattern</span> <span class="ow">in</span> <span class="n">url</span> <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">skip_patterns</span><span class="p">):</span>
-                    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Skipping Wikipedia special page: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-                    <span class="k">return</span> <span class="bp">False</span>
-
-                <span class="c1"># Make sure it's a wiki article page
-</span>                <span class="k">if</span> <span class="ow">not</span> <span class="sh">'</span><span class="s">/wiki/</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">url</span><span class="p">:</span>
-                    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Skipping non-article page: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-                    <span class="k">return</span> <span class="bp">False</span>
-
-                <span class="c1"># Allow all regular Wikipedia articles
-</span>                <span class="k">if</span> <span class="sh">'</span><span class="s">/wiki/</span><span class="sh">'</span> <span class="ow">in</span> <span class="n">url</span> <span class="ow">and</span> <span class="n">parsed</span><span class="p">.</span><span class="n">netloc</span> <span class="o">==</span> <span class="n">self</span><span class="p">.</span><span class="n">domain</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="bp">True</span>
-
-            <span class="c1"># For non-Wikipedia sites, use standard validation
+            <span class="c1"># Ensure the URL belongs to the same domain
 </span>            <span class="n">is_valid</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">parsed</span><span class="p">.</span><span class="n">netloc</span> <span class="o">==</span> <span class="n">self</span><span class="p">.</span><span class="n">domain</span> <span class="ow">and</span>
-                    <span class="n">parsed</span><span class="p">.</span><span class="n">scheme</span> <span class="ow">in</span> <span class="p">[</span><span class="sh">'</span><span class="s">http</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">https</span><span class="sh">'</span><span class="p">]</span> <span class="ow">and</span>
-                    <span class="ow">not</span> <span class="n">url</span><span class="p">.</span><span class="nf">endswith</span><span class="p">((</span><span class="sh">'</span><span class="s">.pdf</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.zip</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.doc</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">.docx</span><span class="sh">'</span><span class="p">))</span>
+                <span class="n">parsed</span><span class="p">.</span><span class="n">netloc</span> <span class="o">==</span> <span class="n">self</span><span class="p">.</span><span class="n">domain</span> <span class="ow">and</span>
+                <span class="n">parsed</span><span class="p">.</span><span class="n">scheme</span> <span class="ow">in</span> <span class="p">[</span><span class="sh">'</span><span class="s">http</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">https</span><span class="sh">'</span><span class="p">]</span>
             <span class="p">)</span>
 
             <span class="k">if</span> <span class="ow">not</span> <span class="n">is_valid</span><span class="p">:</span>
-                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">URL rejected: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[SKIP] URL rejected: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="n">is_valid</span>
 
         <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error parsing URL </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[ERROR] Error parsing URL </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">False</span>
 
     <span class="k">def</span> <span class="nf">clean_filename</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Convert URL to a valid filename.</span><span class="sh">"""</span>
         <span class="c1"># Remove the domain and scheme
-</span>        <span class="n">filename</span> <span class="o">=</span> <span class="nf">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">).</span><span class="n">path</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">filename</span> <span class="ow">or</span> <span class="n">filename</span><span class="p">.</span><span class="nf">endswith</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">):</span>
-            <span class="n">filename</span> <span class="o">+=</span> <span class="sh">'</span><span class="s">index.html</span><span class="sh">'</span>
-        <span class="k">elif</span> <span class="ow">not</span> <span class="n">filename</span><span class="p">.</span><span class="nf">endswith</span><span class="p">(</span><span class="sh">'</span><span class="s">.html</span><span class="sh">'</span><span class="p">):</span>
-            <span class="n">filename</span> <span class="o">+=</span> <span class="sh">'</span><span class="s">.html</span><span class="sh">'</span>
+</span>        <span class="n">parsed</span> <span class="o">=</span> <span class="nf">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">parsed</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">strip</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="p">.</span><span class="nf">endswith</span><span class="p">(</span><span class="sh">'</span><span class="s">.html</span><span class="sh">'</span><span class="p">):</span>
+            <span class="n">path</span> <span class="o">+=</span> <span class="sh">'</span><span class="s">.html</span><span class="sh">'</span>
 
         <span class="c1"># Clean the filename
-</span>        <span class="n">filename</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">[&lt;&gt;:</span><span class="sh">"</span><span class="s">/\\|?*]</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">_</span><span class="sh">'</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">filename</span><span class="p">.</span><span class="nf">lstrip</span><span class="p">(</span><span class="sh">'</span><span class="s">/</span><span class="sh">'</span><span class="p">)</span>
+</span>        <span class="n">filename</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sa">r</span><span class="sh">'</span><span class="s">[&lt;&gt;:</span><span class="sh">"</span><span class="s">/\\|?*]</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">_</span><span class="sh">'</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+
+        <span class="c1"># Create subdirectories if needed
+</span>        <span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">filepath</span>
 
     <span class="k">def</span> <span class="nf">download_page</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Download a webpage and return its content.</span><span class="sh">"""</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="sh">"</span><span class="s">User-Agent</span><span class="sh">"</span><span class="p">:</span> <span class="n">random</span><span class="p">.</span><span class="nf">choice</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">user_agents</span><span class="p">)}</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-                <span class="sh">'</span><span class="s">User-Agent</span><span class="sh">'</span><span class="p">:</span> <span class="sh">'</span><span class="s">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36</span><span class="sh">'</span>
-            <span class="p">}</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">Attempting to download: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
             <span class="n">response</span><span class="p">.</span><span class="nf">raise_for_status</span><span class="p">()</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Download successful! Status code: </span><span class="si">{</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Content length: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span><span class="si">}</span><span class="s"> characters</span><span class="sh">"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[SUCCESS] Downloaded: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">response</span><span class="p">.</span><span class="n">text</span>
-        <span class="k">except</span> <span class="n">requests</span><span class="p">.</span><span class="n">exceptions</span><span class="p">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error downloading </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">requests</span><span class="p">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[ERROR] Failed to download </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">None</span>
 
     <span class="k">def</span> <span class="nf">save_page</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Save webpage content to a file and rewrite links to point to local files.</span><span class="sh">"""</span>
-        <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
-            <span class="n">filename</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">clean_filename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-            <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">Saving page to: </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-
-            <span class="k">try</span><span class="p">:</span>
-                <span class="c1"># Parse the HTML
-</span>                <span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="sh">'</span><span class="s">html.parser</span><span class="sh">'</span><span class="p">)</span>
-
-                <span class="c1"># Remove all image elements
-</span>                <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">'</span><span class="s">img</span><span class="sh">'</span><span class="p">):</span>
-                    <span class="n">img</span><span class="p">.</span><span class="nf">decompose</span><span class="p">()</span>
-
-                <span class="c1"># Remove all picture elements
-</span>                <span class="k">for</span> <span class="n">picture</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">'</span><span class="s">picture</span><span class="sh">'</span><span class="p">):</span>
-                    <span class="n">picture</span><span class="p">.</span><span class="nf">decompose</span><span class="p">()</span>
-
-                <span class="c1"># Remove image-related elements like figure/figcaption if they're empty after image removal
-</span>                <span class="k">for</span> <span class="n">figure</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">'</span><span class="s">figure</span><span class="sh">'</span><span class="p">):</span>
-                    <span class="k">if</span> <span class="ow">not</span> <span class="n">figure</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-                        <span class="n">figure</span><span class="p">.</span><span class="nf">decompose</span><span class="p">()</span>
-
-                <span class="c1"># Rewrite links to point to local files
-</span>                <span class="k">for</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
-                    <span class="n">href</span> <span class="o">=</span> <span class="n">anchor</span><span class="p">[</span><span class="sh">'</span><span class="s">href</span><span class="sh">'</span><span class="p">]</span>
-                    <span class="n">absolute_url</span> <span class="o">=</span> <span class="nf">urljoin</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">href</span><span class="p">)</span>
-
-                    <span class="k">if</span> <span class="n">absolute_url</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">visited_urls</span><span class="p">:</span>
-                        <span class="c1"># Convert the absolute URL to a local path
-</span>                        <span class="n">local_path</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">clean_filename</span><span class="p">(</span><span class="n">absolute_url</span><span class="p">)</span>
-                        <span class="c1"># Make the path relative to the current file
-</span>                        <span class="n">current_depth</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="n">filename</span><span class="p">).</span><span class="nf">split</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">sep</span><span class="p">))</span>
-                        <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">relpath</span><span class="p">(</span><span class="n">local_path</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
-                        <span class="n">anchor</span><span class="p">[</span><span class="sh">'</span><span class="s">href</span><span class="sh">'</span><span class="p">]</span> <span class="o">=</span> <span class="n">relative_path</span>
-                        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Rewriting link: </span><span class="si">{</span><span class="n">href</span><span class="si">}</span><span class="s"> -&gt; </span><span class="si">{</span><span class="n">relative_path</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-
-                <span class="c1"># Create subdirectories if needed
-</span>                <span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Directory structure created/verified</span><span class="sh">"</span><span class="p">)</span>
-
-                <span class="c1"># Save the modified HTML
-</span>                <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-                    <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="nf">str</span><span class="p">(</span><span class="n">soup</span><span class="p">))</span>
-                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Successfully saved modified HTML to </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-
-            <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error saving </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-                <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Full path attempted: </span><span class="si">{</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">abspath</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">clean_filename</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nf">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="sh">'</span><span class="s">utf-8</span><span class="sh">'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[SUCCESS] Saved: </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[ERROR] Error saving </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="nf">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">extract_links</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Extract all valid links from a webpage.</span><span class="sh">"""</span>
         <span class="n">soup</span> <span class="o">=</span> <span class="nc">BeautifulSoup</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="sh">'</span><span class="s">html.parser</span><span class="sh">'</span><span class="p">)</span>
         <span class="n">links</span> <span class="o">=</span> <span class="nf">set</span><span class="p">()</span>
 
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">Extracting links from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">[INFO] Extracting links from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">link_count</span> <span class="o">=</span> <span class="mi">0</span>
 
         <span class="k">for</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="sh">'</span><span class="s">a</span><span class="sh">'</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
@@ -1680,21 +1567,16 @@
                 <span class="n">links</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
                 <span class="n">link_count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Found </span><span class="si">{</span><span class="n">link_count</span><span class="si">}</span><span class="s"> valid links on this page</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[INFO] Found </span><span class="si">{</span><span class="n">link_count</span><span class="si">}</span><span class="s"> valid links on this page</span><span class="sh">"</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">links</span>
 
     <span class="k">def</span> <span class="nf">crawl</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Start the crawling process.</span><span class="sh">"""</span>
-        <span class="c1"># Reset stop flag
-</span>        <span class="n">self</span><span class="p">.</span><span class="n">stop_requested</span> <span class="o">=</span> <span class="bp">False</span>
-
-        <span class="c1"># Queue now contains tuples of (url, depth)
-</span>        <span class="n">queue</span> <span class="o">=</span> <span class="p">[(</span><span class="n">self</span><span class="p">.</span><span class="n">base_url</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
+        <span class="n">queue</span> <span class="o">=</span> <span class="p">[(</span><span class="n">self</span><span class="p">.</span><span class="n">base_url</span><span class="p">,</span> <span class="mi">0</span><span class="p">)]</span>
         <span class="n">pages_processed</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span>
 
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">Starting crawl of </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">base_url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Maximum depth: </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">max_depth</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">[INFO] Starting crawl of </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">base_url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[INFO] Maximum depth: </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">max_depth</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 
         <span class="k">while</span> <span class="n">queue</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">self</span><span class="p">.</span><span class="n">stop_requested</span><span class="p">:</span>
             <span class="n">url</span><span class="p">,</span> <span class="n">depth</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -1703,10 +1585,9 @@
                 <span class="k">continue</span>
 
             <span class="n">pages_processed</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">--- Processing page </span><span class="si">{</span><span class="n">pages_processed</span><span class="si">}</span><span class="s"> ---</span><span class="sh">"</span><span class="p">)</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">URL: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Depth: </span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s">/</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">max_depth</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Queue size: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">[INFO] Processing page </span><span class="si">{</span><span class="n">pages_processed</span><span class="si">}</span><span class="s"> at depth </span><span class="si">{</span><span class="n">depth</span><span class="si">}</span><span class="s">/</span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">max_depth</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[INFO] URL: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[INFO] Queue size: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 
             <span class="n">self</span><span class="p">.</span><span class="n">visited_urls</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 
@@ -1716,24 +1597,23 @@
                 <span class="c1"># Save the page
 </span>                <span class="n">self</span><span class="p">.</span><span class="nf">save_page</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
 
-                <span class="c1"># Only add new links if we haven't reached max_depth
+                <span class="c1"># Extract and add new links to the queue
 </span>                <span class="k">if</span> <span class="n">depth</span> <span class="o">&lt;</span> <span class="n">self</span><span class="p">.</span><span class="n">max_depth</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="c1"># Extract and add new links to the queue with incremented depth
-</span>                    <span class="n">new_links</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">extract_links</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
+                    <span class="n">new_links</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">extract_links</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">url</span><span class="p">)</span>
                     <span class="n">queue</span><span class="p">.</span><span class="nf">extend</span><span class="p">([(</span><span class="n">link</span><span class="p">,</span> <span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">new_links</span> <span class="k">if</span> <span class="n">link</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">visited_urls</span><span class="p">])</span>
 
                 <span class="c1"># Rate limiting
 </span>                <span class="k">if</span> <span class="n">queue</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">self</span><span class="p">.</span><span class="n">stop_requested</span><span class="p">:</span>
-                    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Waiting </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">rate_limit</span><span class="si">}</span><span class="s"> seconds before next page...</span><span class="sh">"</span><span class="p">)</span>
+                    <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[INFO] Waiting </span><span class="si">{</span><span class="n">self</span><span class="p">.</span><span class="n">rate_limit</span><span class="si">}</span><span class="s"> seconds before next page...</span><span class="sh">"</span><span class="p">)</span>
                     <span class="n">time</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">rate_limit</span><span class="p">)</span>
 
         <span class="n">elapsed_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">Crawling completed!</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="se">\n</span><span class="s">[INFO] Crawling completed!</span><span class="sh">"</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">stop_requested</span><span class="p">:</span>
-            <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Crawling was stopped by user</span><span class="sh">"</span><span class="p">)</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Total pages processed: </span><span class="si">{</span><span class="n">pages_processed</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Total unique URLs visited: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">visited_urls</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
-        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Total time: </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> seconds</span><span class="sh">"</span><span class="p">)</span>
+            <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">[INFO] Crawling was stopped by user</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[INFO] Total pages processed: </span><span class="si">{</span><span class="n">pages_processed</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[INFO] Total unique URLs visited: </span><span class="si">{</span><span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">visited_urls</span><span class="p">)</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+        <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">[INFO] Total time: </span><span class="si">{</span><span class="n">elapsed_time</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> seconds</span><span class="sh">"</span><span class="p">)</span>
 
 
 <span class="k">class</span> <span class="nc">WebCrawlerGUI</span><span class="p">:</span>
@@ -1741,8 +1621,8 @@
         <span class="n">self</span><span class="p">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">root</span>
         <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">"</span><span class="s">Web Crawler</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">geometry</span><span class="p">(</span><span class="sh">"</span><span class="s">600x500</span><span class="sh">"</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">crawler</span> <span class="o">=</span> <span class="bp">None</span>  <span class="c1"># Initialize crawler reference
-</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">crawler</span> <span class="o">=</span> <span class="bp">None</span>
+
         <span class="c1"># Create main frame
 </span>        <span class="n">main_frame</span> <span class="o">=</span> <span class="n">ttk</span><span class="p">.</span><span class="nc">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="sh">"</span><span class="s">10</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">main_frame</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">E</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">N</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">S</span><span class="p">))</span>
@@ -1758,8 +1638,7 @@
         <span class="n">self</span><span class="p">.</span><span class="n">output_var</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="nc">StringVar</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="nf">getcwd</span><span class="p">(),</span> <span class="sh">"</span><span class="s">downloaded_site</span><span class="sh">"</span><span class="p">))</span>
         <span class="n">self</span><span class="p">.</span><span class="n">output_entry</span> <span class="o">=</span> <span class="n">ttk</span><span class="p">.</span><span class="nc">Entry</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">output_var</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">output_entry</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">E</span><span class="p">),</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-        <span class="n">ttk</span><span class="p">.</span><span class="nc">Button</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Browse</span><span class="sh">"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">browse_output</span><span class="p">).</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                                                                               <span class="n">padx</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">ttk</span><span class="p">.</span><span class="nc">Button</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Browse</span><span class="sh">"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">browse_output</span><span class="p">).</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
         <span class="c1"># Depth input
 </span>        <span class="n">ttk</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Maximum depth:</span><span class="sh">"</span><span class="p">).</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -1767,9 +1646,15 @@
         <span class="n">depth_entry</span> <span class="o">=</span> <span class="n">ttk</span><span class="p">.</span><span class="nc">Entry</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">depth_var</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
         <span class="n">depth_entry</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
+        <span class="c1"># Rate limit input
+</span>        <span class="n">ttk</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Rate limit (seconds):</span><span class="sh">"</span><span class="p">).</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">rate_limit_var</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="nc">StringVar</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="sh">"</span><span class="s">1</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">rate_limit_entry</span> <span class="o">=</span> <span class="n">ttk</span><span class="p">.</span><span class="nc">Entry</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">rate_limit_var</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">rate_limit_entry</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
         <span class="c1"># Progress frame
 </span>        <span class="n">progress_frame</span> <span class="o">=</span> <span class="n">ttk</span><span class="p">.</span><span class="nc">LabelFrame</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Progress</span><span class="sh">"</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="sh">"</span><span class="s">5</span><span class="sh">"</span><span class="p">)</span>
-        <span class="n">progress_frame</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">E</span><span class="p">),</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">progress_frame</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">E</span><span class="p">),</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
         <span class="c1"># Progress bar
 </span>        <span class="n">self</span><span class="p">.</span><span class="n">progress_var</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="nc">StringVar</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="sh">"</span><span class="s">Ready</span><span class="sh">"</span><span class="p">)</span>
@@ -1777,16 +1662,16 @@
 
         <span class="c1"># Log text area
 </span>        <span class="n">self</span><span class="p">.</span><span class="n">log_text</span> <span class="o">=</span> <span class="n">tk</span><span class="p">.</span><span class="nc">Text</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">WORD</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">log_text</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">E</span><span class="p">),</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">log_text</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">W</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">E</span><span class="p">),</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
         <span class="c1"># Scrollbar for log
 </span>        <span class="n">scrollbar</span> <span class="o">=</span> <span class="n">ttk</span><span class="p">.</span><span class="nc">Scrollbar</span><span class="p">(</span><span class="n">main_frame</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">VERTICAL</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">log_text</span><span class="p">.</span><span class="n">yview</span><span class="p">)</span>
-        <span class="n">scrollbar</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">N</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">S</span><span class="p">))</span>
+        <span class="n">scrollbar</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">N</span><span class="p">,</span> <span class="n">tk</span><span class="p">.</span><span class="n">S</span><span class="p">))</span>
         <span class="n">self</span><span class="p">.</span><span class="n">log_text</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">yscrollcommand</span><span class="o">=</span><span class="n">scrollbar</span><span class="p">.</span><span class="nb">set</span><span class="p">)</span>
 
         <span class="c1"># Buttons frame
 </span>        <span class="n">button_frame</span> <span class="o">=</span> <span class="n">ttk</span><span class="p">.</span><span class="nc">Frame</span><span class="p">(</span><span class="n">main_frame</span><span class="p">)</span>
-        <span class="n">button_frame</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">button_frame</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
         <span class="c1"># Start button
 </span>        <span class="n">self</span><span class="p">.</span><span class="n">start_button</span> <span class="o">=</span> <span class="n">ttk</span><span class="p">.</span><span class="nc">Button</span><span class="p">(</span><span class="n">button_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Start Crawling</span><span class="sh">"</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">start_crawling</span><span class="p">)</span>
@@ -1803,29 +1688,26 @@
 </span>        <span class="n">sys</span><span class="p">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">self</span>
 
     <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Handle stdout redirection</span><span class="sh">"""</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">log_text</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="n">timestamp</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="sh">"</span><span class="s">%Y-%m-%d %H:%M:%S</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">log_text</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="s">[</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s">] </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">log_text</span><span class="p">.</span><span class="nf">see</span><span class="p">(</span><span class="n">tk</span><span class="p">.</span><span class="n">END</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">root</span><span class="p">.</span><span class="nf">update_idletasks</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">flush</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Required for stdout redirection</span><span class="sh">"""</span>
         <span class="k">pass</span>
 
     <span class="k">def</span> <span class="nf">browse_output</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Open directory browser</span><span class="sh">"""</span>
         <span class="n">directory</span> <span class="o">=</span> <span class="n">filedialog</span><span class="p">.</span><span class="nf">askdirectory</span><span class="p">(</span><span class="n">initialdir</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">output_var</span><span class="p">.</span><span class="nf">get</span><span class="p">())</span>
         <span class="k">if</span> <span class="n">directory</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="n">output_var</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="n">directory</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">stop_crawling</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Stop the crawling process</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">stop_button</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="sh">'</span><span class="s">disabled</span><span class="sh">'</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">progress_var</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="sh">"</span><span class="s">Stopping...</span><span class="sh">"</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">crawler</span><span class="p">.</span><span class="nf">stop</span><span class="p">()</span>  <span class="c1"># Request the crawler to stop
-</span>
+        <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">crawler</span><span class="p">:</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">crawler</span><span class="p">.</span><span class="nf">stop</span><span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">start_crawling</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Start the crawling process</span><span class="sh">"""</span>
         <span class="c1"># Validate inputs
 </span>        <span class="n">url</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">url_var</span><span class="p">.</span><span class="nf">get</span><span class="p">().</span><span class="nf">strip</span><span class="p">()</span>
         <span class="n">output_dir</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">output_var</span><span class="p">.</span><span class="nf">get</span><span class="p">().</span><span class="nf">strip</span><span class="p">()</span>
@@ -1836,6 +1718,14 @@
                 <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Depth must be at least 1</span><span class="sh">"</span><span class="p">)</span>
         <span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">messagebox</span><span class="p">.</span><span class="nf">showerror</span><span class="p">(</span><span class="sh">"</span><span class="s">Error</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Invalid depth value. Please enter a positive number.</span><span class="sh">"</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">rate_limit</span> <span class="o">=</span> <span class="nf">float</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">rate_limit_var</span><span class="p">.</span><span class="nf">get</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">rate_limit</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="nc">ValueError</span><span class="p">(</span><span class="sh">"</span><span class="s">Rate limit must be non-negative</span><span class="sh">"</span><span class="p">)</span>
+        <span class="k">except</span> <span class="nb">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">messagebox</span><span class="p">.</span><span class="nf">showerror</span><span class="p">(</span><span class="sh">"</span><span class="s">Error</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Invalid rate limit value. Please enter a non-negative number.</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span>
 
         <span class="k">if</span> <span class="ow">not</span> <span class="n">url</span><span class="p">:</span>
@@ -1858,7 +1748,7 @@
         <span class="c1"># Start crawling in a separate thread
 </span>        <span class="k">def</span> <span class="nf">crawl_thread</span><span class="p">():</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">self</span><span class="p">.</span><span class="n">crawler</span> <span class="o">=</span> <span class="nc">WebsiteCrawler</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">depth</span><span class="p">)</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">crawler</span> <span class="o">=</span> <span class="nc">WebsiteCrawler</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">rate_limit</span><span class="p">)</span>
                 <span class="n">self</span><span class="p">.</span><span class="n">stop_button</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="sh">'</span><span class="s">normal</span><span class="sh">'</span><span class="p">)</span>  <span class="c1"># Enable stop button
 </span>                <span class="n">self</span><span class="p">.</span><span class="n">crawler</span><span class="p">.</span><span class="nf">crawl</span><span class="p">()</span>
                 <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">crawler</span><span class="p">.</span><span class="n">stop_requested</span><span class="p">:</span>
@@ -1871,7 +1761,6 @@
         <span class="n">threading</span><span class="p">.</span><span class="nc">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">crawl_thread</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nf">start</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">crawling_finished</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">success</span><span class="p">,</span> <span class="n">error_message</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Called when crawling is complete</span><span class="sh">"""</span>
         <span class="c1"># Re-enable inputs
 </span>        <span class="n">self</span><span class="p">.</span><span class="n">start_button</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="sh">'</span><span class="s">normal</span><span class="sh">'</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">url_entry</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="sh">'</span><span class="s">normal</span><span class="sh">'</span><span class="p">)</span>
@@ -1914,18 +1803,17 @@
 </ol>
 
 <h3 id="method-overview"><span class="me-2">Method Overview</span><a href="#method-overview" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<pre><code class="language-mermaid">graph TD
-    A[Start Crawling] --&gt; B{Validate Inputs}
-    B --&gt;|Valid| C[Initialize Crawler]
-    C --&gt; D[Crawl Base URL]
-    D --&gt; E[Process Queue]
-    E --&gt; F[Download Page]
-    F --&gt; G[Save Content]
-    G --&gt; H[Extract Links]
-    H --&gt; I[Add to Queue]
-    I --&gt; J{More Pages?}
-    J --&gt;|Yes| E
-    J --&gt;|No| K[Finish]
+<pre><code class="language-mermaid">    A [Start Crawling] --&gt; B {Validate Inputs}
+    B --&gt; |Valid| C [Initialize Crawler]
+    C --&gt; D [Crawl Base URL]
+    D --&gt; E [Process Queue]
+    E --&gt; F [Download Page]
+    F --&gt; G [Save Content]
+    G --&gt; H [Extract Links]
+    H --&gt; I [Add to Queue]
+    I --&gt; J {More Pages?}
+    J --&gt; |Yes| E
+    J --&gt; |No| K [Finish]
 </code></pre>
 
 <hr />
@@ -2101,35 +1989,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cors-guide">Guide to Cross-Origin Resource Sharing (CORS)</a>
+          <a href="/posts/cors-guide">Cross-Origin Resource Sharing (CORS)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/csrf-guide">Guide to Cross-Site Request Forgery (CSRF)</a>
+          <a href="/posts/csrf-guide">Cross-Site Request Forgery (CSRF)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ssrf-guide">Guide to Server-Side Request Forgery (SSRF)</a>
+          <a href="/posts/python-web-scraper">Web Scraper and Crawling Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/find-origin-ip-website">Discover the Origin IP Address of a Website and Identify WAF Protection</a>
+          <a href="/posts/python-network-monitor-tool">Network Monitor Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ffuf-Fuzzing-Guide">FFUF: Fuzzing Guide to Web Applications</a>
+          <a href="/posts/python-metadata-finder">Metadata Finder</a>
         </li>
       
     </ul>
@@ -2253,60 +2141,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2316,122 +2150,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2521,6 +2239,162 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2551,6 +2425,40 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2866,6 +2774,18 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2879,6 +2799,46 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/python-github-scraper" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740441600"
+  data-df="ll"
+  
+>
+  Feb 25, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Github Scraper</h4>
+              <div class="text-muted">
+                <p>Tool designed to scrape and analyze repositories from GitHub based on customizable search criteria.
+
+Github Scraper Repository
+
+  Link: Github Scraper Repository
+
+
+
+
+Features
+
+
+  Customizable Searc...</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/posts/python-honeypot-suite" class="post-preview card h-100">
@@ -2936,41 +2896,6 @@
           </a>
         </article>
       
-        <article class="col">
-          <a href="/posts/python-metadata-finder" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1737849600"
-  data-df="ll"
-  
->
-  Jan 26, 2025
-</time>
-
-              <h4 class="pt-0 my-2">Metadata Finder</h4>
-              <div class="text-muted">
-                <p>A comprehensive tool for finding, managing, and removing metadata from images.
-
-
-
-Features
-
-
-  Metadata Extraction: Extracts detailed metadata such as EXIF data, GPS coordinates, file size, checksu...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2992,11 +2917,11 @@ Features
 
   
     <a
-      href="/posts/waf-bypass"
+      href="/posts/find-origin-ip-website"
       class="btn btn-outline-primary"
       aria-label="Newer"
     >
-      <p>WAF Bypass: Techniques, Tools, and Tactics for Penetration Testers</p>
+      <p>Discover the Origin IP Address of a Website and Identify WAF Protection</p>
     </a>
   
 </nav>
@@ -3163,60 +3088,6 @@ Features
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3226,122 +3097,6 @@ Features
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3431,6 +3186,162 @@ Features
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3461,6 +3372,40 @@ Features
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     

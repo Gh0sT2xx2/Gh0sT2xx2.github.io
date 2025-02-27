@@ -15,7 +15,7 @@ Network scanning tool designed for cybersecurity. It offers features such as por
 
 ## Network Scanner Repository
 
-- **Link**: [Network Scanner Repository](https://github.com/Diogo-Lages/Network_Scanner.py)
+- **Link**: [Network Scanner Repository](https://github.com/Diogo-Lages/Network-Scanner)
 
 ## Features
 

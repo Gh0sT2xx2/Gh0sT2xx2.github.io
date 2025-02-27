@@ -45,7 +45,7 @@
 <meta property="twitter:title" content="Network Monitor Tool" />
 <meta name="twitter:site" content="@Diogo-Lages" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-19T00:00:00+00:00","datePublished":"2025-01-19T00:00:00+00:00","description":"The Network Monitor is a tool designed to capture, analyze, and display real-time network traffic. It provides insights into network packets, including source and destination IP addresses, protocols, ports, process names, packet sizes, and geographical locations of remote IPs. Additionally, it includes a real-time bandwidth usage graph to visualize inbound and outbound traffic.","headline":"Network Monitor Tool","image":"http://localhost:4000/assets/img/thumbnails/Network-Monitor.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-network-monitor-tool"},"url":"http://localhost:4000/posts/python-network-monitor-tool"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-02-26T20:27:14+00:00","datePublished":"2025-01-19T00:00:00+00:00","description":"The Network Monitor is a tool designed to capture, analyze, and display real-time network traffic. It provides insights into network packets, including source and destination IP addresses, protocols, ports, process names, packet sizes, and geographical locations of remote IPs. Additionally, it includes a real-time bandwidth usage graph to visualize inbound and outbound traffic.","headline":"Network Monitor Tool","image":"http://localhost:4000/assets/img/thumbnails/Network-Monitor.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/python-network-monitor-tool"},"url":"http://localhost:4000/posts/python-network-monitor-tool"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -822,6 +822,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740601634"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 26, 2025
+</time>
+
+        </span>
+      
 
       
         
@@ -873,9 +896,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1696 words"
+  title="1571 words"
 >
-  <em>9 min</em> read</span>
+  <em>8 min</em> read</span>
 
         </div>
       </div>
@@ -952,7 +975,7 @@
 
 <h2 id="full-code"><span class="me-2">Full Code</span><a href="#full-code" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>Github Repository:  <a href="https://github.com/Diogo-Lages/Network_Monitor.py">Network Monitor Tool</a></p>
+<p>Github Repository:  <a href="https://github.com/Diogo-Lages/Network-Monitor">Network Monitor Tool</a></p>
 
 <div class="language-python highlighter-rouge"><div class="code-header">
         <span data-label-text="Python"><i class="fas fa-code fa-fw small"></i></span>
@@ -1248,7 +1271,6 @@
 290
 291
 292
-293
 </pre></td><td class="rouge-code"><pre><span class="kn">import</span> <span class="n">psutil</span>
 <span class="kn">from</span> <span class="n">scapy.layers.inet</span> <span class="kn">import</span> <span class="n">IP</span><span class="p">,</span> <span class="n">TCP</span><span class="p">,</span> <span class="n">UDP</span><span class="p">,</span> <span class="n">ICMP</span>
 <span class="kn">from</span> <span class="n">scapy.layers.dns</span> <span class="kn">import</span> <span class="n">DNS</span>
@@ -1264,22 +1286,22 @@
 <span class="kn">from</span> <span class="n">matplotlib.backends.backend_tkagg</span> <span class="kn">import</span> <span class="n">FigureCanvasTkAgg</span>
 <span class="kn">import</span> <span class="n">requests</span>
 
+
 <span class="c1"># ANSI Color Codes
-</span><span class="n">RESTART</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0m</span><span class="sh">'</span>  <span class="c1"># Reset to default
-</span><span class="n">B</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;30m</span><span class="sh">'</span>  <span class="c1"># Black
-</span><span class="n">R</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;31m</span><span class="sh">'</span>  <span class="c1"># Red
-</span><span class="n">G</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;32m</span><span class="sh">'</span>  <span class="c1"># Green
-</span><span class="n">Y</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;33m</span><span class="sh">'</span>  <span class="c1"># Yellow
-</span><span class="n">BLU</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;34m</span><span class="sh">'</span>  <span class="c1"># Blue
-</span><span class="n">P</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;35m</span><span class="sh">'</span>  <span class="c1"># Purple
-</span><span class="n">C</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;36m</span><span class="sh">'</span>  <span class="c1"># Cyan
-</span><span class="n">W</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;37m</span><span class="sh">'</span>  <span class="c1"># White
-</span>
-<span class="c1"># Temporary LocalHost IP Address
-</span><span class="n">IP_ADDRESS</span> <span class="o">=</span> <span class="sh">"</span><span class="s">127.0.0.1</span><span class="sh">"</span>
+</span><span class="n">RESTART</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0m</span><span class="sh">'</span>
+<span class="n">B</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;30m</span><span class="sh">'</span>
+<span class="n">R</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;31m</span><span class="sh">'</span>
+<span class="n">G</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;32m</span><span class="sh">'</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;33m</span><span class="sh">'</span>
+<span class="n">BLU</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;34m</span><span class="sh">'</span>
+<span class="n">P</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;35m</span><span class="sh">'</span>
+<span class="n">C</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;36m</span><span class="sh">'</span>
+<span class="n">W</span> <span class="o">=</span> <span class="sh">'</span><span class="se">\033</span><span class="s">[0;37m</span><span class="sh">'</span>
+
+<span class="n">IP_ADDRESS</span> <span class="o">=</span> <span class="sh">"</span><span class="s">127.0.0.1</span><span class="sh">"</span>
+
 
 <span class="k">def</span> <span class="nf">get_ip_address</span><span class="p">():</span>
-    <span class="sh">"""</span><span class="s">Get the local machine</span><span class="sh">'</span><span class="s">s IP address.</span><span class="sh">"""</span>
     <span class="n">system</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="nf">system</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">system</span> <span class="o">==</span> <span class="sh">"</span><span class="s">Windows</span><span class="sh">"</span><span class="p">:</span>
         <span class="n">hostname</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="nf">gethostname</span><span class="p">()</span>
@@ -1293,11 +1315,8 @@
             <span class="n">ip_address</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Unable to get IP address</span><span class="sh">"</span>
     <span class="k">return</span> <span class="n">ip_address</span>
 
+
 <span class="k">def</span> <span class="nf">get_process_name_by_port</span><span class="p">(</span><span class="n">port</span><span class="p">):</span>
-    <span class="sh">"""</span><span class="s">
-    Get the process name associated with a given port.
-    Uses psutil.net_connections() to map ports to PIDs.
-    </span><span class="sh">"""</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">conn</span> <span class="ow">in</span> <span class="n">psutil</span><span class="p">.</span><span class="nf">net_connections</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="sh">'</span><span class="s">inet</span><span class="sh">'</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">conn</span><span class="p">.</span><span class="n">laddr</span><span class="p">.</span><span class="n">port</span> <span class="o">==</span> <span class="n">port</span> <span class="ow">or</span> <span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="n">raddr</span> <span class="ow">and</span> <span class="n">conn</span><span class="p">.</span><span class="n">raddr</span><span class="p">.</span><span class="n">port</span> <span class="o">==</span> <span class="n">port</span><span class="p">):</span>
@@ -1311,15 +1330,12 @@
         <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error retrieving process name: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
         <span class="k">return</span> <span class="sh">"</span><span class="s">Unknown</span><span class="sh">"</span>
 
+
 <span class="k">class</span> <span class="nc">GeoIPLookup</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
         <span class="n">self</span><span class="p">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span>
 
     <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">ip</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">
-        Perform a GeoIP lookup for the given IP address.
-        Returns location details or </span><span class="sh">"</span><span class="s">Unknown Location</span><span class="sh">"</span><span class="s"> on failure.
-        </span><span class="sh">"""</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">http://api.ipstack.com/</span><span class="si">{</span><span class="n">ip</span><span class="si">}</span><span class="sh">"</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">access_key</span><span class="sh">"</span><span class="p">:</span> <span class="n">self</span><span class="p">.</span><span class="n">api_key</span><span class="p">})</span>
             <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
@@ -1332,6 +1348,7 @@
         <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Error during GeoIP lookup: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
             <span class="k">return</span> <span class="sh">"</span><span class="s">Error during lookup</span><span class="sh">"</span>
+
 
 <span class="k">class</span> <span class="nc">NetworkMonitorApp</span><span class="p">:</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -1406,9 +1423,9 @@
         <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_out</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">def</span> <span class="nf">packet_callback</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">packet</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Callback function to process each captured packet.</span><span class="sh">"""</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">self</span><span class="p">.</span><span class="n">running</span><span class="p">:</span>
             <span class="k">return</span>
+
         <span class="k">if</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">IP</span><span class="p">):</span>
             <span class="n">ip_layer</span> <span class="o">=</span> <span class="n">packet</span><span class="p">[</span><span class="n">IP</span><span class="p">]</span>
             <span class="n">src_ip</span> <span class="o">=</span> <span class="n">ip_layer</span><span class="p">.</span><span class="n">src</span>
@@ -1417,36 +1434,37 @@
             <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">N/A</span><span class="sh">"</span>
             <span class="n">port</span> <span class="o">=</span> <span class="sh">"</span><span class="s">N/A</span><span class="sh">"</span>
             <span class="n">size</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="n">packet</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">proto</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>  <span class="c1"># TCP
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">TCP</span><span class="sh">"</span>
+
+            <span class="k">if</span> <span class="n">proto</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">TCP</span><span class="sh">"</span>
                 <span class="k">if</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">TCP</span><span class="p">):</span>
                     <span class="n">port</span> <span class="o">=</span> <span class="n">packet</span><span class="p">[</span><span class="n">TCP</span><span class="p">].</span><span class="n">sport</span>
                     <span class="n">process_name</span> <span class="o">=</span> <span class="nf">get_process_name_by_port</span><span class="p">(</span><span class="n">packet</span><span class="p">[</span><span class="n">TCP</span><span class="p">].</span><span class="n">sport</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">proto</span> <span class="o">==</span> <span class="mi">17</span><span class="p">:</span>  <span class="c1"># UDP
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">UDP</span><span class="sh">"</span>
+            <span class="k">elif</span> <span class="n">proto</span> <span class="o">==</span> <span class="mi">17</span><span class="p">:</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">UDP</span><span class="sh">"</span>
                 <span class="k">if</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">UDP</span><span class="p">):</span>
                     <span class="n">port</span> <span class="o">=</span> <span class="n">packet</span><span class="p">[</span><span class="n">UDP</span><span class="p">].</span><span class="n">sport</span>
                     <span class="n">process_name</span> <span class="o">=</span> <span class="nf">get_process_name_by_port</span><span class="p">(</span><span class="n">packet</span><span class="p">[</span><span class="n">UDP</span><span class="p">].</span><span class="n">sport</span><span class="p">)</span>
-            <span class="k">elif</span> <span class="n">proto</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># ICMP
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ICMP</span><span class="sh">"</span>
+            <span class="k">elif</span> <span class="n">proto</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">ICMP</span><span class="sh">"</span>
                 <span class="n">process_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">System</span><span class="sh">"</span>
-            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">DNS</span><span class="p">):</span>  <span class="c1"># DNS
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">DNS</span><span class="sh">"</span>
+            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">DNS</span><span class="p">):</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">DNS</span><span class="sh">"</span>
                 <span class="n">process_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">System</span><span class="sh">"</span>
-            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">Raw</span><span class="p">)</span> <span class="ow">and</span> <span class="sa">b</span><span class="sh">"</span><span class="s">HTTP</span><span class="sh">"</span> <span class="ow">in</span> <span class="nf">bytes</span><span class="p">(</span><span class="n">packet</span><span class="p">[</span><span class="n">Raw</span><span class="p">]):</span>  <span class="c1"># HTTP
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">HTTP</span><span class="sh">"</span>
+            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">Raw</span><span class="p">)</span> <span class="ow">and</span> <span class="sa">b</span><span class="sh">"</span><span class="s">HTTP</span><span class="sh">"</span> <span class="ow">in</span> <span class="nf">bytes</span><span class="p">(</span><span class="n">packet</span><span class="p">[</span><span class="n">Raw</span><span class="p">]):</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">HTTP</span><span class="sh">"</span>
                 <span class="n">process_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">System</span><span class="sh">"</span>
-            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">TCP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">packet</span><span class="p">[</span><span class="n">TCP</span><span class="p">].</span><span class="n">dport</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>  <span class="c1"># FTP
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">FTP</span><span class="sh">"</span>
+            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">TCP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">packet</span><span class="p">[</span><span class="n">TCP</span><span class="p">].</span><span class="n">dport</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">FTP</span><span class="sh">"</span>
                 <span class="n">process_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">System</span><span class="sh">"</span>
-            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">TCP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">packet</span><span class="p">[</span><span class="n">TCP</span><span class="p">].</span><span class="n">dport</span> <span class="o">==</span> <span class="mi">25</span><span class="p">:</span>  <span class="c1"># SMTP
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">SMTP</span><span class="sh">"</span>
+            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">TCP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">packet</span><span class="p">[</span><span class="n">TCP</span><span class="p">].</span><span class="n">dport</span> <span class="o">==</span> <span class="mi">25</span><span class="p">:</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">SMTP</span><span class="sh">"</span>
                 <span class="n">process_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">System</span><span class="sh">"</span>
-            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">UDP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">packet</span><span class="p">[</span><span class="n">UDP</span><span class="p">].</span><span class="n">dport</span> <span class="o">==</span> <span class="mi">161</span><span class="p">:</span>  <span class="c1"># SNMP
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">SNMP</span><span class="sh">"</span>
+            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">UDP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">packet</span><span class="p">[</span><span class="n">UDP</span><span class="p">].</span><span class="n">dport</span> <span class="o">==</span> <span class="mi">161</span><span class="p">:</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">SNMP</span><span class="sh">"</span>
                 <span class="n">process_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">System</span><span class="sh">"</span>
-            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">TCP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">packet</span><span class="p">[</span><span class="n">TCP</span><span class="p">].</span><span class="n">dport</span> <span class="o">==</span> <span class="mi">143</span><span class="p">:</span>  <span class="c1"># IMAP
-</span>                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">IMAP</span><span class="sh">"</span>
+            <span class="k">elif</span> <span class="n">packet</span><span class="p">.</span><span class="nf">haslayer</span><span class="p">(</span><span class="n">TCP</span><span class="p">)</span> <span class="ow">and</span> <span class="n">packet</span><span class="p">[</span><span class="n">TCP</span><span class="p">].</span><span class="n">dport</span> <span class="o">==</span> <span class="mi">143</span><span class="p">:</span>
+                <span class="n">protocol</span> <span class="o">=</span> <span class="sh">"</span><span class="s">IMAP</span><span class="sh">"</span>
                 <span class="n">process_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">System</span><span class="sh">"</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">process_name</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Unknown</span><span class="sh">"</span>
@@ -1469,7 +1487,6 @@
             <span class="n">self</span><span class="p">.</span><span class="nf">update_bandwidth_graph</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">start_monitoring</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Start capturing network packets.</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">True</span>
         <span class="n">self</span><span class="p">.</span><span class="n">start_button</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">DISABLED</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">stop_button</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">NORMAL</span><span class="p">)</span>
@@ -1478,41 +1495,47 @@
         <span class="n">self</span><span class="p">.</span><span class="n">sniff_thread</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">stop_monitoring</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Stop capturing network packets.</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">False</span>
         <span class="n">self</span><span class="p">.</span><span class="n">start_button</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">NORMAL</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">stop_button</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="n">tk</span><span class="p">.</span><span class="n">DISABLED</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">start_sniffing</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Start the packet sniffing process.</span><span class="sh">"""</span>
         <span class="nf">sniff</span><span class="p">(</span><span class="n">prn</span><span class="o">=</span><span class="n">self</span><span class="p">.</span><span class="n">packet_callback</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="sh">"</span><span class="s">ip</span><span class="sh">"</span><span class="p">,</span> <span class="n">store</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">update_bandwidth_graph</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Update the real-time bandwidth graph.</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="nf">time</span><span class="p">())</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_in</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">total_bytes_in</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_out</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">total_bytes_out</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>  <span class="c1"># Limit data points to 10
-</span>            <span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_in</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">total_bytes_in</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_out</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">total_bytes_out</span> <span class="o">/</span> <span class="mi">1024</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nf">len</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_in</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_out</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
         <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">clear</span><span class="p">()</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_in</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">Inbound</span><span class="sh">"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_out</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">Outbound</span><span class="sh">"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_in</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">Inbound (KB)</span><span class="sh">"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">"</span><span class="s">blue</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">timestamps</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">bandwidth_out</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sh">"</span><span class="s">Outbound (KB)</span><span class="sh">"</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="sh">"</span><span class="s">red</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">set_title</span><span class="p">(</span><span class="sh">"</span><span class="s">Real-Time Bandwidth Usage</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">set_xlabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Time</span><span class="sh">"</span><span class="p">)</span>
-        <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Bytes</span><span class="sh">"</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">set_ylabel</span><span class="p">(</span><span class="sh">"</span><span class="s">Data (KB)</span><span class="sh">"</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">legend</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">ax</span><span class="p">.</span><span class="nf">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
         <span class="n">self</span><span class="p">.</span><span class="n">canvas</span><span class="p">.</span><span class="nf">draw</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="nf">apply_filters</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Apply filters based on user input.</span><span class="sh">"""</span>
-        <span class="n">ip_filter</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">ip_filter</span><span class="p">.</span><span class="nf">get</span><span class="p">().</span><span class="nf">strip</span><span class="p">()</span>
-        <span class="n">port_filter</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">port_filter</span><span class="p">.</span><span class="nf">get</span><span class="p">().</span><span class="nf">strip</span><span class="p">()</span>
-        <span class="n">protocol_filter</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">protocol_filter</span><span class="p">.</span><span class="nf">get</span><span class="p">().</span><span class="nf">strip</span><span class="p">()</span>
+        <span class="n">ip_filter</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">ip_filter</span><span class="p">.</span><span class="nf">get</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">lower</span><span class="p">()</span>
+        <span class="n">port_filter</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">port_filter</span><span class="p">.</span><span class="nf">get</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">lower</span><span class="p">()</span>
+        <span class="n">protocol_filter</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">protocol_filter</span><span class="p">.</span><span class="nf">get</span><span class="p">().</span><span class="nf">strip</span><span class="p">().</span><span class="nf">lower</span><span class="p">()</span>
+
         <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">tree</span><span class="p">.</span><span class="nf">get_children</span><span class="p">():</span>
             <span class="n">values</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">tree</span><span class="p">.</span><span class="nf">item</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="sh">"</span><span class="s">values</span><span class="sh">"</span><span class="p">)</span>
-            <span class="n">src_ip</span><span class="p">,</span> <span class="n">dst_ip</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">values</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">src_ip</span><span class="p">,</span> <span class="n">dst_ip</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">lower</span><span class="p">(),</span>
+                <span class="n">values</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">lower</span><span class="p">(),</span>
+                <span class="n">values</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nf">lower</span><span class="p">(),</span>
+                <span class="n">values</span><span class="p">[</span><span class="mi">4</span><span class="p">].</span><span class="nf">lower</span><span class="p">(),</span>
+            <span class="p">)</span>
+
             <span class="nf">if </span><span class="p">(</span>
                 <span class="p">(</span><span class="ow">not</span> <span class="n">ip_filter</span> <span class="ow">or</span> <span class="n">ip_filter</span> <span class="ow">in</span> <span class="n">src_ip</span> <span class="ow">or</span> <span class="n">ip_filter</span> <span class="ow">in</span> <span class="n">dst_ip</span><span class="p">)</span>
                 <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">port_filter</span> <span class="ow">or</span> <span class="n">port_filter</span> <span class="o">==</span> <span class="n">port</span><span class="p">)</span>
@@ -1523,12 +1546,10 @@
                 <span class="n">self</span><span class="p">.</span><span class="n">tree</span><span class="p">.</span><span class="nf">detach</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">reset_filters</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Reset all filters and restore the default view.</span><span class="sh">"""</span>
         <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">tree</span><span class="p">.</span><span class="nf">get_children</span><span class="p">():</span>
             <span class="n">self</span><span class="p">.</span><span class="n">tree</span><span class="p">.</span><span class="nf">reattach</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="sh">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">toggle_auto_scroll</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
-        <span class="sh">"""</span><span class="s">Toggle auto-scroll functionality.</span><span class="sh">"""</span>
         <span class="n">self</span><span class="p">.</span><span class="n">auto_scroll</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">self</span><span class="p">.</span><span class="n">auto_scroll</span>
         <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">auto_scroll</span><span class="p">:</span>
             <span class="n">self</span><span class="p">.</span><span class="n">toggle_scroll_button</span><span class="p">.</span><span class="nf">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sh">"</span><span class="s">Disable Auto Scroll</span><span class="sh">"</span><span class="p">)</span>
@@ -1738,35 +1759,35 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/cors-guide">Guide to Cross-Origin Resource Sharing (CORS)</a>
+          <a href="/posts/cors-guide">Cross-Origin Resource Sharing (CORS)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/csrf-guide">Guide to Cross-Site Request Forgery (CSRF)</a>
+          <a href="/posts/csrf-guide">Cross-Site Request Forgery (CSRF)</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ssrf-guide">Guide to Server-Side Request Forgery (SSRF)</a>
+          <a href="/posts/python-web-scraper">Web Scraper and Crawling Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/find-origin-ip-website">Discover the Origin IP Address of a Website and Identify WAF Protection</a>
+          <a href="/posts/python-network-monitor-tool">Network Monitor Tool</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ffuf-Fuzzing-Guide">FFUF: Fuzzing Guide to Web Applications</a>
+          <a href="/posts/python-metadata-finder">Metadata Finder</a>
         </li>
       
     </ul>
@@ -1890,60 +1911,6 @@
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1953,122 +1920,6 @@
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2158,6 +2009,162 @@
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -2188,6 +2195,40 @@
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
@@ -2503,6 +2544,18 @@
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2516,6 +2569,46 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/python-github-scraper" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740441600"
+  data-df="ll"
+  
+>
+  Feb 25, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Github Scraper</h4>
+              <div class="text-muted">
+                <p>Tool designed to scrape and analyze repositories from GitHub based on customizable search criteria.
+
+Github Scraper Repository
+
+  Link: Github Scraper Repository
+
+
+
+
+Features
+
+
+  Customizable Searc...</p>
+              </div>
+            </div>
+          </a>
+        </article>
       
         <article class="col">
           <a href="/posts/python-honeypot-suite" class="post-preview card h-100">
@@ -2568,41 +2661,6 @@
               <h4 class="pt-0 my-2">Network Scanner</h4>
               <div class="text-muted">
                 <p>Network scanning tool designed for cybersecurity. It offers features such as port scanning, service detection, OS fingerprinting, vulnerability scanning, traceroute, geolocation, WHOIS lookup, and ...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/python-metadata-finder" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1737849600"
-  data-df="ll"
-  
->
-  Jan 26, 2025
-</time>
-
-              <h4 class="pt-0 my-2">Metadata Finder</h4>
-              <div class="text-muted">
-                <p>A comprehensive tool for finding, managing, and removing metadata from images.
-
-
-
-Features
-
-
-  Metadata Extraction: Extracts detailed metadata such as EXIF data, GPS coordinates, file size, checksu...</p>
               </div>
             </div>
           </a>
@@ -2804,60 +2862,6 @@ Features
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2867,122 +2871,6 @@ Features
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -3072,6 +2960,162 @@ Features
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
         
         
@@ -3102,6 +3146,40 @@ Features
     
     
       
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
     
   
     
