@@ -30,23 +30,26 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Web Pentesting" />
+<meta property="og:title" content="Server-Side Request Forgery (SSRF)" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity." />
-<meta property="og:description" content="Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity." />
-<link rel="canonical" href="http://localhost:4000/tags/web-pentesting/" />
-<meta property="og:url" content="http://localhost:4000/tags/web-pentesting/" />
+<meta name="description" content="Coming-Soon" />
+<meta property="og:description" content="Coming-Soon" />
+<link rel="canonical" href="http://localhost:4000/posts/bug-bounty/ssrf" />
+<meta property="og:url" content="http://localhost:4000/posts/bug-bounty/ssrf" />
 <meta property="og:site_name" content="Diogo Lages" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Web Pentesting" />
+<meta property="og:image" content="http://localhost:4000/assets/img/thumbnails/ssrf.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-01-30T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/img/thumbnails/ssrf.png" />
+<meta property="twitter:title" content="Server-Side Request Forgery (SSRF)" />
 <meta name="twitter:site" content="@Diogo-Lages" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.","headline":"Web Pentesting","url":"http://localhost:4000/tags/web-pentesting/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-30T00:00:00+00:00","datePublished":"2025-01-30T00:00:00+00:00","description":"Coming-Soon","headline":"Server-Side Request Forgery (SSRF)","image":"http://localhost:4000/assets/img/thumbnails/ssrf.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/bug-bounty/ssrf"},"url":"http://localhost:4000/posts/bug-bounty/ssrf"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>Web Pentesting | Diogo Lages
+  <title>Server-Side Request Forgery (SSRF) | Diogo Lages
   </title>
 
   <!--
@@ -110,9 +113,16 @@
   <!-- 3rd-party Dependencies -->
 
   
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.32.2/dist/tocbot.min.css">
   
 
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.min.css">
+  
+
+  
+    <!-- Image Popup -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css">
   
 
   <!-- Scripts -->
@@ -128,6 +138,13 @@
 <!-- layout specified -->
 
 
+  
+
+  
+    <!-- image lazy-loading & popup & clipboard -->
+    
+  
+
 
 
 
@@ -177,9 +194,30 @@
 
   
 
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
+
+  
+    
+
+    
+
+  
 
 
-  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
+
+  <script defer src="https://cdn.jsdelivr.net/combine/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js,npm/loading-attribute-polyfill@2.1.1/dist/loading-attribute-polyfill.umd.min.js,npm/glightbox@3.3.0/dist/js/glightbox.min.js,npm/clipboard@2.0.11/dist/clipboard.min.js,npm/dayjs@1.11.13/dayjs.min.js,npm/dayjs@1.11.13/locale/en.js,npm/dayjs@1.11.13/plugin/relativeTime.js,npm/dayjs@1.11.13/plugin/localizedFormat.js"></script>
 
 
 
@@ -187,11 +225,15 @@
 
 
 
-<script defer src="/assets/js/dist/misc.min.js"></script>
+<script defer src="/assets/js/dist/post.min.js"></script>
 
 
 
 <!-- Pageviews -->
+
+  
+
+  
 
 
 
@@ -400,14 +442,12 @@
           
         
           
-            <span>
-              <a href="/tags/">Tags</a>
-            </span>
+        
           
         
           
             
-              <span>Web Pentesting</span>
+              <span>Server-Side Request Forgery (SSRF)</span>
             
 
           
@@ -421,7 +461,7 @@
     </button>
 
     <div id="topbar-title">
-      Tag
+      Post
     </div>
 
     <button type="button" id="search-trigger" class="btn btn-link">
@@ -447,27 +487,185 @@
         <div class="row flex-grow-1">
           <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
             
-              
+              <!-- Refactor the HTML structure -->
 
 
 
-<article class="px-1">
+<!--
+  In order to allow a wide table to scroll horizontally,
+  we suround the markdown table with `<div class="table-wrapper">` and `</div>`
+-->
+
+
+
+<!--
+  Fixed kramdown code highlight rendering:
+  https://github.com/penibelst/jekyll-compress-html/issues/101
+  https://github.com/penibelst/jekyll-compress-html/issues/71#issuecomment-188144901
+-->
+
+
+
+<!-- Change the icon of checkbox -->
+
+
+
+<!-- Handle images -->
+
+
+
+
+  
+  
+
   
     
-
-
-
-<div id="page-tag">
-  <h1 class="ps-lg-2">
-    <i class="fa fa-tag fa-fw text-muted"></i>
-    Web Pentesting
-    <span class="lead text-muted ps-2">3</span>
-  </h1>
-  <ul class="content ps-0">
+      
+      
     
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/csrf-guide">Cross-Site Request Forgery (CSRF)</a>
-        <span class="dash flex-grow-1"></span>
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
+
+<!-- Add header for code snippets -->
+
+
+
+<!-- Create heading anchors -->
+
+
+
+
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+
+
+
+<!-- return -->
+
+
+
+
+
+
+
+
+
+
+<article class="px-1" data-toc="false">
+  <header>
+    <h1 data-toc-skip>Server-Side Request Forgery (SSRF)</h1>
+    
+
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span>
+        Posted
         <!--
   Date format snippet
   See: ${JS_ROOT}/utils/locale-dateime.js
@@ -477,71 +675,185 @@
 
 
 <time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1740268800"
-  data-df="ll"
-  
->
-  Feb 23, 2025
-</time>
-
-      </li>
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/cors-guide">Cross-Origin Resource Sharing (CORS)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
-  
-  data-ts="1740268800"
-  data-df="ll"
-  
->
-  Feb 23, 2025
-</time>
-
-      </li>
-    
-      <li class="d-flex justify-content-between px-md-3">
-        <a href="/posts/ssrf-guide">Server-Side Request Forgery (SSRF)</a>
-        <span class="dash flex-grow-1"></span>
-        <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-    class="text-muted small text-nowrap"
   
   data-ts="1738195200"
   data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
   Jan 30, 2025
 </time>
 
-      </li>
-    
-  </ul>
-</div>
+      </span>
+
+      <!-- lastmod date -->
+      
+
+      
+        
+        
+        
+
+        
+
+        <div class="mt-3 mb-3">
+          <a href="/assets/img/thumbnails/ssrf.png" class="popup img-link preview-img shimmer"><img src="/assets/img/thumbnails/ssrf.png"  alt="Preview Image" width="1200" height="630"  loading="lazy"></a></div>
+      
+
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
+          
+
+          By
+
+          <em>
+            
+              <a href="https://twitter.com/diogo-lages">Diogo Lages</a>
+            
+          </em>
+        </span>
+
+        <div>
+          <!-- pageviews -->
+          
+
+          <!-- read time -->
+          <!-- Calculate the post's reading time, and display the word count in tooltip -->
+
+
+
+<!-- words per minute -->
+
+
+
+
+
+
+
+
+
+
+<!-- return element -->
+<span
+  class="readtime"
+  data-bs-toggle="tooltip"
+  data-bs-placement="bottom"
+  title="1 words"
+>
+  <em>1 min</em> read</span>
+
+        </div>
+      </div>
+    </div>
+  </header>
 
   
+
+  <div class="content">
+    <h1 id="coming-soon">Coming-Soon</h1>
+
+
+  </div>
+
+  <div class="post-tail-wrapper text-muted">
+    <!-- categories -->
+    
+      <div class="post-meta mb-3">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        
+          <a href="/categories/bug-bounty/">Bug Bounty</a>,
+          <a href="/categories/vulnerabilities/">Vulnerabilities</a>
+      </div>
+    
+
+    <!-- tags -->
+    
+      <div class="post-tags">
+        <i class="fa fa-tags fa-fw me-1"></i>
+        
+          <a
+            href="/tags/bug-bounty/"
+            class="post-tag no-text-decoration"
+          >Bug Bounty</a>
+        
+          <a
+            href="/tags/ssrf/"
+            class="post-tag no-text-decoration"
+          >SSRF</a>
+        
+          <a
+            href="/tags/vulnerabilities/"
+            class="post-tag no-text-decoration"
+          >Vulnerabilities</a>
+        
+      </div>
+    
+
+    <div
+      class="
+        post-tail-bottom
+        d-flex justify-content-between align-items-center mt-5 pb-2
+      "
+    >
+      <div class="license-wrapper">
+        
+          
+
+          This post is licensed under 
+        <a href="https://creativecommons.org/licenses/by/4.0/">
+          CC BY 4.0
+        </a>
+         by the author.
+        
+      </div>
+
+      <!-- Post sharing snippet -->
+
+<div class="share-wrapper d-flex align-items-center">
+  <span class="share-label text-muted">Share</span>
+  <span class="share-icons">
+    
+    
+    
+
+    
+
+      
+
+      <a href="https://github.com/Diogo-Lages" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Github" aria-label="Github">
+        <i class="fa-fw fab fa-github"></i>
+      </a>
+    
+
+      
+
+      <a href="https://www.linkedin.com/in/diogo-lages/" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Linkedin" aria-label="Linkedin">
+        <i class="fa-fw fab fa-linkedin"></i>
+      </a>
+    
+
+    <button
+      id="copy-link"
+      aria-label="Copy link"
+      class="btn small"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Copy link"
+      data-title-succeed="Link copied successfully!"
+    >
+      <i class="fa-fw fas fa-link pe-none fs-6"></i>
+    </button>
+  </span>
+</div>
+
+    </div>
+    <!-- .post-tail-bottom -->
+  </div>
+  <!-- div.post-tail-wrapper -->
 </article>
+
 
             
           </main>
@@ -572,14 +884,21 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/python-deep-dork">Deep Dork</a>
+          <a href="/posts/python-network-scanner">Network Scanner</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/python-network-scanner">Network Scanner</a>
+          <a href="/posts/python-bug-bounty-tools-assistant">Bug Bounty Tools Assistant</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
+          <a href="/posts/python-deep-dork">Deep Dork</a>
         </li>
       
         
@@ -593,14 +912,7 @@
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/csrf-guide">Cross-Site Request Forgery (CSRF)</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/cors-guide">Cross-Origin Resource Sharing (CORS)</a>
+          <a href="/posts/python-github-scraper">Github Scraper</a>
         </li>
       
     </ul>
@@ -734,50 +1046,15 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -842,6 +1119,161 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -900,178 +1332,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1225,6 +1485,43 @@
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -1265,16 +1562,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/guides/">Guides</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/bug-bounty/">Bug Bounty</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/exploits/">Exploits</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web-pentesting/">Web Pentesting</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/csrf/">CSRF</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/vulnerabilities/">Vulnerabilities</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -1291,10 +1585,23 @@
         
         <a class="post-tag btn btn-outline-primary" href="/tags/browser-extensions/">Browser Extensions</a>
       
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bug-bounty-tool/">Bug Bounty Tool</a>
+      
     </div>
   </section>
 
             </div>
+
+            
+              
+              
+
+
+
+
+
+
 
             
           </aside>
@@ -1303,6 +1610,164 @@
         <div class="row">
           <!-- tail -->
           <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+            
+              
+              <!-- Recommend the other 3 posts according to the tags and categories of the current post. -->
+
+<!-- The total size of related posts -->
+
+
+<!-- An random integer that bigger than 0 -->
+
+
+<!-- Equals to TAG_SCORE / {max_categories_hierarchy} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <aside id="related-posts" aria-labelledby="related-label">
+    <h3 class="mb-4" id="related-label">Further Reading</h3>
+    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        <article class="col">
+          <a href="/posts/bug-bounty/xss" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740268800"
+  data-df="ll"
+  
+>
+  Feb 23, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Cross Site Scripting (XSS)</h4>
+              <div class="text-muted">
+                <p>Coming-Soon</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/bug-bounty/sql-injection" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1740268800"
+  data-df="ll"
+  
+>
+  Feb 23, 2025
+</time>
+
+              <h4 class="pt-0 my-2">SQL Injection</h4>
+              <div class="text-muted">
+                <p>Coming-Soon</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+    </nav>
+  </aside>
+  <!-- #related-posts -->
+
+
+            
+              
+              <!-- Navigation buttons at the bottom of the post. -->
+
+<nav class="post-navigation d-flex justify-content-between" aria-label="Post Navigation">
+  
+  
+
+  
+    <a
+      href="/posts/Exploiting-noVNC-for-2FA-Bypass/"
+      class="btn btn-outline-primary"
+      aria-label="Older"
+    >
+      <p>Exploiting noVNC for 2FA Bypass</p>
+    </a>
+  
+
+  
+    <a
+      href="/posts/Evil-Twin-Attack/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Evil Twin Attack</p>
+    </a>
+  
+</nav>
+
             
 
             <!-- The Footer -->
@@ -1475,50 +1940,15 @@
     
     
     
+  
+    
+    
+    
+    
       
         
         
 
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1583,6 +2013,161 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1641,178 +2226,6 @@
     
     
     
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1966,6 +2379,43 @@
         
         
 
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+      
+    
   
     
     
@@ -2006,16 +2456,13 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/python/">Python</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/guides/">Guides</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/bug-bounty/">Bug Bounty</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/exploits/">Exploits</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/web-pentesting/">Web Pentesting</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/csrf/">CSRF</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/vulnerabilities/">Vulnerabilities</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/tools/">Tools</a>
@@ -2031,6 +2478,9 @@
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/browser-extensions/">Browser Extensions</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/bug-bounty-tool/">Bug Bounty Tool</a>
       
     </div>
   </section>
@@ -2080,6 +2530,11 @@
     
 
     <!-- Embedded scripts -->
+
+    
+      
+      <!-- The comments switcher -->
+
 
     
 

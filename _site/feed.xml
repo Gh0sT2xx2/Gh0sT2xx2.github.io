@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-03-09T22:08:33+00:00</updated>
+  <updated>2025-03-09T22:50:25+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,43 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Bug Bounty Tools Assistant</title>
+    <link href="http://localhost:4000/posts/python-bug-bounty-tools-assistant" rel="alternate" type="text/html" title="Bug Bounty Tools Assistant" />
+    <published>2025-03-01T00:00:00+00:00</published>
+  
+    <updated>2025-03-01T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/python-bug-bounty-tools-assistant</id>
+    <content type="text/html" src="http://localhost:4000/posts/python-bug-bounty-tools-assistant" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="Python" />
+    
+    <category term="Bug Bounty Tools Assistant" />
+    
+  
+
+  <summary>A Python-based interactive CLI tool designed to assist bug bounty hunters and security testers by providing quick access to commands for Recon, Exploitation, and Miscellaneous tasks.
+
+Bug Bounty Tools Assistant Repository
+
+
+  Link: Bug Bounty Tools Assistant Repository
+
+
+Features
+
+  Interactive Menu: Navigate through categories like Recon, Exploitation, and Miscellaneous with ease.
+  Command Ex...</summary>
+
+  </entry>
 
   
   <entry>
@@ -87,92 +124,53 @@ Features
 
   
   <entry>
-    <title>Cross-Site Request Forgery (CSRF)</title>
-    <link href="http://localhost:4000/posts/csrf-guide" rel="alternate" type="text/html" title="Cross-Site Request Forgery (CSRF)" />
+    <title>Cross Site Scripting (XSS)</title>
+    <link href="http://localhost:4000/posts/bug-bounty/xss" rel="alternate" type="text/html" title="Cross Site Scripting (XSS)" />
     <published>2025-02-23T00:00:00+00:00</published>
   
-    <updated>2025-02-27T00:19:57+00:00</updated>
+    <updated>2025-02-23T00:00:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/csrf-guide</id>
-    <content type="text/html" src="http://localhost:4000/posts/csrf-guide" />
+    <id>http://localhost:4000/posts/bug-bounty/xss</id>
+    <content type="text/html" src="http://localhost:4000/posts/bug-bounty/xss" />
     <author>
       <name>Diogo Lages</name>
     </author>
 
   
     
-    <category term="Guides" />
+    <category term="Bug Bounty" />
     
-    <category term="Web Pentesting" />
+    <category term="Vulnerabilities" />
     
   
 
-  <summary>Introduction to Cross-Site Request Forgery (CSRF)
-
-What is Cross-Site Request Forgery (CSRF)?
-
-Cross-Site Request Forgery (CSRF) is a web security vulnerability that tricks users into performing actions they didn’t intend to. It exploits the trust that a website has in a user’s browser, allowing an attacker to perform unauthorized actions on behalf of an authenticated user without their knowled...</summary>
+  <summary>Coming-Soon</summary>
 
   </entry>
 
   
   <entry>
-    <title>Cross-Origin Resource Sharing (CORS)</title>
-    <link href="http://localhost:4000/posts/cors-guide" rel="alternate" type="text/html" title="Cross-Origin Resource Sharing (CORS)" />
+    <title>SQL Injection</title>
+    <link href="http://localhost:4000/posts/bug-bounty/sql-injection" rel="alternate" type="text/html" title="SQL Injection" />
     <published>2025-02-23T00:00:00+00:00</published>
   
-    <updated>2025-02-26T20:27:14+00:00</updated>
+    <updated>2025-02-23T00:00:00+00:00</updated>
   
-    <id>http://localhost:4000/posts/cors-guide</id>
-    <content type="text/html" src="http://localhost:4000/posts/cors-guide" />
+    <id>http://localhost:4000/posts/bug-bounty/sql-injection</id>
+    <content type="text/html" src="http://localhost:4000/posts/bug-bounty/sql-injection" />
     <author>
       <name>Diogo Lages</name>
     </author>
 
   
     
-    <category term="Guides" />
+    <category term="Bug Bounty" />
     
-    <category term="Web Pentesting" />
-    
-  
-
-  <summary>Introduction to Cross-Origin Resource Sharing (CORS)
-
-Cross-origin resource sharing (CORS) is a browser mechanism that enables controlled access to resources located outside of a given domain. It extends and adds flexibility to the same-origin policy (SOP), which restricts how websites can interact with resources outside their source domain. While CORS provides greater flexibility for developer...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>FFUF: Fuzzing Guide to Web Applications</title>
-    <link href="http://localhost:4000/posts/ffuf-Fuzzing-Guide" rel="alternate" type="text/html" title="FFUF: Fuzzing Guide to Web Applications" />
-    <published>2025-02-15T00:00:00+00:00</published>
-  
-    <updated>2025-02-15T00:00:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/ffuf-Fuzzing-Guide</id>
-    <content type="text/html" src="http://localhost:4000/posts/ffuf-Fuzzing-Guide" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Tools" />
-    
-    <category term="FFUF Fuzzing Guide" />
+    <category term="Vulnerabilities" />
     
   
 
-  <summary>FFUF is a powerful, open-source fuzzing tool designed for web application security testing. It enables users to discover hidden files, directories, subdomains, and parameters through high-speed fuzzing. This guide will provide an in-depth explanation of FFUF commands, their use cases, and advanced techniques to help you leverage its full potential.
-
-
-
-Table of Contents
-
-  Installation
-  Basic C...</summary>
+  <summary>Coming-Soon</summary>
 
   </entry>
 
