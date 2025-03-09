@@ -10,107 +10,98 @@ image:
 
 
 
-Network scanning tool designed for cybersecurity. It offers features such as port scanning, service detection, OS fingerprinting, vulnerability scanning, traceroute, geolocation, WHOIS lookup, and SSL/TLS checks. By querying external databases like Shodan, NVD, and CIRCL, the tool identifies potential vulnerabilities and generates detailed HTML reports summarizing scan results.
+Python-based tool designed for network reconnaissance, service detection, and vulnerability analysis. It supports port scanning, service fingerprinting, web analysis, geolocation, and detailed reporting in both HTML and JSON formats.
+
+### Network Scanner Repository  
+
+- **Link**: [Network Scanner Repository](https://github.com/Diogo-Lages/Network-Scanner)  
+
+---
+
+## Features  
+
+The **Network Scanner** is a powerful Python-based tool designed for network reconnaissance, service detection, and vulnerability analysis. Key features include:  
+
+- **Port Scanning**: Identify open ports and running services on both IPv4 and IPv6 addresses.  
+- **Service Detection**: Detect services like HTTP, SSH, FTP, and more using banners, extended probes, and SSL/TLS analysis.  
+- **Web Analysis**: Analyze websites for technologies, security headers, WAF detection, and potential vulnerabilities.  
+- **Geolocation**: Pinpoint the physical location of IP addresses using the GeoLite2 database.  
+- **DNS Information**: Retrieve DNS records (A, MX, TXT) and perform reverse DNS lookups.  
+- **WHOIS Lookup**: Fetch domain registration details.  
+- **Reporting**: Generate professional HTML and JSON reports with risk assessments.  
+- **Customizable**: Configure timeouts, concurrent scans, and reporting formats via `config.yml`.  
+- **Cross-Platform**: Works seamlessly on Windows, Linux, and macOS.  
+
+---
+
+## How It Works  
+
+The **Network Scanner** operates in several stages:  
+
+1. **Target Resolution**:  
+   - Resolves hostnames to both IPv4 and IPv6 addresses.  
+   - Performs reverse DNS lookups and geolocation for resolved IPs.  
+
+2. **Port Scanning**:  
+   - Scans default or custom ports using asynchronous techniques for efficiency.  
+   - Supports retries, timeouts, and rate limiting to ensure reliability.  
+
+3. **Service Detection**:  
+   - Identifies services running on open ports using banners, SSL/TLS information, and extended probes.  
+   - Analyzes web services for technologies, security headers, and vulnerabilities.  
+
+4. **Reporting**:  
+   - Generates detailed HTML and JSON reports with scan results, risk assessments, and metadata.  
+
+5. **User Interaction**:  
+   - Provides an interactive menu for selecting scan modes, entering targets, and specifying custom ports.  
+
+---
+
+## Code Structure  
+
+The project is organized into modular components for maintainability and scalability:  
+
+- **`network_scanner.py`**: Main entry point for the application. Handles user interaction and orchestrates the scanning process.  
+- **`utils/async_scanner.py`**: Implements asynchronous port scanning and service detection.  
+- **`utils/web_analyzer.py`**: Analyzes websites for technologies, vulnerabilities, and security headers.  
+- **`utils/reporter.py`**: Generates HTML and JSON reports based on scan results.  
+- **`utils/config_manager.py`**: Manages configuration loading and validation from `config.yml`.  
+- **`utils/logger.py`**: Handles logging to both console and file outputs.  
+- **`templates/`**: Contains HTML and CSS templates for report generation.  
+- **`GeoLite2-City.mmdb`**: GeoIP database for geolocation features.  
+- **`config.yml`**: Configuration file for scanner settings.  
+
+---
+
+## Interface  
 
 
-## Network Scanner Repository
-
-- **Link**: [Network Scanner Repository](https://github.com/Diogo-Lages/Network-Scanner)
-
-## Features
-
-- **Port Scanning**: Scan both TCP and UDP ports to identify open, closed, or filtered ports.
-- **Service Detection**: Detect service versions running on open ports.
-- **OS Fingerprinting**: Perform advanced OS fingerprinting to guess the operating system of the target.
-- **Vulnerability Scanning**: Query external databases (Shodan, NVD, CIRCL) to identify potential vulnerabilities.
-- **Traceroute**: Perform a traceroute to the target IP to identify the network path.
-- **Geolocation**: Determine the geographical location of the target IP using the GeoIP database.
-- **WHOIS Lookup**: Retrieve WHOIS information for the target domain or IP.
-- **SSL/TLS Check**: Check SSL/TLS configurations for HTTPS services.
-- **NSLookup**: Perform DNS resolution to convert IP addresses to domain names and vice versa.
-- **HTML Report Generation**: Generate a detailed HTML report summarizing the scan results.
-- **Website Vulnerability Check**: Query CVE Details for known vulnerabilities associated with the target domain.
-
-## How It Works
-
-The program starts by displaying a banner and prompting the user for a target IP address and a port range. It then proceeds to scan the specified ports using TCP or UDP protocols. For each open port, the program attempts to detect the service version and suggest potential vulnerabilities. It also performs additional tasks like OS fingerprinting, traceroute, geolocation, WHOIS lookup, and SSL/TLS checks. Finally, it compiles all the gathered information into an HTML report.
-
-## Code Structure
-
-The code is structured into several functions, each responsible for a specific task:
-
-- **`scan_tcp_port`**: Scans a TCP port and determines if it is open, closed, or filtered.
-- **`scan_udp_port`**: Scans a UDP port and determines if it is open, closed, or filtered.
-- **`nslookup`**: Performs DNS resolution for the target IP or domain.
-- **`query_website_vulnerabilities`**: Queries CVE Details for known vulnerabilities associated with the target domain.
-- **`generate_html_report`**: Generates an HTML report summarizing the scan results.
-- **`detect_service_version`**: Detects the service version running on an open port.
-- **`suggest_exploits`**: Suggests potential exploits for the detected service.
-- **`os_fingerprinting`**: Performs OS fingerprinting to guess the operating system of the target.
-- **`query_shodan`**: Queries Shodan for information about the target IP.
-- **`query_nvd`**: Queries the National Vulnerability Database (NVD) for known vulnerabilities.
-- **`query_circl`**: Queries CIRCL for potential vulnerabilities.
-- **`query_exploit_db`**: Queries Exploit-DB for potential exploits.
-- **`vulnerability_scan`**: Performs a vulnerability scan using external APIs.
-- **`traceroute`**: Performs a traceroute to the target IP.
-- **`geolocation`**: Determines the geographical location of the target IP.
-- **`whois_lookup`**: Performs a WHOIS lookup for the target domain or IP.
-- **`ssl_tls_check`**: Checks SSL/TLS configurations for HTTPS services.
-- **`start_scan`**: Orchestrates the entire scanning process.
-
-## Interface
-
-### **Command-Line Interface**
-
-![Command-Line Interface](/assets/img/Command-Line-Interface.png)
-
-### **HTML Report Template Interface**
-
-![HTML Report Template Interface](/assets/img/HTML-Report-Template.png)
-
-## Limitations
-
-- **Rate Limiting**: The program may be rate-limited by external APIs like Shodan, NVD, and CIRCL.
-- **Accuracy**: OS fingerprinting and service detection may not always be accurate.
-- **GeoIP Database**: The program requires a local GeoIP database for geolocation. If the database is not present, geolocation will not work.
-- **SSL/TLS Check**: The SSL/TLS check is limited to port 443 (HTTPS).
-- **Vulnerability Scanning**: The vulnerability scanning feature relies on external APIs and may not cover all possible vulnerabilities.
-
-## Future Enhancements
-
-- **Support for IPv6**: Add support for scanning IPv6 addresses.
-- **Enhanced OS Fingerprinting**: Improve the accuracy of OS fingerprinting by incorporating more advanced techniques.
-- **Integration with More APIs**: Integrate with additional vulnerability databases and APIs.
-- **User Interface**: Develop a graphical user interface (GUI) for easier interaction.
-- **Automated Reporting**: Add support for automated email or Slack notifications with the scan report.
-- **Customizable Port Ranges**: Allow users to define and save custom port ranges for scanning.
-- **Performance Optimization**: Optimize the code for faster scanning and reduced resource usage.
-
-## Ethical Considerations
-
-- **Authorization**: Always ensure you have proper authorization before scanning any network or system. Unauthorized scanning can be illegal and unethical.
-- **Data Privacy**: Be mindful of the data you collect during scanning. Ensure that any sensitive information is handled securely and in compliance with relevant laws and regulations.
-- **Impact on Target Systems**: Be aware that aggressive scanning can impact the performance of target systems. Use the tool responsibly and avoid causing disruption.
-- **Disclosure of Vulnerabilities**: If you discover vulnerabilities during your scan, follow responsible disclosure practices to inform the affected parties.
-
-## Tips and Tricks
-
-- **Use Top Ports**: For a quick scan, use the "Top Ports" option to scan commonly used ports.
-- **Custom Port Ranges**: For a more thorough scan, specify a custom port range (e.g., 1-1024).
-- **GeoIP Database**: Ensure the GeoIP database is present in the working directory for accurate geolocation.
-- **External APIs**: If you have API keys for Shodan or other services, configure them in the code for enhanced vulnerability scanning.
-- **HTML Report**: Always review the generated HTML report for a comprehensive summary of the scan results.
-
-## Extra Insights
-
-- **Service Banners**: The program attempts to grab service banners from open ports. This can provide valuable information about the services running on the target.
-- **Vulnerability Suggestions**: The program suggests potential vulnerabilities based on the detected services. Use this information to prioritize further investigation.
-- **Traceroute**: The traceroute feature can help you understand the network path to the target, which can be useful for troubleshooting or network analysis.
-- **WHOIS Lookup**: The WHOIS lookup feature provides information about the domain registration, which can be useful for identifying the owner of the target.
-
-## Conclusion
-
-This Python-based network scanner is a tool for network reconnaissance and vulnerability assessment. It provides a wide range of features, from basic port scanning to advanced vulnerability detection and reporting.
+![Main Dashboard](/assets/img/network_scanner.png)
 
 
+---
 
+## Future Enhancements  
+
+The following features are planned for future releases:  
+
+- **Enhanced Vulnerability Scanning**: Integrate with CVE databases for real-time vulnerability checks.  
+- **Authentication Support**: Add support for scanning authenticated endpoints.  
+- **Graphical User Interface (GUI)**: Develop a GUI for easier interaction.  
+- **API Integration**: Provide an API for integrating the scanner into other tools or workflows.  
+- **Improved Reporting**: Add PDF export and customizable report templates.  
+- **Support for Additional Protocols**: Extend support for protocols like SNMP, SIP, and more.  
+
+---
+
+## Ethical Considerations  
+
+The **Network Scanner** is intended for ethical use only. Users must adhere to the following guidelines:  
+
+- **Authorization**: Always obtain explicit permission before scanning networks or systems.  
+- **Legal Compliance**: Ensure compliance with local laws and regulations regarding network scanning.  
+- **Responsible Use**: Avoid using the tool for malicious purposes or unauthorized activities.  
+- **Data Privacy**: Handle any data collected during scans responsibly and securely.  
+
+By using this tool, you agree to abide by these ethical considerations and assume full responsibility for its usage.
