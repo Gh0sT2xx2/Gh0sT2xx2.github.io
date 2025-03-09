@@ -16,7 +16,7 @@ Python tool for extracting, analyzing, and visualizing metadata from files. It s
 
 ### **Digital Forensics Toolkit Repository**
 
-- **Link**: [Network Monitor Repository](https://github.com/Diogo-Lages/Digital-Forensics-Toolkit)
+- **Link**: [Digital Forensics Toolkit Repository](https://github.com/Diogo-Lages/Digital-Forensics-Toolkit)
 
 ---
 
