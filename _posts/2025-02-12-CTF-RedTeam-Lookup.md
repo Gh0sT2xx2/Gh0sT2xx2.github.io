@@ -23,6 +23,7 @@ image:
 - **Linpeas**: For automating enumeration and identifying privilege escalation vectors.
 
 #### **Resources Used**:
+- **Lookup**: [TryHackMe](https://tryhackme.com/room/lookup)
 - **GTFOBins**: A repository of Unix binaries that can be exploited for privilege escalation.
 - **SecLists**: A collection of wordlists used for brute-forcing credentials with Hydra.
 - **Exploit DB**: An alternative resource for finding exploits, such as the one used for elFinder.
