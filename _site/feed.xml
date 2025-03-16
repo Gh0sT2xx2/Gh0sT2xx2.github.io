@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-03-13T19:27:52+00:00</updated>
+  <updated>2025-03-16T19:14:08+00:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,39 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Web: Cybersecurity Frameworks</title>
+    <link href="http://localhost:4000/posts/web-cybersecurity-frameworks" rel="alternate" type="text/html" title="Web: Cybersecurity Frameworks" />
+    <published>2025-03-14T00:00:00+00:00</published>
+  
+    <updated>2025-03-14T00:00:00+00:00</updated>
+  
+    <id>http://localhost:4000/posts/web-cybersecurity-frameworks</id>
+    <content type="text/html" src="http://localhost:4000/posts/web-cybersecurity-frameworks" />
+    <author>
+      <name>Diogo Lages</name>
+    </author>
+
+  
+    
+    <category term="WebDev" />
+    
+    <category term="Cybersecurity Frameworks" />
+    
+  
+
+  <summary>The frameworks presented here include Framework Hub (The Main Dashboard), OSINT Framework , Blue Team Framework , and Bug Bounty Framework . These frameworks are designed to help users find tools specific to each area, such as Blue Team, Bug Bounty, and OSINT.
+
+Cybersecurity Frameworks Repositorys
+
+
+  Link: Framework Hub Repository
+  Link: OSINT Framework Repository
+  Link: Blue Team Framework ...</summary>
+
+  </entry>
 
   
   <entry>
@@ -132,32 +165,6 @@ Features
   
     <id>http://localhost:4000/posts/bug-bounty/xss</id>
     <content type="text/html" src="http://localhost:4000/posts/bug-bounty/xss" />
-    <author>
-      <name>Diogo Lages</name>
-    </author>
-
-  
-    
-    <category term="Bug Bounty" />
-    
-    <category term="Vulnerabilities" />
-    
-  
-
-  <summary>Coming-Soon</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>SQL Injection</title>
-    <link href="http://localhost:4000/posts/bug-bounty/sql-injection" rel="alternate" type="text/html" title="SQL Injection" />
-    <published>2025-02-23T00:00:00+00:00</published>
-  
-    <updated>2025-02-23T00:00:00+00:00</updated>
-  
-    <id>http://localhost:4000/posts/bug-bounty/sql-injection</id>
-    <content type="text/html" src="http://localhost:4000/posts/bug-bounty/sql-injection" />
     <author>
       <name>Diogo Lages</name>
     </author>
