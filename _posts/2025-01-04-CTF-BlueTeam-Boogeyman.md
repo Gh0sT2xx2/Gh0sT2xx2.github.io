@@ -5,7 +5,7 @@ categories: [CTF, Blue Team]
 tags: [CTF, Blue Team]
 permalink: /posts/ctf-blueteam-all-boogeyman
 image:
-  path: /assets/img/thumbnails/ctf-blueteam-lookup.png
+  path: /assets/img/thumbnails/ctf-blueteam-boogeyman.png
 ---
 
 
