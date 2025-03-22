@@ -1,6 +1,6 @@
 ---
 title: "THM: Squid Game"
-date: 2025-01-03
+date: 2025-01-21
 categories: [CTF, Blue Team]
 tags: [CTF, Blue Team]
 permalink: /posts/ctf-blueteam-squid-game

@@ -1,6 +1,6 @@
 ---
 title: "THM: Boogeyman (All)"
-date: 2025-01-04
+date: 2025-01-22
 categories: [CTF, Blue Team]
 tags: [CTF, Blue Team]
 permalink: /posts/ctf-blueteam-all-boogeyman

@@ -1,6 +1,6 @@
 ---
 title: "THM: Masterminds"
-date: 2025-01-05
+date: 2025-01-02
 categories: [CTF, Blue Team]
 tags: [CTF, Blue Team]
 permalink: /posts/ctf-blueteam-masterminds

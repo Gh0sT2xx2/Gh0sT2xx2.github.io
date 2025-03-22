@@ -1,6 +1,6 @@
 ---
 title: "THM: Conti"
-date: 2025-01-02
+date: 2025-02-02
 categories: [CTF, Blue Team]
 tags: [CTF, Blue Team]
 permalink: /posts/ctf-blueteam-conti

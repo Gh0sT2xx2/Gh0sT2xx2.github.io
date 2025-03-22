@@ -1,6 +1,6 @@
 ---
 title: "THM: Benign"
-date: 2025-01-02
+date: 2025-01-18
 categories: [CTF, Blue Team]
 tags: [CTF, Blue Team]
 permalink: /posts/ctf-blueteam-benign

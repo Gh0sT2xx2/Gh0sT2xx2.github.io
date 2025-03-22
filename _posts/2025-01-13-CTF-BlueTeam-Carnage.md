@@ -1,6 +1,6 @@
 ---
 title: "THM: Carnage"
-date: 2025-01-03
+date: 2025-01-13
 categories: [CTF, Blue Team]
 tags: [CTF, Blue Team]
 permalink: /posts/ctf-blueteam-carnage
