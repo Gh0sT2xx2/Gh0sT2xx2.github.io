@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Diogo Lages</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
-  <updated>2025-03-22T19:38:43+00:00</updated>
+  <updated>2025-03-30T21:53:32+01:00</updated>
   <author>
     <name>Diogo Lages</name>
     <uri>http://localhost:4000/</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>Web: Cybersecurity Frameworks</title>
     <link href="http://localhost:4000/posts/web-cybersecurity-frameworks" rel="alternate" type="text/html" title="Web: Cybersecurity Frameworks" />
-    <published>2025-03-14T00:00:00+00:00</published>
+    <published>2025-03-14T00:00:00+01:00</published>
   
-    <updated>2025-03-14T00:00:00+00:00</updated>
+    <updated>2025-03-14T00:00:00+01:00</updated>
   
     <id>http://localhost:4000/posts/web-cybersecurity-frameworks</id>
     <content type="text/html" src="http://localhost:4000/posts/web-cybersecurity-frameworks" />
@@ -53,131 +53,238 @@ Cybersecurity Frameworks Repositorys
 
   
   <entry>
-    <title>Bug Bounty Tools Assistant</title>
-    <link href="http://localhost:4000/posts/python-bug-bounty-tools-assistant" rel="alternate" type="text/html" title="Bug Bounty Tools Assistant" />
-    <published>2025-03-01T00:00:00+00:00</published>
+    <title>THM: Red</title>
+    <link href="http://localhost:4000/posts/ctf-red" rel="alternate" type="text/html" title="THM: Red" />
+    <published>2025-03-05T00:00:00+01:00</published>
   
-    <updated>2025-03-01T00:00:00+00:00</updated>
+    <updated>2025-03-05T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/python-bug-bounty-tools-assistant</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-bug-bounty-tools-assistant" />
+    <id>http://localhost:4000/posts/ctf-red</id>
+    <content type="text/html" src="http://localhost:4000/posts/ctf-red" />
     <author>
       <name>Diogo Lages</name>
     </author>
 
   
     
-    <category term="Python" />
+    <category term="CTF" />
     
-    <category term="Bug Bounty Tools Assistant" />
+    <category term="Red Team" />
     
   
 
-  <summary>A Python-based interactive CLI tool designed to assist bug bounty hunters and security testers by providing quick access to commands for Recon, Exploitation, and Miscellaneous tasks.
+  <summary>Walkthrough
 
-Bug Bounty Tools Assistant Repository
+CTF Platform: TryHackMe
+Level: Easy
+
+Tools Used:
 
 
-  Link: Bug Bounty Tools Assistant Repository
+  Nmap
+  Hydra
+  CyberChef
+  Pspy
+  Netcat
+  Python Exploit Script
 
 
-Features
+Resources Used::
 
-  Interactive Menu: Navigate through categories like Recon, Exploitation, and Miscellaneous with ease.
-  Command Ex...</summary>
+
+  Tryhackme
+  CyberChef
+  GitHub (for exploit code)
+  TryHackMe documentation
+
+
+Steps for the CTF
+
+
+
+Here’s the organized and polished version of your writeup in Markdown format, following your instructions:
+
+
+
+NAME - Red Team CTF Writeup
+
+Walkt...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Deep Dork</title>
-    <link href="http://localhost:4000/posts/python-deep-dork" rel="alternate" type="text/html" title="Deep Dork" />
-    <published>2025-02-27T00:00:00+00:00</published>
+    <title>THM: Mother´s Secret</title>
+    <link href="http://localhost:4000/posts/ctf-mother-secret" rel="alternate" type="text/html" title="THM: Mother´s Secret" />
+    <published>2025-03-05T00:00:00+01:00</published>
   
-    <updated>2025-02-27T20:22:29+00:00</updated>
+    <updated>2025-03-05T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/python-deep-dork</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-deep-dork" />
+    <id>http://localhost:4000/posts/ctf-mother-secret</id>
+    <content type="text/html" src="http://localhost:4000/posts/ctf-mother-secret" />
     <author>
       <name>Diogo Lages</name>
     </author>
 
   
     
-    <category term="Python" />
+    <category term="CTF" />
     
-    <category term="Deep Dork" />
+    <category term="Red Team" />
     
   
 
-  <summary>Deep Dork is an advanced Google Dorking tool designed to automate and streamline the process of discovering sensitive information exposed on the web. It leverages Google’s search engine, proxies, CAPTCHA bypass mechanisms, and result parsing to provide a powerful utility for ethical security research and reconnaissance.
+  <summary>Walkthrough
 
-In addition to the Python CLI version, Deep Dork Web is now available as a...</summary>
+CTF Platform: TryHackMe
+Level: Easy
+
+Tools Used:
+
+
+  Burp Suite
+  Web Browser (for manual testing)
+  Basic Linux Commands
+
+
+Resources Used::
+
+
+  TryHackMe
+  Code Analysis Techniques
+  YAML File Documentation
+
+
+Steps for the CTF
+
+
+
+Initial Hints
+The Operating Manual gives us the following hint:
+
+  What is the number of the emergency command override?
+    
+      Answer: 100375
+      ...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Github Scraper</title>
-    <link href="http://localhost:4000/posts/python-github-scraper" rel="alternate" type="text/html" title="Github Scraper" />
-    <published>2025-02-25T00:00:00+00:00</published>
+    <title>THM: mKingdom</title>
+    <link href="http://localhost:4000/posts/ctf-mkingdom" rel="alternate" type="text/html" title="THM: mKingdom" />
+    <published>2025-03-04T00:00:00+01:00</published>
   
-    <updated>2025-02-25T00:00:00+00:00</updated>
+    <updated>2025-03-04T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/python-github-scraper</id>
-    <content type="text/html" src="http://localhost:4000/posts/python-github-scraper" />
+    <id>http://localhost:4000/posts/ctf-mkingdom</id>
+    <content type="text/html" src="http://localhost:4000/posts/ctf-mkingdom" />
     <author>
       <name>Diogo Lages</name>
     </author>
 
   
     
-    <category term="Python" />
+    <category term="CTF" />
     
-    <category term="Github Scraper" />
+    <category term="Red Team" />
     
   
 
-  <summary>Tool designed to scrape and analyze repositories from GitHub based on customizable search criteria.
+  <summary>Walkthrough
 
-Github Scraper Repository
+CTF Platform: TryHackMe
+Level: Easy
 
-  Link: Github Scraper Repository
-
-
-
-
-Features
+Tools Used:
 
 
-  Customizable Search: Filter repositories by programming language, associated tools/technologies (e.g., Docker, React, TensorFlow), and star ratings.
-  Date Filtering: Retrieve repositories updated within a specific tim...</summary>
+  Nmap
+  Gobuster
+  Burp Suite
+  RevShells
+  LinPEAS
+  Pspy64
+  Python HTTP Server
+  Netcat
+
+
+Resources Used::
+
+
+  Tryhackme
+  Vulners - Concrete5 Exploit
+  RevShells Payload Generator
+  LinPEAS Script
+  Pspy64 Tool
+  DarkReading - Common Default Passwords
+
+
+Steps for the CTF
+
+
+
+1. Enumeration
+
+NMAP:
+The first step in any CTF is en...</summary>
 
   </entry>
 
   
   <entry>
-    <title>Cross Site Scripting (XSS)</title>
-    <link href="http://localhost:4000/posts/bug-bounty/xss" rel="alternate" type="text/html" title="Cross Site Scripting (XSS)" />
-    <published>2025-02-23T00:00:00+00:00</published>
+    <title>THM: Cyberlens</title>
+    <link href="http://localhost:4000/posts/ctf-cyberlens" rel="alternate" type="text/html" title="THM: Cyberlens" />
+    <published>2025-03-04T00:00:00+01:00</published>
   
-    <updated>2025-02-23T00:00:00+00:00</updated>
+    <updated>2025-03-04T00:00:00+01:00</updated>
   
-    <id>http://localhost:4000/posts/bug-bounty/xss</id>
-    <content type="text/html" src="http://localhost:4000/posts/bug-bounty/xss" />
+    <id>http://localhost:4000/posts/ctf-cyberlens</id>
+    <content type="text/html" src="http://localhost:4000/posts/ctf-cyberlens" />
     <author>
       <name>Diogo Lages</name>
     </author>
 
   
     
-    <category term="Bug Bounty" />
+    <category term="CTF" />
     
-    <category term="Vulnerabilities" />
+    <category term="Red Team" />
     
   
 
-  <summary>Coming-Soon</summary>
+  <summary>Walkthrough
+
+CTF Platform: TryHackMe
+Level: Easy
+
+Tools Used:
+
+
+  Nmap
+  Gobuster
+  Exiftool
+  Metasploit
+  Searchsploit
+  Developer Tools (Network Tab)
+
+
+Resources Used::
+
+
+  Tryhackme
+  Nmap Documentation
+  Gobuster GitHub Repository
+  Metasploit Framework
+  Searchsploit Documentation
+
+
+Steps for the CTF
+
+
+
+Step 1: Initial Reconnaissance
+After starting the machine, I explored the website host...</summary>
 
   </entry>
 
