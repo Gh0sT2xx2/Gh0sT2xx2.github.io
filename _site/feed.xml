@@ -2,18 +2,18 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://localhost:4000/</id>
-  <title>Diogo Lages</title>
+  <title>An0ns4i</title>
   <subtitle>Explore Red Team and Blue Team CTF walkthroughs, cybersecurity projects including Python and hands-on labs, as well as all other areas of cybersecurity.</subtitle>
   <updated>2025-03-30T21:53:32+01:00</updated>
-  <author>
-    <name>Diogo Lages</name>
+  <author> 
+    <name>An0ns4i</name>
     <uri>http://localhost:4000/</uri>
   </author>
   <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
-  <rights> © 2025 Diogo Lages </rights>
+  <rights> © 2025 An0ns4i </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
@@ -29,7 +29,7 @@
     <id>http://localhost:4000/posts/web-cybersecurity-frameworks</id>
     <content type="text/html" src="http://localhost:4000/posts/web-cybersecurity-frameworks" />
     <author>
-      <name>Diogo Lages</name>
+      <name>An0ns4i</name>
     </author>
 
   
@@ -62,7 +62,7 @@ Cybersecurity Frameworks Repositorys
     <id>http://localhost:4000/posts/ctf-red</id>
     <content type="text/html" src="http://localhost:4000/posts/ctf-red" />
     <author>
-      <name>Diogo Lages</name>
+      <name>An0ns4i</name>
     </author>
 
   
@@ -123,7 +123,7 @@ Walkt...</summary>
     <id>http://localhost:4000/posts/ctf-mother-secret</id>
     <content type="text/html" src="http://localhost:4000/posts/ctf-mother-secret" />
     <author>
-      <name>Diogo Lages</name>
+      <name>An0ns4i</name>
     </author>
 
   
@@ -180,7 +180,7 @@ The Operating Manual gives us the following hint:
     <id>http://localhost:4000/posts/ctf-mkingdom</id>
     <content type="text/html" src="http://localhost:4000/posts/ctf-mkingdom" />
     <author>
-      <name>Diogo Lages</name>
+      <name>An0ns4i</name>
     </author>
 
   
@@ -242,7 +242,7 @@ The first step in any CTF is en...</summary>
     <id>http://localhost:4000/posts/ctf-cyberlens</id>
     <content type="text/html" src="http://localhost:4000/posts/ctf-cyberlens" />
     <author>
-      <name>Diogo Lages</name>
+      <name>An0ns4i</name>
     </author>
 
   
