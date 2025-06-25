@@ -11,7 +11,7 @@ order: 4
 
 ## **$whoami**
 
-Hi, I’m Diogo Lages, a **aspiring cybersecurity professional**. I believe cybersecurity is a field that’s always evolving, and I’m committed to keeping up with everything happening. I’m constantly learning, not just to improve my knowledge, but to stay ahead in the industry.
+Hi, I’m An0ns4i, a **aspiring cybersecurity professional**. I believe cybersecurity is a field that’s always evolving, and I’m committed to keeping up with everything happening. I’m constantly learning, not just to improve my knowledge, but to stay ahead in the industry.
 
 <br>
 
@@ -29,5 +29,5 @@ print("- Share Guides, Books, Cheat Sheets, Forums, Tools for Cybersecurity")
 
 <br>
 
-> Stay updated with my latest work: [GitHub Profile](https://github.com/Diogo-Lages)
+> Stay updated with my latest work: [GitHub Profile](https://github.com/Gh0sT2xx2)
 {: .prompt-tip }
