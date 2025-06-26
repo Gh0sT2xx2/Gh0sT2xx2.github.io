@@ -14,10 +14,10 @@ The frameworks presented here include Framework Hub (The Main Dashboard), OSINT 
 
 # Cybersecurity Frameworks Repositorys
 
-- **Link**: [Framework Hub Repository](https://github.com/Diogo-Lages/Framework-Hub)
-- **Link**: [OSINT Framework Repository](https://github.com/Diogo-Lages/OSINT-Framework)
-- **Link**: [Blue Team Framework Repository](https://github.com/Diogo-Lages/Blueteam-Framework)
-- **Link**: [Bug Bounty Framework Repository](https://github.com/Diogo-Lages/BugBounty-Framework)
+- **Link**: [Framework Hub Repository](https://Gh0sT2xx2.github.io/Framework-Hub)
+- **Link**: [OSINT Framework Repository](https://Gh0sT2xx2.github.io/OSINT-Framework)
+- **Link**: [Blue Team Framework Repository](https://Gh0sT2xx2.github.io/Blueteam-Framework)
+- **Link**: [Bug Bounty Framework Repository](https://Gh0sT2xx2.github.io/BugBounty-Framework)
 
 ---
 
