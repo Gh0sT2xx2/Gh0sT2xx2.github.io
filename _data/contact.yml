@@ -2,18 +2,19 @@
 
 - type: github
   icon: "fab fa-github"
+  url:  'https://github.com/Gh0sT2xx2'
 
 - type: linkedin
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.linkedin.com/in/diogo-lages/' # Fill with your Linkedin homepage
+  url:  'https://github.com/Gh0sT2xx2' # Fill with your Linkedin homepage
 
 - type: link
   icon: "fas fa-user-secret"
-  url: "https://tryhackme.com/p/DiogoLages"
+  url: "https://github.com/Gh0sT2xx2"
 
 - type: link
   icon: "fas fa-fingerprint"
-  url: "https://diogo-lages.github.io/Framework-Hub/"
+  url: "https://Gh0sT2xx2.github.io/Framework-Hub/"
 
 
 # Uncomment and complete the url below to enable more contact options
