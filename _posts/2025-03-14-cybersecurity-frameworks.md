@@ -9,12 +9,12 @@ image:
 ---
 
 
-The frameworks presented here include Framework Hub (The Main Dashboard), OSINT Framework , Blue Team Framework , and Bug Bounty Framework . These frameworks are designed to help users find tools specific to each area, such as Blue Team, Bug Bounty, and OSINT.
+The frameworks presented here include Deep Dork Web, OSINT Framework , Blue Team Framework , and Bug Bounty Framework . These frameworks are designed to help users find tools specific to each area, such as Blue Team, Bug Bounty, and OSINT.
 
 
 # Cybersecurity Frameworks Repositorys
 
-- **Link**: [Framework Hub Repository](https://Gh0sT2xx2.github.io/Framework-Hub)
+- **Link**: [Deep Dork Web Repository](https://gh0st2xx2.github.io/Deep-Dork-Web/)
 - **Link**: [OSINT Framework Repository](https://Gh0sT2xx2.github.io/OSINT-Framework)
 - **Link**: [Blue Team Framework Repository](https://Gh0sT2xx2.github.io/Blueteam-Framework)
 - **Link**: [Bug Bounty Framework Repository](https://Gh0sT2xx2.github.io/BugBounty-Framework)
@@ -36,9 +36,9 @@ The **Bug Bounty Framework** stands out as it uses pure HTML and JavaScript, pro
 
 ## Features Across Projects
 
-### Framework Hub
-- A centralized dashboard offering access to multiple frameworks, including OSINT, Bug Bounty, Blue Team, and Google Dork tools.
-- Modular design allows users to switch between frameworks seamlessly.
+### Deep Dork Web
+- A modern, browser-based tool designed to simplify and automate Google Dork searches for ethical security research.
+- Filter dorks by categories such as "sensitive data," "vulnerabilities," or "misconfigurations."
 
 ### OSINT Framework
 - Unified search interface across multiple OSINT sources.
@@ -57,8 +57,8 @@ The **Bug Bounty Framework** stands out as it uses pure HTML and JavaScript, pro
 ## Interface
 
 
-![Framework Hub](/assets/img/Framework-Hub-Interface.png)  
-*Framework Hub: Centralized access to all frameworks.*
+![Deep Dork Web](/assets/img/Output-Deep-Dork-Web.png)  
+*Deep Dork Web: Automate Google Dork searches.*
 
 ![OSINT Framework](/assets/img/OSINT-Framework-Interface.png)  
 *OSINT Framework: Tree view search and categorized resources.*
