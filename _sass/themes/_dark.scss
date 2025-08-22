@@ -4,7 +4,7 @@
   /* Framework color */
   --main-bg: black;
   --mask-bg: rgb(68, 69, 70);
-  --main-border-color: #6a0dad; /* Dark Purple */
+  --main-border-color: #ff0000; /* Dark Purple */
 
   /* Common color */
   --text-color: rgb(175, 176, 177);
@@ -14,8 +14,8 @@
   --label-color: #a7a7a7;
   --blockquote-border-color: rgb(66, 66, 66);
   --blockquote-text-color: #868686;
-  --link-color: #6a0dad; /* Dark Purple */
-  --link-underline-color: #6a0dad; /* Dark Purple */
+  --link-color: #ff0000; /* Dark Purple */
+  --link-underline-color: #ff0000; /* Dark Purple */
   --button-bg: #1e1e1e;
   --btn-border-color: #2e2f31;
   --btn-backtotop-color: var(--text-color);
@@ -32,7 +32,7 @@
   );
 
   /* Sidebar */
-  --site-title-color: #6a0dad; /* Dark Purple */
+  --site-title-color: #ff0000; /* Dark Purple */
   --site-subtitle-color: white;
   --sidebar-bg: black;
   --sidebar-border-color: #292929;
@@ -56,13 +56,13 @@
   --btn-paginator-hover-color: #2e2e2e;
 
   /* Posts */
-  --toc-highlight: #6a0dad; /* Dark Purple */
+  --toc-highlight: #ff0000; /* Dark Purple */
   --toc-popup-border-color: #373737;
   --tag-hover: rgb(43, 56, 62);
   --tb-odd-bg: #252526; /* odd rows of the posts' table */
   --tb-even-bg: rgb(31, 31, 34); /* even rows of the posts' table */
   --tb-border-color: var(--tb-odd-bg);
-  --footnote-target-bg: #6a0dad; /* Dark Purple */
+  --footnote-target-bg: #ff0000; /* Dark Purple */
   --btn-share-color: #6c757d;
   --btn-share-hover-color: #bfc1ca;
   --card-bg: black;
@@ -84,23 +84,23 @@
 
   /* Tags */
   --tag-border: rgb(59, 79, 88);
-  --tag-shadow: #6a0dad; /* Dark Purple */
+  --tag-shadow: #ff0000; /* Dark Purple */
   --dash-color: rgb(63, 65, 68);
   --search-tag-bg: #292828;
 
   /* Categories */
   --categories-border: rgb(64, 66, 69, 0.5);
-  --categories-hover-bg: #6a0dad; /* Dark Purple */
+  --categories-hover-bg: #ff0000; /* Dark Purple */
   --categories-icon-hover-color: white;
 
   /* Archive */
   --timeline-node-bg: white;
-  --timeline-color: #6a0dad; /* Dark Purple */
+  --timeline-color: #ff0000; /* Dark Purple */
   --timeline-year-dot-color: var(--timeline-color);
 
   /* Code highlight colors */
-  --language-border-color: #6a0dad; /* Dark Purple */
-  --highlight-bg-color: #6a0dad; /* Dark Purple */
+  --language-border-color: #ff0000; /* Dark Purple */
+  --highlight-bg-color: #ff0000; /* Dark Purple */
   --highlighter-rouge-color: #c9def1;
   --highlight-lineno-color: #808080;
   --inline-code-bg: rgba(255, 255, 255, 0.05);
