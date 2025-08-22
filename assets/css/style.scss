@@ -1,16 +1,17 @@
 ---
 ---
 
-@import "jekyll-theme-chirpy"; /* import theme first */
+/* ✅ Direct overrides, no @import / @use needed */
 
-/* ✅ Override purple → red */
+/* Light theme */
 :root {
-  --bs-primary: #ff0000;       /* Bootstrap primary */
-  --primary-color: #ff0000;    /* Chirpy custom */
-  --link-color: #ff0000;       /* Links */
-  --link-hover-color: #cc0000; /* Darker red on hover */
+  --bs-primary: #ff0000;
+  --primary-color: #ff0000;
+  --link-color: #ff0000;
+  --link-hover-color: #cc0000;
 }
 
+/* Dark theme */
 [data-theme="dark"] {
   --bs-primary: #ff0000;
   --primary-color: #ff0000;
