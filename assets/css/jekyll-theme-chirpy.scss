@@ -2,9 +2,19 @@
 ---
 
 @use 'main
-{%- if jekyll.environment == 'production' -%}
+{%- if jekyll.environment == "production" -%}
   .bundle
 {%- endif -%}
 ';
 
 /* append your custom style below */
+
+/* Light theme */
+:root {
+  --primary-color: #ff0000; /* Red */
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --primary-color: #ff0000; /* Red */
+}
