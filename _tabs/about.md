@@ -11,20 +11,23 @@ order: 4
 
 ## **$whoami**
 
-Hi, I’m An0ns4i, a **Black Hat Hacker & CIA (Operation Talent)**. We are Anonymous. We are Legion. We do not forgive. We do not forget. Expect Us.
+Hi, I’m An0ns4i, **White Hat Hacker**. 
+H4CK1NG 4 G00D CAUSE!!!
+We are Anonymous. 
+We are Legion. 
 
 <br>
 
 ```shell
 print("What I Do:")
 
-print("- Hacking,Exploitation,Reconnaisance")
+print("- Reconnaisance,Enumeration,Exploitation,Persistence")
 print("- OSINT - Open Source Intelligence")
-print("- Malware,Virus Development")
-print("- Social Engineering")
-print("- OPSEC Guides")
-print("- DDOS,Botnets")
+print("- Malware/Virus/Trojan/Worms")
 print("- C2,Crypter,Binder,RAT")
+print("- Social Engineering")
+print("- DDOS,Botnets")
+print("- OPSEC")
 ```
 
 <br>
